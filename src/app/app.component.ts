@@ -20,7 +20,8 @@ import { AppState } from './app.service';
   ],
   template: `
     <nav class="black-bg">
-      <a [routerLink]=" ['./'] " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <a [routerLink]=" ['./'] "
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <i class="fa fa-home fa-lg" aria-hidden="true">
         <b>Наш Двір</b></i>
       </a>

@@ -31,4 +31,7 @@ export class LoginComponent implements OnInit {
 
   public submitState(value: string) {
   }
+  onSubmit(){
+    console.log("DONE");
+  }
 }

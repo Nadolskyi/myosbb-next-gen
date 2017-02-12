@@ -5,10 +5,10 @@
                 <h2 class="form-login-heading">{{'sign_in'}}</h2>
                 <div class="login-wrapper">
                     <input type="text" id="username" class="form-control" name="username" placeholder="{{'user' }}"
-                            autofocus maxlength="35" required>
+                            autofocus maxlength="35" required [(ngModel)]="model.username">
                     <br>
                     <input type="password" id="password" class="form-control" name="password" placeholder="{{'password'}}"
-                            minlength="4" maxlength="16" required>
+                            minlength="4" maxlength="16" required [(ngModel)]="model.password">
                     <div class="alert alert-danger" *ngIf="logInError">
                         <strong>{{'user_not_found'}}</strong>Try again</div>
                     <input type="hidden"/>

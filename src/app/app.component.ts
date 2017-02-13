@@ -25,6 +25,9 @@ import { AppState } from './app.service';
         <i class="fa fa-home fa-lg" aria-hidden="true">
         <b>Наш Двір</b></i>
       </a>
+      <a [routerLink]=" ['./admin/osbb'] " routerLinkActive="active">
+       <button type="button" class="btn btn-success">OSBB</button>
+      </a>
     </nav>
     <main>
       <router-outlet></router-outlet>

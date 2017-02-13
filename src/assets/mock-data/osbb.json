@@ -1,0 +1,226 @@
+[{
+  "osbbId": 1,
+  "name": "Мій Дім",
+  "description": "осбб для людей",
+  "street": null,
+  "houseNumber": "м.Львів вул.Городоцька 147а",
+  "district": {
+    "id": 5,
+    "name": "Залізничний",
+    "city": {
+      "id": 1,
+      "name": "Львів",
+      "region": {
+        "id": 13,
+        "name": "Львівська обл."
+      }
+    }
+  },
+  "available": true,
+  "logo": null,
+  "creationDate": 1472716003221,
+  "links": [{
+    "rel": "self",
+    "href": "http://localhost:8080/myosbb/restful/osbb/1"
+  }]
+}, {
+  "osbbId": 2,
+  "name": "Червона Калина",
+  "description": "найкраще осбб",
+  "street": null,
+  "houseNumber": "м.Львів вул.В.Великого 99",
+  "district": {
+    "id": 4,
+    "name": "Франківський",
+    "city": {
+      "id": 1,
+      "name": "Львів",
+      "region": {
+        "id": 13,
+        "name": "Львівська обл."
+      }
+    }
+  },
+  "available": true,
+  "logo": null,
+  "creationDate": 1409903203221,
+  "links": [{
+    "rel": "self",
+    "href": "http://localhost:8080/myosbb/restful/osbb/2"
+  }]
+}, {
+  "osbbId": 3,
+  "name": "Двір",
+  "description": "рівні права",
+  "street": null,
+  "houseNumber": "м.Львів вул.Б.Хмельницького 77",
+  "district": {
+    "id": 4,
+    "name": "Франківський",
+    "city": {
+      "id": 1,
+      "name": "Львів",
+      "region": {
+        "id": 13,
+        "name": "Львівська обл."
+      }
+    }
+  },
+  "available": true,
+  "logo": null,
+  "creationDate": 1338096043221,
+  "links": [{
+    "rel": "self",
+    "href": "http://localhost:8080/myosbb/restful/osbb/3"
+  }]
+}, {
+  "osbbId": 4,
+  "name": "Район",
+  "description": "осбб",
+  "street": null,
+  "houseNumber": "м.Львів вул.Сихівськаа 33",
+  "district": {
+    "id": 3,
+    "name": "Сихівський",
+    "city": {
+      "id": 1,
+      "name": "Львів",
+      "region": {
+        "id": 13,
+        "name": "Львівська обл."
+      }
+    }
+  },
+  "available": true,
+  "logo": null,
+  "creationDate": 1444895203221,
+  "links": [{
+    "rel": "self",
+    "href": "http://localhost:8080/myosbb/restful/osbb/4"
+  }]
+}, {
+  "osbbId": 5,
+  "name": "Надія",
+  "description": "файне осбб",
+  "street": null,
+  "houseNumber": "м.Львів вул.Гната Хоткевича 47а",
+  "district": {
+    "id": 3,
+    "name": "Сихівський",
+    "city": {
+      "id": 1,
+      "name": "Львів",
+      "region": {
+        "id": 13,
+        "name": "Львівська обл."
+      }
+    }
+  },
+  "available": true,
+  "logo": null,
+  "creationDate": 1280648803221,
+  "links": [{
+    "rel": "self",
+    "href": "http://localhost:8080/myosbb/restful/osbb/5"
+  }]
+}, {
+  "osbbId": 6,
+  "name": "Весна",
+  "description": " ",
+  "street": null,
+  "houseNumber": "м.Львів вул.Проспект Червоної Калини 11",
+  "district": {
+    "id": 3,
+    "name": "Сихівський",
+    "city": {
+      "id": 1,
+      "name": "Львів",
+      "region": {
+        "id": 13,
+        "name": "Львівська обл."
+      }
+    }
+  },
+  "available": true,
+  "logo": null,
+  "creationDate": 1462873603221,
+  "links": [{
+    "rel": "self",
+    "href": "http://localhost:8080/myosbb/restful/osbb/6"
+  }]
+}, {
+  "osbbId": 7,
+  "name": "Мрія",
+  "description": " ",
+  "street": null,
+  "houseNumber": "м.Львів вул.Городоцька 147а",
+  "district": {
+    "id": 5,
+    "name": "Залізничний",
+    "city": {
+      "id": 1,
+      "name": "Львів",
+      "region": {
+        "id": 13,
+        "name": "Львівська обл."
+      }
+    }
+  },
+  "available": true,
+  "logo": null,
+  "creationDate": 1472716003221,
+  "links": [{
+    "rel": "self",
+    "href": "http://localhost:8080/myosbb/restful/osbb/7"
+  }]
+}, {
+  "osbbId": 8,
+  "name": "Моя Оселя",
+  "description": "",
+  "street": null,
+  "houseNumber": "м.Львів вул.Повітряна 17б",
+  "district": {
+    "id": 5,
+    "name": "Залізничний",
+    "city": {
+      "id": 1,
+      "name": "Львів",
+      "region": {
+        "id": 13,
+        "name": "Львівська обл."
+      }
+    }
+  },
+  "available": true,
+  "logo": null,
+  "creationDate": 1381556803221,
+  "links": [{
+    "rel": "self",
+    "href": "http://localhost:8080/myosbb/restful/osbb/8"
+  }]
+}, {
+  "osbbId": 9,
+  "name": "Сонечко",
+  "description": "",
+  "street": null,
+  "houseNumber": "м.Львів вул.Наукова 77",
+  "district": {
+    "id": 4,
+    "name": "Франківський",
+    "city": {
+      "id": 1,
+      "name": "Львів",
+      "region": {
+        "id": 13,
+        "name": "Львівська обл."
+      }
+    }
+  },
+  "available": true,
+  "logo": null,
+  "creationDate": 1429343203221,
+  "links": [{
+    "rel": "self",
+    "href": "http://localhost:8080/myosbb/restful/osbb/9"
+  }]
+}]

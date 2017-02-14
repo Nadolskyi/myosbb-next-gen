@@ -30,6 +30,8 @@ import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
 import { OSBBComponent } from './admin/osbb';
+import { HousesComponent } from './admin/houses';
+import { ProjectsComponent } from './admin/projects';
 
 
 import '../styles/styles.scss';
@@ -57,9 +59,12 @@ type StoreType = {
     AboutComponent,
     HomeComponent,
     LoginComponent,
-    OSBBComponent,
+    HousesComponent,
+    ProjectsComponent,
     NoContentComponent,
-    XLargeDirective
+    XLargeDirective,
+    OSBBComponent
+
   ],
   imports: [ // import Angular's modules
     BrowserModule,

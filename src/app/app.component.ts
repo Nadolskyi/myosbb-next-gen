@@ -28,6 +28,12 @@ import { AppState } from './app.service';
       <a [routerLink]=" ['./admin/osbb'] " routerLinkActive="active">
        <button type="button" class="btn btn-success">OSBB</button>
       </a>
+      <a [routerLink]=" ['./admin/houses'] " routerLinkActive="active">
+       <button type="button" class="btn btn-success">Houses</button>
+      </a>
+      <a [routerLink]=" ['./admin/projects'] " routerLinkActive="active">
+       <button type="button" class="btn btn-success">Projects</button>
+      </a>
     </nav>
     <main>
       <router-outlet></router-outlet>

@@ -10,10 +10,15 @@
         <th>Action:</th>
     </tr>
     <tr *ngFor="let c of mockData" class="info">
-        <td>{{c.name}}</td>
+        <td>{{c.street.name}}</td>
+        <td>{{c.street.city.name}}</td>
+        <td>{{c.zipCode}}</td>
+        <td>{{c.apartmentCount}}</td>
+        <td>{{c.osbbName}}</td>
+        <td>
+            <button class="btn">Switch</button>
+        </td>
         <td>{{c.description}}</td>
-        <td>{{c.houseNumber}}</td>
-        <td>{{c.district.name}}</td>
         <td>
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Options

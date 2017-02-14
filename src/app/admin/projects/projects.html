@@ -1,0 +1,22 @@
+<br>
+<br>
+<br>
+<table class="table table-hover">
+    <tr>
+        <th>Firstname:</th>
+        <th>Lastname:</th>
+        <th>Age:</th>
+        <th>Notice:</th>
+        <th>Action:</th>
+    </tr>
+    <tr *ngFor="let c of mockData" class="info">
+        <td>{{c.name}}</td>
+        <td>{{c.user.firstName}}</td>
+        <td>{{c.assigned.firstName}}</td>
+        <td>Date</td>
+        <td>
+            <button class="btn">Switch</button>
+        </td>
+        <td>Ні</td>
+    </tr>
+</table>

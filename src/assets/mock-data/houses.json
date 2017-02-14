@@ -1,0 +1,241 @@
+[{
+        "houseId": 45,
+        "numberHouse": null,
+        "street": {
+            "id": 5,
+            "name": "Курмановича",
+            "city": {
+                "id": 1,
+                "name": "Львів",
+                "region": {
+                    "id": 13,
+                    "name": "Львівська обл."
+                }
+            }
+        },
+        "zipCode": "79084",
+        "description": "a nice house with a lot of parking spaces",
+        "osbbName": "Весна",
+        "apartmentCount": 0,
+        "numberOfInhabitants": 0,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/house/45"
+        }]
+    }, {
+        "houseId": 42,
+        "numberHouse": null,
+        "street": {
+            "id": 5,
+            "name": "Курмановича",
+            "city": {
+                "id": 1,
+                "name": "Львів",
+                "region": {
+                    "id": 13,
+                    "name": "Львівська обл."
+                }
+            }
+        },
+        "zipCode": "79081",
+        "description": "a nice house with a lot of parking spaces",
+        "osbbName": "Район",
+        "apartmentCount": 0,
+        "numberOfInhabitants": 0,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/house/42"
+        }]
+    }, {
+        "houseId": 47,
+        "numberHouse": null,
+        "street": {
+            "id": 5,
+            "name": "Курмановича",
+            "city": {
+                "id": 1,
+                "name": "Львів",
+                "region": {
+                    "id": 13,
+                    "name": "Львівська обл."
+                }
+            }
+        },
+        "zipCode": "79086",
+        "description": "a nice house with a lot of parking spaces",
+        "osbbName": "Весна",
+        "apartmentCount": 0,
+        "numberOfInhabitants": 0,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/house/47"
+        }]
+    }, {
+        "houseId": 46,
+        "numberHouse": null,
+        "street": {
+            "id": 5,
+            "name": "Курмановича",
+            "city": {
+                "id": 1,
+                "name": "Львів",
+                "region": {
+                    "id": 13,
+                    "name": "Львівська обл."
+                }
+            }
+        },
+        "zipCode": "79085",
+        "description": "a nice house with a lot of parking spaces",
+        "osbbName": "Надія",
+        "apartmentCount": 0,
+        "numberOfInhabitants": 0,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/house/46"
+        }]
+    }, {
+        "houseId": 44,
+        "numberHouse": null,
+        "street": {
+            "id": 5,
+            "name": "Курмановича",
+            "city": {
+                "id": 1,
+                "name": "Львів",
+                "region": {
+                    "id": 13,
+                    "name": "Львівська обл."
+                }
+            }
+        },
+        "zipCode": "79083",
+        "description": "a nice house with a lot of parking spaces",
+        "osbbName": "Двір",
+        "apartmentCount": 0,
+        "numberOfInhabitants": 0,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/house/44"
+        }]
+    }, {
+        "houseId": 43,
+        "numberHouse": null,
+        "street": {
+            "id": 5,
+            "name": "Курмановича",
+            "city": {
+                "id": 1,
+                "name": "Львів",
+                "region": {
+                    "id": 13,
+                    "name": "Львівська обл."
+                }
+            }
+        },
+        "zipCode": "79082",
+        "description": "a nice house with a lot of parking spaces",
+        "osbbName": "Весна",
+        "apartmentCount": 0,
+        "numberOfInhabitants": 0,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/house/43"
+        }]
+    }, {
+        "houseId": 49,
+        "numberHouse": null,
+        "street": {
+            "id": 5,
+            "name": "Курмановича",
+            "city": {
+                "id": 1,
+                "name": "Львів",
+                "region": {
+                    "id": 13,
+                    "name": "Львівська обл."
+                }
+            }
+        },
+        "zipCode": "79088",
+        "description": "a nice house with a lot of parking spaces",
+        "osbbName": "Сонечко",
+        "apartmentCount": 0,
+        "numberOfInhabitants": 0,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/house/49"
+        }]
+    }, {
+        "houseId": 48,
+        "numberHouse": null,
+        "street": {
+            "id": 5,
+            "name": "Курмановича",
+            "city": {
+                "id": 1,
+                "name": "Львів",
+                "region": {
+                    "id": 13,
+                    "name": "Львівська обл."
+                }
+            }
+        },
+        "zipCode": "79087",
+        "description": "a nice house with a lot of parking spaces",
+        "osbbName": "Моя Оселя",
+        "apartmentCount": 0,
+        "numberOfInhabitants": 0,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/house/48"
+        }]
+    }, {
+        "houseId": 41,
+        "numberHouse": null,
+        "street": {
+            "id": 5,
+            "name": "Курмановича",
+            "city": {
+                "id": 1,
+                "name": "Львів",
+                "region": {
+                    "id": 13,
+                    "name": "Львівська обл."
+                }
+            }
+        },
+        "zipCode": "79080",
+        "description": "a nice house with a lot of parking spaces",
+        "osbbName": "Червона Калина",
+        "apartmentCount": 0,
+        "numberOfInhabitants": 0,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/house/41"
+        }]
+    }, {
+        "houseId": 34,
+        "numberHouse": null,
+        "street": {
+            "id": 4,
+            "name": "Водогінна",
+            "city": {
+                "id": 1,
+                "name": "Львів",
+                "region": {
+                    "id": 13,
+                    "name": "Львівська обл."
+                }
+            }
+        },
+        "zipCode": "79073",
+        "description": "a nice house with a lot of parking spaces",
+        "osbbName": "Сонечко",
+        "apartmentCount": 0,
+        "numberOfInhabitants": 0,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/house/34"
+        }]
+    }]

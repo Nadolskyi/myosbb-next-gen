@@ -1,15 +1,17 @@
 import {Injectable} from "@angular/core";
 import {Http, Response, Headers} from "@angular/http";
 import {Observable} from "rxjs/Observable";
-import {User} from "../../shared/models/User";
-import {ApiService} from "./api.service";
+//import {User} from "../../shared/models/User";
+//import {ApiService} from "./api.service";
 //import {routes} from "../app.routes";
 import {Component} from '@angular/core';
 
 @Injectable()
 export class LoginService {
+    
+
     token:string;
-    private _pathUrl = ApiService.serverUrl;
+    private _pathUrl = 'http://localhost:8080/myosbb';
     currentUser:User;
     client = {
         'client_pass': '123456',
@@ -30,12 +32,16 @@ export class LoginService {
         var data = 'username=' + encodeURIComponent(model.username) + '&password='
             + encodeURIComponent(model.password) + '&grant_type=password';
            // HeaderComponent.currentUser = 
+           console.log(data);
+            console.log(tokenUrl);
         return this.http.post(tokenUrl, data);
     }
 
     //sends token to SERVERS PROTECTED RESOURCES if THIS ONE WILL PASS EVERYTHING IS WORKING
     sendToken():Observable<any> {
+        console.log("sendtoken");
         let userUrl = this._pathUrl + "/restful/user/getCurrent";
+        console.log("sendtoken");
         return this.http.get(userUrl);
     }
 
@@ -48,9 +54,11 @@ export class LoginService {
     //cheking is there in localstorage data
     checkLogin():boolean {
         if ((localStorage.getItem("access_token") != null) && (localStorage.getItem("access_token") != "")) {
+            console.log("checkLogin");
             return true;
         }
         else
+            console.log("checkLogin");
             return false;
     }
 

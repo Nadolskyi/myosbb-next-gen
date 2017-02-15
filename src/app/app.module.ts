@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
 import {
   NgModule,
   ApplicationRef
@@ -14,6 +14,7 @@ import {
   RouterModule,
   PreloadAllModules
 } from '@angular/router';
+import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -24,10 +25,14 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { HomeComponent } from './home';
-import { AboutComponent } from './about';
+import { UserComponent } from './user';
+import { AppHeaderComponent } from './app-header';
+import { SidebarMenuComponent } from './sidebar-menu';
 import { NoContentComponent } from './no-content';
-import { XLargeDirective } from './home/x-large';
+import { OsbbContactsComponent } from './user/osbb-contacts';
+
+// pipes
+import { CapitalizeFirstLetterPipe } from './common/pipes/capitalize-first-letter';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -51,16 +56,23 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    AboutComponent,
-    HomeComponent,
+    UserComponent,
+    SidebarMenuComponent,
     NoContentComponent,
-    XLargeDirective
+    AppHeaderComponent,
+    CapitalizeFirstLetterPipe,
+    OsbbContactsComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    TranslateModule.forRoot({
+            provide: TranslateLoader,
+            useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
+            deps: [Http]
+        })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

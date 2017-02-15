@@ -61,10 +61,10 @@ ngOnInit():any {
                       this.isLoggedIn = true;
                       this.setRole();
                       if (this.getRole() === "ROLE_USER") {
-                          this._router.navigate(['home']);
+                          this._router.navigate(['./']);
                       }
                       if (this.getRole() === "ROLE_ADMIN") {
-                          this._router.navigate(['/']);
+                          this._router.navigate(['./']);
                       }
                       if (this.getRole() === "ROLE_MANAGER") {
                           this._router.navigate(['manager']);

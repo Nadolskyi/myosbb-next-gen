@@ -31,12 +31,9 @@ export class LoginService extends BaseRequestOptions {
         return body.data || {};
     }
     public checkLogin():boolean {
-        if ((localStorage.getItem("access_token") != null) && (localStorage.getItem("access_token") != "")) {
-            return true;
-        }
-        else
-            return false;
-    }
+          console.log( ((localStorage.getItem("access_token") != null) && (localStorage.getItem("access_token") != "")) ? "LogedIn":"LogOut" )
+          return  ((localStorage.getItem("access_token") != null) && (localStorage.getItem("access_token") != "")) ? true:false;
+     }
     public logOut() {
             localStorage.clear();
     }
@@ -60,7 +57,7 @@ export class LoginService extends BaseRequestOptions {
     }
    
     public getRequestOptionArgs(options?:RequestOptionsArgs, url?:string):RequestOptionsArgs {
-        if (options == null) {
+        if (!options) {
             options = new RequestOptions();
         }
         if (options.headers == null) {
@@ -69,7 +66,8 @@ export class LoginService extends BaseRequestOptions {
         if ((localStorage.getItem(this.tokenName) != null) && (localStorage.getItem(this.tokenName) != "")) {
             if (!options.headers.has("Authorization")) {
                 options.headers.append('Authorization', 'Bearer ' + localStorage.getItem(this.tokenName));
-            } if(!options.headers.has("Content-Type"))
+            } 
+            if(!options.headers.has("Content-Type"))
             options.headers.append('Content-Type', `application/json`);
         } else {
             options.headers.append('Authorization', `Basic  Y2xpZW50YXBwOjEyMzQ1Ng==`);

@@ -1,6 +1,6 @@
-import assign = require("core-js/library/fn/object/assign");
-import { Apartment } from "./apartment.interface";
-import { House } from "./house";
+// import assign = require("core-js/library/fn/object/assign");
+// import { Apartment } from "./apartment.interface";
+// import { House } from "./house";
 export class User {
     userId:number;
     firstName:string;
@@ -12,8 +12,8 @@ export class User {
     gender:string;
     role:string;
     activated:boolean;
-    apartment:Apartment;
-    house:House;
+    // apartment:Apartment;
+    // house:House;
 
     constructor() {
         this.userId = new Number();

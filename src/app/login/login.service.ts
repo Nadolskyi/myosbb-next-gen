@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {Http, Response, Headers,BaseRequestOptions,RequestOptions,RequestOptionsArgs} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 //import {User} from "../../shared/models/User";
-//import {ApiService} from "./api.service";
+import {ApiService} from "./api.service";
 //import {routes} from "../app.routes";
 import {Component} from '@angular/core';
 
@@ -11,8 +11,9 @@ export class LoginService extends BaseRequestOptions {
     
     private tokenName:string = "access_token";
     token:string;
-    private _pathUrl = 'http://localhost:8080/myosbb';
-    currentUser:User;
+    //private apiService =ApiService.serverUrl;
+    private _pathUrl = ApiService.serverUrl;
+    //currentUser:User;
     client = {
         'client_pass': '123456',
         'client_id': 'clientapp',
@@ -30,7 +31,6 @@ export class LoginService extends BaseRequestOptions {
     sendCredentials(model) {
         console.log('Authentication pending...');
         let options=this.getRequestOptionArgs();
-        //this.headers.append('Authorization', `Basic  Y2xpZW50YXBwOjEyMzQ1Ng==`);
         let tokenUrl = this._pathUrl + "/oauth/token";
         var data = 'username=' + encodeURIComponent(model.username) + '&password='
             + encodeURIComponent(model.password) + '&grant_type=password';

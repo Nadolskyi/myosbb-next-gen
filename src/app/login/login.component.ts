@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import {LoginService} from "./login.service";
 import { AppState } from '../app.service';
-//import {ApiService} from "./api.service";
+import {ApiService} from "./api.service";
 import {Router} from "@angular/router";
 import {User} from './User'
 import {Observable} from "rxjs/Observable";
@@ -19,7 +19,7 @@ import {Http, Request, RequestOptionsArgs, Response, RequestOptions, ConnectionB
   providers: [LoginService
   ],
   // Our list of styles in our component. We may add more to compose many styles together
-  styleUrls: [ '../../assets/css/login/login.css' ],
+  styleUrls: [ './login.css' ],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
   templateUrl: './login.component.html',
   outputs: ['isLoggedIn']
@@ -37,11 +37,8 @@ ngOnInit():any {
     public appState: AppState,private http:Http,private loginService:LoginService, private _router:Router
   ) {}
 
-
-  public submitState(value: string) {
-  }
   private tokenName:string = "access_token";
-  private _pathUrl = 'http://localhost:8080/myosbb';
+  private _pathUrl = ApiService.serverUrl;
   private model={'username':'','password':''};
   public  decodeAccessToken(access_token:string) {
         return JSON.parse(window.atob(access_token.split('.')[1]));
@@ -56,15 +53,15 @@ ngOnInit():any {
     }
     
 
-    getRole():string {
-        return this.role;
-    }
+  getRole():string {
+      return this.role;
+  }
 
-    setRole() {
-        if (this.loginService.checkLogin()) {
-            this.role = this.decodeAccessToken(localStorage.getItem("access_token"))["authorities"][0];
-        }
-    }
+  setRole() {
+      if (this.loginService.checkLogin()) {
+          this.role = this.decodeAccessToken(localStorage.getItem("access_token"))["authorities"][0];
+      }
+  }
 
     
   onSubmit(){

@@ -18,22 +18,11 @@ import { AppState } from './app.service';
   styleUrls: [
     './app.component.scss'
   ],
-  template: `
-    <nav class="black-bg">
-      <a [routerLink]=" ['./'] "
-        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <i class="fa fa-home fa-lg" aria-hidden="true">
-        <b>Наш Двір</b></i>
-      </a>
-    </nav>
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-  `
+  templateUrl: './app.html'
 })
 export class AppComponent implements OnInit {
-  public angularclassLogo = 'assets/img/angularclass-avatar.png';
-  public name = 'Angular 2 Webpack Starter';
+  public angularclassLogo = 'assets/img/favicon.ico';
+  public name = 'Наш Двір';
   public url = 'https://twitter.com/AngularClass';
 
   constructor(

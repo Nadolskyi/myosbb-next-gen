@@ -27,8 +27,8 @@ import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { AboutComponent } from './about';
-import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
+
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -51,11 +51,11 @@ type StoreType = {
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
+
     AppComponent,
     AboutComponent,
     HomeComponent,
     LoginComponent,
-    NoContentComponent,
     XLargeDirective
   ],
   imports: [ // import Angular's modules

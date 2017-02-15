@@ -6,7 +6,7 @@ import {LoginService} from "./login.service";
 import { AppState } from '../app.service';
 //import {ApiService} from "./api.service";
 import {Router} from "@angular/router";
-
+import {User} from './User'
 import {Observable} from "rxjs/Observable";
 //import {HttpClient} from "./HttpClient";
 import {Http, Request, RequestOptionsArgs, Response, RequestOptions, ConnectionBackend, Headers} from '@angular/http';
@@ -31,10 +31,10 @@ ngOnInit():any {
     }
   
   public localState = { value: '' };
-  private _router:Router, private loginService:LoginService, private _currentUserService:CurrentUserService;
+  
   // TypeScript public modifiers
   constructor(
-    public appState: AppState,private http:Http,private loginService:LoginService, 
+    public appState: AppState,private http:Http,private loginService:LoginService, private _router:Router
   ) {}
 
 
@@ -43,11 +43,17 @@ ngOnInit():any {
   private tokenName:string = "access_token";
   private _pathUrl = 'http://localhost:8080/myosbb';
   private model={'username':'','password':''};
-  
+  public  decodeAccessToken(access_token:string) {
+        return JSON.parse(window.atob(access_token.split('.')[1]));
+    }
   private role:string = "";
   private isLoggedIn:boolean;
   private logInError:boolean = false;
+  public currentUser:User
 
+  setUser(user:User) {
+        this.currentUser = user;
+    }
     
 
     getRole():string {
@@ -60,59 +66,7 @@ ngOnInit():any {
         }
     }
 
-    post(url:string, body:string, options?:RequestOptionsArgs):Observable<Response> {
-        options = this.getRequestOptionArgs(options, url);
-        options.method = "POST";
-        console.log('Пароль');
-        return this.intercept(super.post(url, body, options));
-    }
-    getRequestOptionArgs(options?:RequestOptionsArgs, url?:string):RequestOptionsArgs {
-        if (options == null) {
-            options = new RequestOptions();
-        }
-        if (options.headers == null) {
-            options.headers = new Headers();
-        }
-        if ((localStorage.getItem(this.tokenName) != null) && (localStorage.getItem(this.tokenName) != "")) {
-            if (!options.headers.has("Authorization")) {
-                options.headers.delete('Authorization');
-                options.headers.append('Authorization', 'Bearer ' + localStorage.getItem(this.tokenName));
-            } if(!options.headers.has("Content-Type"))
-            options.headers.append('Content-Type', `application/json`);
-        } else {
-            options.headers.append('Authorization', `Basic  Y2xpZW50YXBwOjEyMzQ1Ng==`);
-            if (!options.headers.has("Content-Type")) {
-                options.headers.append('Content-Type', `application/x-www-form-urlencoded`);
-                options.headers.append('Accept', `application/json`);
-            }
-        }
-        console.log(options);
-        return options;
-    }
-
-    intercept(observable:Observable<Response>):Observable<Response> {
-        return observable.catch((err, source) => {
-            if (err.status == 401) {
-                this._router.navigate(['/login']);
-                localStorage.clear();
-                return Observable.empty();
-            } else {
-                return Observable.throw(err);
-            }
-        });
-
-    }
-createAuthorizationHeader(headers: Headers) {
-    headers.append('Authorization', `Basic  Y2xpZW50YXBwOjEyMzQ1Ng==`); 
-  }
-post(url, data) {
-    let headers = new Headers();
-    this.createAuthorizationHeader(headers);
-    console.log(url);
-    return this.http.post(url, data, {
-      headers: headers
-    });
-  }
+    
   onSubmit(){
    
     console.log(Headers);
@@ -141,7 +95,7 @@ post(url, data) {
                             }
                             if (this.getRole() === "ROLE_ADMIN") {
                                 
-                                this._router.navigate(['admin']);
+                                this._router.navigate(['/']);
                             }
                             if (this.getRole() === "ROLE_MANAGER") {
                                 

@@ -77,14 +77,14 @@ ngOnInit():any {
                     this.tokenParseInLocalStorage(data.json());
                     this.loginService.sendToken().subscribe(
                         data=> {
-                          console.log('Fucking animal2');
+                          
                             let user:User = <User>data.json();
                             this.setUser(user);
                             this.model.username = "";
                             this.model.password = "";
                             this.isLoggedIn = true;
                             this.setRole();
-                            console.log('Fucking animal');
+                            
                             console.log(this.getRole());
                             if (this.getRole() === "ROLE_USER") {
                                 

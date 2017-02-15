@@ -7,6 +7,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { AppState } from './app.service';
+import {LoginService} from './login/login.service'
 
 /*
  * App Component
@@ -28,6 +29,10 @@ import { AppState } from './app.service';
       <a class="logination" [routerLink]=" ['./login'] "
         routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <button type="button" class="btn btn-warning"><span>Залогуватися</span></button>
+      </a>
+      <a class="logination" [routerLink]=" ['./login'] "
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <button type="button" class="btn btn-warning"><span>Вилогуватись</span></button>
       </a>
     </nav>
     <main>

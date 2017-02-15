@@ -31,31 +31,19 @@ ngOnInit():any {
     }
   
   public localState = { value: '' };
- // private _router:Router, private loginService:LoginService, private _currentUserService:CurrentUserService;
+  private _router:Router, private loginService:LoginService, private _currentUserService:CurrentUserService;
   // TypeScript public modifiers
   constructor(
     public appState: AppState,private http:Http,private loginService:LoginService, 
   ) {}
 
 
-// constructor(private _router:Router, private loginService:LoginService
-//         , private _currentUserService:CurrentUserService) {
-//     }
-
-
-
-//   ngOnInit():any {
-//         this.isLoggedIn = this.loginService.checkLogin();
-//     }
-
-
-
-  
   public submitState(value: string) {
   }
-   private tokenName:string = "access_token";
+  private tokenName:string = "access_token";
   private _pathUrl = 'http://localhost:8080/myosbb';
   private model={'username':'','password':''};
+  
   private role:string = "";
   private isLoggedIn:boolean;
   private logInError:boolean = false;
@@ -67,17 +55,17 @@ ngOnInit():any {
     }
 
     setRole() {
-        if (this._loginservice.checkLogin()) {
+        if (this.loginService.checkLogin()) {
             this.role = this.decodeAccessToken(localStorage.getItem("access_token"))["authorities"][0];
         }
     }
 
-    // post(url:string, body:string, options?:RequestOptionsArgs):Observable<Response> {
-    //     options = this.getRequestOptionArgs(options, url);
-    //     options.method = "POST";
-    //     console.log('Пароль');
-    //     return this.intercept(super.post(url, body, options));
-    // }
+    post(url:string, body:string, options?:RequestOptionsArgs):Observable<Response> {
+        options = this.getRequestOptionArgs(options, url);
+        options.method = "POST";
+        console.log('Пароль');
+        return this.intercept(super.post(url, body, options));
+    }
     getRequestOptionArgs(options?:RequestOptionsArgs, url?:string):RequestOptionsArgs {
         if (options == null) {
             options = new RequestOptions();
@@ -98,6 +86,7 @@ ngOnInit():any {
                 options.headers.append('Accept', `application/json`);
             }
         }
+        console.log(options);
         return options;
     }
 
@@ -125,7 +114,8 @@ post(url, data) {
     });
   }
   onSubmit(){
-   // this.post('http://localhost:8080/myosbb/restful/settings','Basic  Y2xpZW50YXBwOjEyMzQ1Ng==');
+   
+    console.log(Headers);
     console.log('Логін'+' '+this.model.username);
     console.log('Пароль'+' '+this.model.password);
     this.loginService.sendCredentials(this.model).subscribe(
@@ -136,12 +126,14 @@ post(url, data) {
                     this.tokenParseInLocalStorage(data.json());
                     this.loginService.sendToken().subscribe(
                         data=> {
+                          console.log('Fucking animal2');
                             let user:User = <User>data.json();
                             this.setUser(user);
                             this.model.username = "";
                             this.model.password = "";
                             this.isLoggedIn = true;
                             this.setRole();
+                            console.log('Fucking animal');
                             console.log(this.getRole());
                             if (this.getRole() === "ROLE_USER") {
                                 

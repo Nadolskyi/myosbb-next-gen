@@ -29,6 +29,7 @@ import { LoginComponent } from './login';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
+//import {HttpClient} from 'HttpClient';
 
 
 import '../styles/styles.scss';
@@ -52,6 +53,7 @@ type StoreType = {
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
+
     AppComponent,
     AboutComponent,
     HomeComponent,

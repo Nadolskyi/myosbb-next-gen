@@ -6,19 +6,12 @@
         <th>Firstname:</th>
         <th>Lastname:</th>
         <th>Age:</th>
-        <th>Notice:</th>
         <th>Action:</th>
     </tr>
     <tr *ngFor="let c of mockData" class="info">
-        <td>{{c.street.name}}</td>
-        <td>{{c.street.city.name}}</td>
-        <td>{{c.zipCode}}</td>
-        <td>{{c.apartmentCount}}</td>
-        <td>{{c.osbbName}}</td>
-        <td>
-            <button class="btn"><a [routerLink]=" ['./../../houses'] " routerLinkActive="active">Switch</a></button>
-        </td>
-        <td>{{c.description}}</td>
+        <td>{{c.house.street.name}}</td>
+        <td>{{c.number}}</td>
+        <td>{{c.square}}</td>
         <td>
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Options

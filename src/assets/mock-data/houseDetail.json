@@ -1,0 +1,26 @@
+[{
+    "houseId": 47,
+    "numberHouse": null,
+    "street": {
+        "id": 5,
+        "name": "Курмановича",
+        "city": {
+            "id": 1,
+            "name": "Львів",
+            "region": {
+                "id": 13,
+                "name": "Львівська обл."
+            }
+        }
+    },
+    "zipCode": "79086",
+    "description": "a nice house with a lot of parking spaces",
+    "osbbName": "Весна",
+    "apartmentCount": 0,
+    "numberOfInhabitants": 0,
+    "_links": {
+        "self": {
+            "href": "http://localhost:8080/myosbb/restful/house/47"
+        }
+    }
+}]

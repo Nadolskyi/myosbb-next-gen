@@ -10,13 +10,16 @@
         <th>Action:</th>
     </tr>
     <tr *ngFor="let c of mockData" class="info">
-        <td>{{c.name}}</td>
-        <td>{{c.user.firstName+' '+c.user.lastName}}</td>
-        <td>{{c.assigned.firstName}}</td>
-        <td>{{c.time | date: 'dd/MM/yyyy'}}</td>
+        <td>{{c.firstName}}</td>
+        <td>{{c.lastName}}</td>
+        <td>{{c.phoneNumber}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.gender}}</td>
         <td>
-            <button class="btn">Switch</button>
+            <button class="btn">Disable</button>
         </td>
-        <td>Ні</td>
+        <td>
+            <button class="btn">Delete</button>
+        </td>
     </tr>
 </table>

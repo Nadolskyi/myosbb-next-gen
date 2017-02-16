@@ -4,15 +4,15 @@ import {
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Http, Response } from "@angular/http";
-import mockData from "../../../assets/mock-data/projects.json";
+import mockData from "../../../assets/mock-data/apartments.json";
 
 
 @Component({
-  selector: 'projects',
-  templateUrl: './projects.html',
+  selector: 'apartments',
+  templateUrl: './apartments.html',
   styleUrls: ['../styleTables.css'],
 })
-export class ProjectsComponent implements OnInit {
+export class ApartmentsComponent implements OnInit {
 console.log(mockData);
   public localState: any;
   constructor(

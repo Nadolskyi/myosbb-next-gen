@@ -1,0 +1,425 @@
+[{
+    "userId": 2,
+    "firstName": "kris",
+    "lastName": "vilum",
+    "birthDate": 752018400000,
+    "email": "vilumkris@gmail.com",
+    "phoneNumber": "380931286864",
+    "password": "$2a$06$IeFQ1f0OMzPvfrwMvUrvqO6ghg.Qayu57t6nRAhgY9Ic18muPHGAC",
+    "gender": "Female",
+    "activated": true,
+    "role": {
+        "roleId": 1,
+        "name": "ROLE_USER",
+        "authority": "ROLE_USER"
+    },
+    "apartment": {
+        "apartmentId": 2,
+        "number": 2,
+        "house": {
+            "houseId": 1,
+            "numberHouse": 1,
+            "zipCode": "79040",
+            "description": "a nice house with a lot of parking spaces",
+            "street": {
+                "id": 1,
+                "name": "Героїв УПА",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "osbb": {
+                "osbbId": 1,
+                "name": "Мій Дім",
+                "description": "осбб для людей",
+                "street": null,
+                "houseNumber": "м.Львів вул.Городоцька 147а",
+                "district": {
+                    "id": 5,
+                    "name": "Залізничний",
+                    "city": {
+                        "id": 1,
+                        "name": "Львів",
+                        "region": {
+                            "id": 13,
+                            "name": "Львівська обл."
+                        }
+                    }
+                },
+                "available": true,
+                "logo": null,
+                "creationDate": 1472716003221
+            }
+        },
+        "square": 67,
+        "owner": 2
+    },
+    "house": {
+        "houseId": 2,
+        "numberHouse": 2,
+        "zipCode": "79041",
+        "description": "a nice house with a lot of parking spaces",
+        "street": {
+            "id": 1,
+            "name": "Героїв УПА",
+            "city": {
+                "id": 1,
+                "name": "Львів",
+                "region": {
+                    "id": 13,
+                    "name": "Львівська обл."
+                }
+            }
+        },
+        "osbb": {
+            "osbbId": 4,
+            "name": "Район",
+            "description": "осбб",
+            "street": null,
+            "houseNumber": "м.Львів вул.Сихівськаа 33",
+            "district": {
+                "id": 3,
+                "name": "Сихівський",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "available": true,
+            "logo": null,
+            "creationDate": 1444895203221
+        }
+    },
+    "owner": true,
+    "links": [{
+        "rel": "self",
+        "href": "http://localhost:8080/myosbb/restful/user/2"
+    }]
+}, {
+    "userId": 3,
+    "firstName": "Nazar",
+    "lastName": "Sviderskyi",
+    "birthDate": 659743200000,
+    "email": "n.svidersky@gmail.com",
+    "phoneNumber": "0931544845",
+    "password": "$2a$06$fGiJsjD0U/ZoHbmjab2ytOoedYAB1zQ0XANiGUQXAwv9TcyxV.Qfe",
+    "gender": "Male",
+    "activated": true,
+    "role": {
+        "roleId": 1,
+        "name": "ROLE_USER",
+        "authority": "ROLE_USER"
+    },
+    "apartment": {
+        "apartmentId": 3,
+        "number": 3,
+        "house": {
+            "houseId": 1,
+            "numberHouse": 1,
+            "zipCode": "79040",
+            "description": "a nice house with a lot of parking spaces",
+            "street": {
+                "id": 1,
+                "name": "Героїв УПА",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "osbb": {
+                "osbbId": 1,
+                "name": "Мій Дім",
+                "description": "осбб для людей",
+                "street": null,
+                "houseNumber": "м.Львів вул.Городоцька 147а",
+                "district": {
+                    "id": 5,
+                    "name": "Залізничний",
+                    "city": {
+                        "id": 1,
+                        "name": "Львів",
+                        "region": {
+                            "id": 13,
+                            "name": "Львівська обл."
+                        }
+                    }
+                },
+                "available": true,
+                "logo": null,
+                "creationDate": 1472716003221
+            }
+        },
+        "square": 98,
+        "owner": 3
+    },
+    "house": {
+        "houseId": 3,
+        "numberHouse": 3,
+        "zipCode": "79042",
+        "description": "a nice house with a lot of parking spaces",
+        "street": {
+            "id": 1,
+            "name": "Героїв УПА",
+            "city": {
+                "id": 1,
+                "name": "Львів",
+                "region": {
+                    "id": 13,
+                    "name": "Львівська обл."
+                }
+            }
+        },
+        "osbb": {
+            "osbbId": 2,
+            "name": "Червона Калина",
+            "description": "найкраще осбб",
+            "street": null,
+            "houseNumber": "м.Львів вул.В.Великого 99",
+            "district": {
+                "id": 4,
+                "name": "Франківський",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "available": true,
+            "logo": null,
+            "creationDate": 1409903203221
+        }
+    },
+    "owner": true,
+    "links": [{
+        "rel": "self",
+        "href": "http://localhost:8080/myosbb/restful/user/3"
+    }]
+}, {
+    "userId": 4,
+    "firstName": "Roman",
+    "lastName": "Kostetsky",
+    "birthDate": 824853600000,
+    "email": "KostetskyRoma@gmail.com",
+    "phoneNumber": "380687773508",
+    "password": "$2a$06$R33Bzp5v3k5l5xs1n3dwQuQ/fM1DjCMldqthEXhvnI7Cu3gOQ4ms6",
+    "gender": "Male",
+    "activated": true,
+    "role": {
+        "roleId": 1,
+        "name": "ROLE_USER",
+        "authority": "ROLE_USER"
+    },
+    "apartment": {
+        "apartmentId": 4,
+        "number": 4,
+        "house": {
+            "houseId": 1,
+            "numberHouse": 1,
+            "zipCode": "79040",
+            "description": "a nice house with a lot of parking spaces",
+            "street": {
+                "id": 1,
+                "name": "Героїв УПА",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "osbb": {
+                "osbbId": 1,
+                "name": "Мій Дім",
+                "description": "осбб для людей",
+                "street": null,
+                "houseNumber": "м.Львів вул.Городоцька 147а",
+                "district": {
+                    "id": 5,
+                    "name": "Залізничний",
+                    "city": {
+                        "id": 1,
+                        "name": "Львів",
+                        "region": {
+                            "id": 13,
+                            "name": "Львівська обл."
+                        }
+                    }
+                },
+                "available": true,
+                "logo": null,
+                "creationDate": 1472716003221
+            }
+        },
+        "square": 67,
+        "owner": 4
+    },
+    "house": {
+        "houseId": 6,
+        "numberHouse": 6,
+        "zipCode": "79045",
+        "description": "a nice house with a lot of parking spaces",
+        "street": {
+            "id": 1,
+            "name": "Героїв УПА",
+            "city": {
+                "id": 1,
+                "name": "Львів",
+                "region": {
+                    "id": 13,
+                    "name": "Львівська обл."
+                }
+            }
+        },
+        "osbb": {
+            "osbbId": 2,
+            "name": "Червона Калина",
+            "description": "найкраще осбб",
+            "street": null,
+            "houseNumber": "м.Львів вул.В.Великого 99",
+            "district": {
+                "id": 4,
+                "name": "Франківський",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "available": true,
+            "logo": null,
+            "creationDate": 1409903203221
+        }
+    },
+    "owner": true,
+    "links": [{
+        "rel": "self",
+        "href": "http://localhost:8080/myosbb/restful/user/4"
+    }]
+}, {
+    "userId": 5,
+    "firstName": "Roman",
+    "lastName": "Buta",
+    "birthDate": 725666400000,
+    "email": "butaroman@gmail.com",
+    "phoneNumber": "0632571119",
+    "password": "$2a$06$IeFQ1f0OMzPvfrwMvUrvqO6ghg.Qayu57t6nRAhgY9Ic18muPHGAC",
+    "gender": "Male",
+    "activated": true,
+    "role": {
+        "roleId": 1,
+        "name": "ROLE_USER",
+        "authority": "ROLE_USER"
+    },
+    "apartment": {
+        "apartmentId": 5,
+        "number": 5,
+        "house": {
+            "houseId": 1,
+            "numberHouse": 1,
+            "zipCode": "79040",
+            "description": "a nice house with a lot of parking spaces",
+            "street": {
+                "id": 1,
+                "name": "Героїв УПА",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "osbb": {
+                "osbbId": 1,
+                "name": "Мій Дім",
+                "description": "осбб для людей",
+                "street": null,
+                "houseNumber": "м.Львів вул.Городоцька 147а",
+                "district": {
+                    "id": 5,
+                    "name": "Залізничний",
+                    "city": {
+                        "id": 1,
+                        "name": "Львів",
+                        "region": {
+                            "id": 13,
+                            "name": "Львівська обл."
+                        }
+                    }
+                },
+                "available": true,
+                "logo": null,
+                "creationDate": 1472716003221
+            }
+        },
+        "square": 100,
+        "owner": 5
+    },
+    "house": {
+        "houseId": 7,
+        "numberHouse": 7,
+        "zipCode": "79046",
+        "description": "a nice house with a lot of parking spaces",
+        "street": {
+            "id": 1,
+            "name": "Героїв УПА",
+            "city": {
+                "id": 1,
+                "name": "Львів",
+                "region": {
+                    "id": 13,
+                    "name": "Львівська обл."
+                }
+            }
+        },
+        "osbb": {
+            "osbbId": 1,
+            "name": "Мій Дім",
+            "description": "осбб для людей",
+            "street": null,
+            "houseNumber": "м.Львів вул.Городоцька 147а",
+            "district": {
+                "id": 5,
+                "name": "Залізничний",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "available": true,
+            "logo": null,
+            "creationDate": 1472716003221
+        }
+    },
+    "owner": true,
+    "links": [{
+        "rel": "self",
+        "href": "http://localhost:8080/myosbb/restful/user/5"
+    }]
+}]

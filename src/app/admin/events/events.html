@@ -10,13 +10,14 @@
         <th>Action:</th>
     </tr>
     <tr *ngFor="let c of mockData" class="info">
-        <td>{{c.street.name}}</td>
-        <td>{{c.street.city.name}}</td>
-        <td>{{c.zipCode}}</td>
-        <td>{{c.apartmentCount}}</td>
-        <td>{{c.osbbName}}</td>
+        <td>{{c.title}}</td>
+        <td>{{c.start}}</td>
+        <td>{{c.end}}</td>
+        <td>{{c.repeat}}</td>
+        <td>{{c.author.firstName+' '+c.author.lastName}}</td>
+        <td> <button class="btn">{{c.status}}</button></td>
         <td>
-            <button class="btn"><a [routerLink]=" ['./../../houses'] " routerLinkActive="active">Switch</a></button>
+            <button class="btn">Switch</button>
         </td>
         <td>{{c.description}}</td>
         <td>

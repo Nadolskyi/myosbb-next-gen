@@ -1,0 +1,492 @@
+[{
+        "apartmentId": 1,
+        "number": 1,
+        "house": {
+            "houseId": 1,
+            "numberHouse": 1,
+            "zipCode": "79040",
+            "description": "a nice house with a lot of parking spaces",
+            "street": {
+                "id": 1,
+                "name": "Героїв УПА",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "osbb": {
+                "osbbId": 1,
+                "name": "Мій Дім",
+                "description": "осбб для людей",
+                "street": null,
+                "houseNumber": "м.Львів вул.Городоцька 147а",
+                "district": {
+                    "id": 5,
+                    "name": "Залізничний",
+                    "city": {
+                        "id": 1,
+                        "name": "Львів",
+                        "region": {
+                            "id": 13,
+                            "name": "Львівська обл."
+                        }
+                    }
+                },
+                "available": true,
+                "logo": null,
+                "creationDate": 1472716003221
+            }
+        },
+        "square": 44,
+        "owner": 1,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/apartment/1"
+        }]
+    }, {
+        "apartmentId": 2,
+        "number": 2,
+        "house": {
+            "houseId": 1,
+            "numberHouse": 1,
+            "zipCode": "79040",
+            "description": "a nice house with a lot of parking spaces",
+            "street": {
+                "id": 1,
+                "name": "Героїв УПА",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "osbb": {
+                "osbbId": 1,
+                "name": "Мій Дім",
+                "description": "осбб для людей",
+                "street": null,
+                "houseNumber": "м.Львів вул.Городоцька 147а",
+                "district": {
+                    "id": 5,
+                    "name": "Залізничний",
+                    "city": {
+                        "id": 1,
+                        "name": "Львів",
+                        "region": {
+                            "id": 13,
+                            "name": "Львівська обл."
+                        }
+                    }
+                },
+                "available": true,
+                "logo": null,
+                "creationDate": 1472716003221
+            }
+        },
+        "square": 67,
+        "owner": 2,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/apartment/2"
+        }]
+    }, {
+        "apartmentId": 3,
+        "number": 3,
+        "house": {
+            "houseId": 1,
+            "numberHouse": 1,
+            "zipCode": "79040",
+            "description": "a nice house with a lot of parking spaces",
+            "street": {
+                "id": 1,
+                "name": "Героїв УПА",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "osbb": {
+                "osbbId": 1,
+                "name": "Мій Дім",
+                "description": "осбб для людей",
+                "street": null,
+                "houseNumber": "м.Львів вул.Городоцька 147а",
+                "district": {
+                    "id": 5,
+                    "name": "Залізничний",
+                    "city": {
+                        "id": 1,
+                        "name": "Львів",
+                        "region": {
+                            "id": 13,
+                            "name": "Львівська обл."
+                        }
+                    }
+                },
+                "available": true,
+                "logo": null,
+                "creationDate": 1472716003221
+            }
+        },
+        "square": 98,
+        "owner": 3,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/apartment/3"
+        }]
+    }, {
+        "apartmentId": 4,
+        "number": 4,
+        "house": {
+            "houseId": 1,
+            "numberHouse": 1,
+            "zipCode": "79040",
+            "description": "a nice house with a lot of parking spaces",
+            "street": {
+                "id": 1,
+                "name": "Героїв УПА",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "osbb": {
+                "osbbId": 1,
+                "name": "Мій Дім",
+                "description": "осбб для людей",
+                "street": null,
+                "houseNumber": "м.Львів вул.Городоцька 147а",
+                "district": {
+                    "id": 5,
+                    "name": "Залізничний",
+                    "city": {
+                        "id": 1,
+                        "name": "Львів",
+                        "region": {
+                            "id": 13,
+                            "name": "Львівська обл."
+                        }
+                    }
+                },
+                "available": true,
+                "logo": null,
+                "creationDate": 1472716003221
+            }
+        },
+        "square": 67,
+        "owner": 4,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/apartment/4"
+        }]
+    }, {
+        "apartmentId": 5,
+        "number": 5,
+        "house": {
+            "houseId": 1,
+            "numberHouse": 1,
+            "zipCode": "79040",
+            "description": "a nice house with a lot of parking spaces",
+            "street": {
+                "id": 1,
+                "name": "Героїв УПА",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "osbb": {
+                "osbbId": 1,
+                "name": "Мій Дім",
+                "description": "осбб для людей",
+                "street": null,
+                "houseNumber": "м.Львів вул.Городоцька 147а",
+                "district": {
+                    "id": 5,
+                    "name": "Залізничний",
+                    "city": {
+                        "id": 1,
+                        "name": "Львів",
+                        "region": {
+                            "id": 13,
+                            "name": "Львівська обл."
+                        }
+                    }
+                },
+                "available": true,
+                "logo": null,
+                "creationDate": 1472716003221
+            }
+        },
+        "square": 100,
+        "owner": 5,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/apartment/5"
+        }]
+    }, {
+        "apartmentId": 6,
+        "number": 6,
+        "house": {
+            "houseId": 1,
+            "numberHouse": 1,
+            "zipCode": "79040",
+            "description": "a nice house with a lot of parking spaces",
+            "street": {
+                "id": 1,
+                "name": "Героїв УПА",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "osbb": {
+                "osbbId": 1,
+                "name": "Мій Дім",
+                "description": "осбб для людей",
+                "street": null,
+                "houseNumber": "м.Львів вул.Городоцька 147а",
+                "district": {
+                    "id": 5,
+                    "name": "Залізничний",
+                    "city": {
+                        "id": 1,
+                        "name": "Львів",
+                        "region": {
+                            "id": 13,
+                            "name": "Львівська обл."
+                        }
+                    }
+                },
+                "available": true,
+                "logo": null,
+                "creationDate": 1472716003221
+            }
+        },
+        "square": 87,
+        "owner": 6,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/apartment/6"
+        }]
+    }, {
+        "apartmentId": 7,
+        "number": 7,
+        "house": {
+            "houseId": 1,
+            "numberHouse": 1,
+            "zipCode": "79040",
+            "description": "a nice house with a lot of parking spaces",
+            "street": {
+                "id": 1,
+                "name": "Героїв УПА",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "osbb": {
+                "osbbId": 1,
+                "name": "Мій Дім",
+                "description": "осбб для людей",
+                "street": null,
+                "houseNumber": "м.Львів вул.Городоцька 147а",
+                "district": {
+                    "id": 5,
+                    "name": "Залізничний",
+                    "city": {
+                        "id": 1,
+                        "name": "Львів",
+                        "region": {
+                            "id": 13,
+                            "name": "Львівська обл."
+                        }
+                    }
+                },
+                "available": true,
+                "logo": null,
+                "creationDate": 1472716003221
+            }
+        },
+        "square": 89,
+        "owner": 7,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/apartment/7"
+        }]
+    }, {
+        "apartmentId": 8,
+        "number": 8,
+        "house": {
+            "houseId": 1,
+            "numberHouse": 1,
+            "zipCode": "79040",
+            "description": "a nice house with a lot of parking spaces",
+            "street": {
+                "id": 1,
+                "name": "Героїв УПА",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "osbb": {
+                "osbbId": 1,
+                "name": "Мій Дім",
+                "description": "осбб для людей",
+                "street": null,
+                "houseNumber": "м.Львів вул.Городоцька 147а",
+                "district": {
+                    "id": 5,
+                    "name": "Залізничний",
+                    "city": {
+                        "id": 1,
+                        "name": "Львів",
+                        "region": {
+                            "id": 13,
+                            "name": "Львівська обл."
+                        }
+                    }
+                },
+                "available": true,
+                "logo": null,
+                "creationDate": 1472716003221
+            }
+        },
+        "square": 66,
+        "owner": 8,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/apartment/8"
+        }]
+    }, {
+        "apartmentId": 9,
+        "number": 9,
+        "house": {
+            "houseId": 1,
+            "numberHouse": 1,
+            "zipCode": "79040",
+            "description": "a nice house with a lot of parking spaces",
+            "street": {
+                "id": 1,
+                "name": "Героїв УПА",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "osbb": {
+                "osbbId": 1,
+                "name": "Мій Дім",
+                "description": "осбб для людей",
+                "street": null,
+                "houseNumber": "м.Львів вул.Городоцька 147а",
+                "district": {
+                    "id": 5,
+                    "name": "Залізничний",
+                    "city": {
+                        "id": 1,
+                        "name": "Львів",
+                        "region": {
+                            "id": 13,
+                            "name": "Львівська обл."
+                        }
+                    }
+                },
+                "available": true,
+                "logo": null,
+                "creationDate": 1472716003221
+            }
+        },
+        "square": 55,
+        "owner": null,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/apartment/9"
+        }]
+    }, {
+        "apartmentId": 10,
+        "number": 10,
+        "house": {
+            "houseId": 1,
+            "numberHouse": 1,
+            "zipCode": "79040",
+            "description": "a nice house with a lot of parking spaces",
+            "street": {
+                "id": 1,
+                "name": "Героїв УПА",
+                "city": {
+                    "id": 1,
+                    "name": "Львів",
+                    "region": {
+                        "id": 13,
+                        "name": "Львівська обл."
+                    }
+                }
+            },
+            "osbb": {
+                "osbbId": 1,
+                "name": "Мій Дім",
+                "description": "осбб для людей",
+                "street": null,
+                "houseNumber": "м.Львів вул.Городоцька 147а",
+                "district": {
+                    "id": 5,
+                    "name": "Залізничний",
+                    "city": {
+                        "id": 1,
+                        "name": "Львів",
+                        "region": {
+                            "id": 13,
+                            "name": "Львівська обл."
+                        }
+                    }
+                },
+                "available": true,
+                "logo": null,
+                "creationDate": 1472716003221
+            }
+        },
+        "square": 69,
+        "owner": null,
+        "links": [{
+            "rel": "self",
+            "href": "http://localhost:8080/myosbb/restful/apartment/10"
+        }]
+    }]
+

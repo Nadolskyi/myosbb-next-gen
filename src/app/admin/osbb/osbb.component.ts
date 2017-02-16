@@ -10,10 +10,9 @@ import mockData from "../../../assets/mock-data/osbb.json";
 @Component({
   selector: 'osbb',
   templateUrl: './osbb.html',
-  styleUrls: ['./osbb.css'],
+  styleUrls: ['../styleTables.css'],
 })
 export class OSBBComponent implements OnInit {
-console.log(mockData);
   public localState: any;
   constructor(
     public route: ActivatedRoute

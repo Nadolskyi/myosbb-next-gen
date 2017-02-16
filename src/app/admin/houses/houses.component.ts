@@ -10,7 +10,7 @@ import mockData from "../../../assets/mock-data/houses.json";
 @Component({
   selector: 'houses',
   templateUrl: './houses.html',
-  styleUrls: ['./houses.css'],
+  styleUrls: ['../styleTables.css'],
 })
 export class HousesComponent implements OnInit {
 console.log(mockData);

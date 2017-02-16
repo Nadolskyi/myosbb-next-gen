@@ -18,27 +18,7 @@ import { AppState } from './app.service';
   styleUrls: [
     './app.component.scss'
   ],
-  template: `
-    <nav class="black-bg">
-      <a [routerLink]=" ['./'] "
-        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <i class="fa fa-home fa-lg" aria-hidden="true">
-        <b>Наш Двір</b></i>
-      </a>
-      <a [routerLink]=" ['./admin/osbb'] " routerLinkActive="active">
-       <button type="button" class="btn btn-success">OSBB</button>
-      </a>
-      <a [routerLink]=" ['./admin/houses'] " routerLinkActive="active">
-       <button type="button" class="btn btn-success">Houses</button>
-      </a>
-      <a [routerLink]=" ['./admin/projects'] " routerLinkActive="active">
-       <button type="button" class="btn btn-success">Projects</button>
-      </a>
-    </nav>
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-  `
+  templateUrl: './app.component.template.html',
 })
 export class AppComponent implements OnInit {
   public angularclassLogo = 'assets/img/angularclass-avatar.png';

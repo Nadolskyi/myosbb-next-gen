@@ -10,10 +10,11 @@
         <th>Action:</th>
     </tr>
     <tr *ngFor="let c of mockData" class="info">
-        <td>{{c.name}}</td>
+        <td><a [routerLink]=" ['../houses'] " routerLinkActive="active">{{c.name}}</a></td>
         <td>{{c.description}}</td>
         <td>{{c.houseNumber}}</td>
         <td>{{c.district.name}}</td>
+        <td>{{c.creationDate | date: 'dd/MM/yyyy'}}</td>
         <td>
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Options

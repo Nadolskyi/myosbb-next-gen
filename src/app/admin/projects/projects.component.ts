@@ -6,7 +6,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Http, Response } from "@angular/http";
 import mockData from "../../../assets/mock-data/projects.json";
 
-
 @Component({
   selector: 'projects',
   templateUrl: './projects.html',

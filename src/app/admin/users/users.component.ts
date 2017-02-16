@@ -13,7 +13,6 @@ import mockData from "../../../assets/mock-data/users.json";
   styleUrls: ['../styleTables.css'],
 })
 export class UsersComponent implements OnInit {
-console.log(mockData);
   public localState: any;
   constructor(
     public route: ActivatedRoute

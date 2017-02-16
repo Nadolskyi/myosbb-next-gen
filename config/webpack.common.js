@@ -27,7 +27,7 @@ const ngcWebpack = require('ngc-webpack');
 const HMR = helpers.hasProcessFlag('hot');
 const AOT = helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
+  title: 'Наш Двір',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
@@ -204,6 +204,8 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#plugins
      */
     plugins: [
+
+
       new AssetsPlugin({
         path: helpers.root('dist'),
         filename: 'webpack-assets.json',
@@ -266,7 +268,6 @@ module.exports = function (options) {
        */
       new CopyWebpackPlugin([
         { from: 'src/assets', to: 'assets' },
-        { from: 'src/meta'},
         { from: 'node_modules/font-awesome/css/font-awesome.min.css', to: 'assets/font-awesome/css/font-awesome.min.css' },
         { from: 'node_modules/font-awesome/fonts', to: 'assets/font-awesome/fonts' }
       ]),

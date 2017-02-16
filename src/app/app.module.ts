@@ -27,7 +27,6 @@ import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { AboutComponent } from './about';
-import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
 import { OSBBComponent } from './admin/osbb';
 import { HousesComponent } from './admin/houses';
@@ -36,6 +35,7 @@ import { ProjectsComponent } from './admin/projects';
 import { ApartmentsComponent } from './admin/apartments';
 import { EventsComponent } from './admin/events';
 import { UsersComponent } from './admin/users';
+import {AppHeader} from './header';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -58,6 +58,7 @@ type StoreType = {
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
+
     AppComponent,
     AboutComponent,
     HomeComponent,
@@ -65,12 +66,13 @@ type StoreType = {
     HousesComponent,
     HouseAboutComponent,
     ProjectsComponent,
-    NoContentComponent,
     XLargeDirective,
     OSBBComponent,
     ApartmentsComponent,
     EventsComponent,
     UsersComponent,
+    XLargeDirective,
+    AppHeader
   ],
   imports: [ // import Angular's modules
     BrowserModule,

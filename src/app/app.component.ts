@@ -7,7 +7,6 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { AppState } from './app.service';
-import {LoginService} from './login/login.service'
 
 /*
  * App Component
@@ -19,26 +18,7 @@ import {LoginService} from './login/login.service'
   styleUrls: [
     './app.component.scss'
   ],
-  template: `
-    <nav class="black-bg">
-      <a [routerLink]=" ['./'] "
-        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <i class="fa fa-home fa-lg" aria-hidden="true">
-        <b>Наш Двір</b></i>
-      </a>
-      <a class="logination" [routerLink]=" ['./login'] "
-        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <button type="button" class="btn btn-warning"><span>Залогуватися</span></button>
-      </a>
-      <a class="logination" [routerLink]=" ['./login'] "
-        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <button type="button" class="btn btn-warning"><span>Вилогуватись</span></button>
-      </a>
-    </nav>
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-  `
+  templateUrl: './app.html'
 })
 export class AppComponent implements OnInit {
   public angularclassLogo = 'assets/img/favicon.ico';

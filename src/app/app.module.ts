@@ -27,8 +27,8 @@ import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { AboutComponent } from './about';
-import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
+import {AppHeader} from './header';
 
 
 import '../styles/styles.scss';
@@ -57,8 +57,8 @@ type StoreType = {
     AboutComponent,
     HomeComponent,
     LoginComponent,
-    NoContentComponent,
-    XLargeDirective
+    XLargeDirective,
+    AppHeader
   ],
   imports: [ // import Angular's modules
     BrowserModule,

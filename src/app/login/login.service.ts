@@ -1,89 +1,52 @@
 import {Injectable} from "@angular/core";
 import {Http, Response, Headers,BaseRequestOptions,RequestOptions,RequestOptionsArgs} from "@angular/http";
 import {Observable} from "rxjs/Observable";
-//import {User} from "../../shared/models/User";
 import {ApiService} from "./api.service";
-//import {routes} from "../app.routes";
 import {Component} from '@angular/core';
 
 @Injectable()
 export class LoginService extends BaseRequestOptions {
     
     private tokenName:string = "access_token";
-    token:string;
-    //private apiService =ApiService.serverUrl;
+    public token:string;
     private _pathUrl = ApiService.serverUrl;
-    //currentUser:User;
-    client = {
-        'client_pass': '123456',
-        'client_id': 'clientapp',
-        'grant_type': 'password',
-        'scope': 'read%20write'
-    };
-
 
     constructor(private http:Http) {
         super();
         this.headers.append('Authorization', 'Basic  Y2xpZW50YXBwOjEyMzQ1Ng==');
     }
-
-    //Sending credentials{username ,password for getting token}
-    sendCredentials(model) {
-        console.log('Authentication pending...');
+    public sendCredentials(model) {
         let options=this.getRequestOptionArgs();
         let tokenUrl = this._pathUrl + "/oauth/token";
-        var data = 'username=' + encodeURIComponent(model.username) + '&password='
-            + encodeURIComponent(model.password) + '&grant_type=password';
-           // HeaderComponent.currentUser = 
-        
-           console.log(data);
-            console.log(tokenUrl);
+        var data = 'username=' + encodeURIComponent(model.username) + '&password=' + encodeURIComponent(model.password) + '&grant_type=password';
         return this.http.post(tokenUrl, data,options);
     }
-
-    //sends token to SERVERS PROTECTED RESOURCES if THIS ONE WILL PASS EVERYTHING IS WORKING
-    sendToken():Observable<any> {
-        console.log("sendtoken");
+    public sendToken():Observable<any> {
         let options=this.getRequestOptionArgs();
         let userUrl = this._pathUrl + "/restful/user/getCurrent";
-        console.log("sendtoken");
         return this.http.get(userUrl,options);
     }
-
-
-    private extractData(res:Response) {
+    public extractData(res:Response) {
         let body = res.json();
         return body.data || {};
     }
-
-    //cheking is there in localstorage data
-    checkLogin():boolean {
-        if ((localStorage.getItem("access_token") != null) && (localStorage.getItem("access_token") != "")) {
-            console.log("checkLogintrue");
-            return true;
-        }
-        else
-            console.log("checkLoginfalse");
-            return false;
-    }
-
-    //erasing everything from  local storage
-    logOut() {
+    public checkLogin():boolean {
+          console.log( ((localStorage.getItem("access_token") != null) && (localStorage.getItem("access_token") != "")) ? "LogedIn":"LogOut" )
+          return  ((localStorage.getItem("access_token") != null) && (localStorage.getItem("access_token") != "")) ? true:false;
+     }
+    public logOut() {
             localStorage.clear();
-            
     }
-
-    //gets UserName from  localStorage
-    getUserName() {
+    public getUserName() {
         return localStorage.getItem("currentUserName");
     }
 
-    validateEmail(data){
+    public validateEmail(data){
         let validate=this._pathUrl+"/validEmail";
         let headers=new Headers({'Content-Type':'application/json'});
         return this.http.post(validate, data,{headers:headers});
     }
-    sendPassword(data){
+    public sendPassword(data){
         let url=this._pathUrl+"/sendEmailMail";
         let headers=new Headers({'Content-Type':'application/json'});
         return this.http.post(url, data,{headers:headers});
@@ -93,8 +56,8 @@ export class LoginService extends BaseRequestOptions {
         return JSON.parse(window.atob(access_token.split('.')[1]));
     }
    
-    getRequestOptionArgs(options?:RequestOptionsArgs, url?:string):RequestOptionsArgs {
-        if (options == null) {
+    public getRequestOptionArgs(options?:RequestOptionsArgs, url?:string):RequestOptionsArgs {
+        if (!options) {
             options = new RequestOptions();
         }
         if (options.headers == null) {
@@ -102,9 +65,9 @@ export class LoginService extends BaseRequestOptions {
         }
         if ((localStorage.getItem(this.tokenName) != null) && (localStorage.getItem(this.tokenName) != "")) {
             if (!options.headers.has("Authorization")) {
-                options.headers.delete('Authorization');
                 options.headers.append('Authorization', 'Bearer ' + localStorage.getItem(this.tokenName));
-            } if(!options.headers.has("Content-Type"))
+            } 
+            if(!options.headers.has("Content-Type"))
             options.headers.append('Content-Type', `application/json`);
         } else {
             options.headers.append('Authorization', `Basic  Y2xpZW50YXBwOjEyMzQ1Ng==`);
@@ -113,7 +76,6 @@ export class LoginService extends BaseRequestOptions {
                 options.headers.append('Accept', `application/json`);
             }
         }
-        console.log(options);
         return options;
     }
 }

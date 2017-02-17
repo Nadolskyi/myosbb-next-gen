@@ -6,7 +6,6 @@ import {LoginService} from "./login.service";
 import { AppState } from '../app.service';
 import {ApiService} from "./api.service";
 import {Router} from "@angular/router";
-import {User} from './User'
 import {Observable} from "rxjs/Observable";
 import {Http, Request, RequestOptionsArgs, Response, RequestOptions, ConnectionBackend, Headers} from '@angular/http';
 @Component({
@@ -30,12 +29,12 @@ ngOnInit():any {
   private role:string = "";
   private isLoggedIn:boolean;
   private logInError:boolean = false;
-  public currentUser:User
+  public currentUser:any;
 
   public  decodeAccessToken(access_token:string) {
         return JSON.parse(window.atob(access_token.split('.')[1]));
     }
-  public setUser(user:User) {
+  public setUser(user:any) {
         this.currentUser = user;
     }
   public getRole():string {
@@ -47,6 +46,20 @@ ngOnInit():any {
           this.role = this.decodeAccessToken(localStorage.getItem("access_token"))["authorities"][0];
       }
   }  
+
+  public tester(){
+    this.tratata().subscribe(
+    data=>{
+        let dupa:any=data.json()
+        console.log(dupa); 
+      }
+    )
+  }
+  public tratata():Observable<any> {
+        let options=this.loginService.getRequestOptionArgs();
+        let userUrl = 'http://localhost:8080/myosbb/restful/house/all';
+        return this.http.get(userUrl,options);
+    }
   public onSubmit(){
     this.loginService.sendCredentials(this.model).subscribe(
       data => {
@@ -54,20 +67,22 @@ ngOnInit():any {
               this.tokenParseInLocalStorage(data.json());
               this.loginService.sendToken().subscribe(
                   data=> {
-                      let user:User = <User>data.json();
+                      let user:any = data.json();
                       this.setUser(user);
                       this.model.username = "";
                       this.model.password = "";
                       this.isLoggedIn = true;
                       this.setRole();
-                      if (this.getRole() === "ROLE_USER") {
-                          this._router.navigate(['./']);
-                      }
-                      if (this.getRole() === "ROLE_ADMIN") {
-                          this._router.navigate(['./']);
-                      }
-                      if (this.getRole() === "ROLE_MANAGER") {
-                          this._router.navigate(['manager']);
+                      switch (this.getRole()){
+                        case "ROLE_USER":
+                        this._router.navigate(['./']);
+                        break;
+                        case "ROLE_ADMIN":
+                        this._router.navigate(['./']);
+                        break;
+                        case "ROLE_MANAGER":
+                        this._router.navigate(['./']);
+                        break;
                       }
                   }
               )

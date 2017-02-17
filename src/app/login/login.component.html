@@ -27,6 +27,10 @@
                         <a href="#">
                             {{'create_account'}}
                         </a>
+                        <a  [routerLink]=" ['./'] "
+                          routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                          <button type="button" class="btn btn-warning" (click)="tester()"><span>Вbk</span></button>
+                        </a>
                     </div>
 
                 </div>

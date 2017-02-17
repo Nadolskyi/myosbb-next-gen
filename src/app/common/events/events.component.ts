@@ -22,5 +22,9 @@ export class EventsComponent {
   public resData = EventConfigs.rows;
   public title: string = 'Events';
 
-  constructor(public http: Http) { }
+  constructor(public http: Http) {
+    this.http.get('http://localhost:8080/myosbb/restful/bill/?status=ALL').subscribe(data => {
+      console.log("TUTUT", data.json());
+    })
+  }
 }

@@ -25,7 +25,8 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { LoginComponent } from './login';
-import { NoContentComponent } from './no-content';
+import { AppHeader } from './header';
+
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -48,9 +49,9 @@ type StoreType = {
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
+    AppHeader,
     AppComponent,
-    LoginComponent,
-    NoContentComponent,
+    LoginComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,

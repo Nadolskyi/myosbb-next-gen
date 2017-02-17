@@ -11,6 +11,7 @@ import { ticketConfig } from './tocket.config';
     styleUrls: ['../../../assets/css/manager.page.layout.scss'],
     // templateUrl: './ticket.component.html'
   template: `<div class="content">
+    <breadcrumb [header]="title"></breadcrumb>
   <table class="table table-striped table-advance table-hover" style="table-layout: fixed;">
     <thead>
     <tr>
@@ -113,6 +114,7 @@ import { ticketConfig } from './tocket.config';
 })
 export class TicketSingleManagerComponent {
   public data = ticketConfig.rows;
+  public title: string = 'Ticket';
   constructor(private http: Http) {
     console.log(ticketConfig.rows);
 

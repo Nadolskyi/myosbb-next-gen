@@ -1,5 +1,4 @@
 import {Component} from "@angular/core";
-// import {ProviderComponent} from "../../../user/provider/provider.component";
 
 @Component({
     selector: 'calendar',
@@ -8,5 +7,5 @@ import {Component} from "@angular/core";
 })
 
 export class CalendarComponent {
-
+  public title: string = `Calendar`;
 }

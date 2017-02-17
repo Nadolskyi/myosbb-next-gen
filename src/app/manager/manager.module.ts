@@ -18,6 +18,7 @@ import { ProviderManagerComponent } from '../common/provider';
 import { ApartmentComponent } from '../common/apartment';
 import { CalendarComponent } from '../common/calendar';
 import { ContactsComponent } from '../contacts';
+import { BreadcrumbComponent } from './breadcrumb';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ContactsComponent } from '../contacts';
     EventsComponent,
     ApartmentComponent,
     ContactsComponent,
+    BreadcrumbComponent,
     CalendarComponent,
     ProviderManagerComponent,
     OsbbBillsComponent,

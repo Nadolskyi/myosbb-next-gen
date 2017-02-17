@@ -14,6 +14,7 @@ import { ContractsConfig } from './contracts.config';
 
 export class ContractsComponent {
   public data = ContractsConfig;
+  public title: string = 'Contracts';
   constructor(private http: Http) {
     console.log(ContractsConfig);
 

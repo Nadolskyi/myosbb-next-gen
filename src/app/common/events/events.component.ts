@@ -14,7 +14,7 @@ import { EventConfigs } from './event.config';
 })
 export class EventsComponent implements OnInit {
   public resData = EventConfigs.rows;
-
+  public title: string = 'Events';
   constructor(
     public http: Http
   ) {

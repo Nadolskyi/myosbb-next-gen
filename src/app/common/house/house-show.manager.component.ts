@@ -12,6 +12,7 @@ import { myosbbLink } from '../../../shared/models/localhost.config';
   }
 )
 export class HouseShowManagerComponent implements OnInit{
+  public title: string = `HOUSE`;
   public resData: any;
   constructor(public http: Http) {}
 

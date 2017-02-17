@@ -14,6 +14,7 @@ import { hardcodeData } from './osbb.hardcode';
 
 export class OsbbBillsComponent {
   public data = hardcodeData.rows;
+  public title: string = `Osbb`;
   constructor(private http: Http) {
     console.log(hardcodeData.rows);
 

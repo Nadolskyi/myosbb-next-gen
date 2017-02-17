@@ -25,11 +25,11 @@
   <div class="logination">
     <a  [routerLink]=" ['./login'] "
       routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-      <button type="button" class="btn btn-warning"><span>Залогуватися</span></button>
+      <button type="button" class="btn btn-success"(click)="logOut()"><i class="fa fa-sign-in">  LogIn</i></button>
     </a>
     <a  [routerLink]=" ['./'] "
       routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-      <button type="button" class="btn btn-warning" (click)="logOut()"><span>Вилогуватись</span></button>
+      <button type="button" class="btn btn-warning" (click)="logOut()"><i class="fa fa-sign-out">  LogOut</i></button>
     </a>
   </div>
 </nav>

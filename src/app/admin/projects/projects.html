@@ -12,10 +12,10 @@
     <tr *ngFor="let c of mockData" class="info">
         <td>{{c.name}}</td>
         <td>{{c.user.firstName+' '+c.user.lastName}}</td>
-        <td>{{c.assigned.firstName}}</td>
         <td>{{c.time | date: 'dd/MM/yyyy'}}</td>
+        <td>{{c.assigned.firstName+' '+c.assigned.lastName}}</td>
         <td>
-            <button class="btn">Switch</button>
+            <button class="btn">{{c.state}}</button>
         </td>
         <td>Ні</td>
     </tr>

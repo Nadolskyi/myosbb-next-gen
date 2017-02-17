@@ -6,12 +6,10 @@ import { RouterModule } from '@angular/router';
 
 import { routes } from './manager.routes';
 import { ComComponent } from './common.component';
-import { Compo } from './component';
 
 @NgModule({
   declarations: [
     ComComponent,
-    Compo
   ],
   imports: [
     CommonModule,

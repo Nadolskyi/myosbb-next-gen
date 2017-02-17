@@ -7,10 +7,7 @@ import { myosbbLink } from '../../shared/models/localhost.config';
 
 @Component({
   selector: 'ticket',
-  styles: [``],
-  template: `
-    <h1>Hello from common</h1>
-    `
+  template: ``
 })
 
 export class ComComponent {

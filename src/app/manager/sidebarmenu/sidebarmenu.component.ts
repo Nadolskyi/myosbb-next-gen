@@ -3,8 +3,9 @@ import { RouterModule } from "@angular/router";
 
 @Component({
     selector: 'manager-sidebar-menu',
-  styleUrls: ['./sidebar.style.css'],
-  template: `<aside>
+    styleUrls: ['./sidebar.style.css'],
+    template: `
+  <aside>
   <div id="sidebar" class="nav-collapse">
     <!-- sidebar menu start-->
     <ul class="sidebar-menu" id="nav-accordion">
@@ -22,7 +23,7 @@ import { RouterModule } from "@angular/router";
       </li>
       <!-- HOUSES -->
       <li class="sub-menu">
-        <a [routerLink]="['manager-house-show']">
+        <a [routerLink]="['house']">
           <i class="fa fa-home"></i>
           <span>{{ 'houses'}}</span>
         </a>
@@ -42,15 +43,15 @@ import { RouterModule } from "@angular/router";
         </a>
       </li>
       <!-- EVENTS -->
-      <li class="sub-menu">
+       <li>
         <a [routerLink]="['events']">
-          <i class="fa fa-comments"></i>
-          <span>{{ 'events' }}</span>
+          <i class="fa fa-bookmark"></i>
+          <span> {{ 'events'}}</span>
         </a>
       </li>
       <!-- TICKETS -->
       <li class="sub-menu">
-        <a [routerLink]="['ticket-manager']">
+        <a [routerLink]="['ticket']">
           <i class="fa fa-ticket"></i>
           <span>{{'tickets'}}</span>
         </a>
@@ -77,21 +78,15 @@ import { RouterModule } from "@angular/router";
         </a>
       </li>
       <li>
-        <a [routerLink]="['user']">
-          <i class="fa fa-bookmark"></i>
-          <span> {{ 'user'}}</span>
-        </a>
-      </li>
-      <li>
         <a [routerLink]="['wall']">
           <i class="fa fa-bookmark"></i>
           <span> {{ 'wall'}}</span>
         </a>
       </li>
        <li>
-        <a [routerLink]="['event']">
+        <a [routerLink]="['contacts']">
           <i class="fa fa-bookmark"></i>
-          <span> {{ 'event'}}</span>
+          <span> {{ 'contacts'}}</span>
         </a>
       </li>
     </ul>
@@ -101,6 +96,4 @@ import { RouterModule } from "@angular/router";
 `
     // pipes: [TranslatePipe, CapitalizeFirstLetterPipe]
 })
-export class ManagerSidebarMenuComponent {
-
-}
+export class ManagerSidebarMenuComponent {}

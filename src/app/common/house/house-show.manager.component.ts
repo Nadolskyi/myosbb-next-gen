@@ -6,7 +6,7 @@ import { myosbbLink } from '../../../shared/models/localhost.config';
 
 @Component(
   {
-    selector: 'manager-house-show',
+    selector: 'house',
     templateUrl: 'house-show.manager.html',
     styleUrls: ['../../../assets/css/manager.page.layout.scss', './house.scss']
   }

@@ -26,6 +26,7 @@
     <button type="button" class="btn btn-default">Paid</button>
   </div>
   <table class='table'>
+    <thead>
     <tr>
       <th>Apartment</th>
       <th>Name</th>
@@ -34,7 +35,10 @@
       <th>Amout to pay</th>
       <th>Paid</th>
       <th>Status</th>
+      <th>&nbsp;</th>
     </tr>
+    </thead>
+    <tbody>
     <tr *ngFor="let item of data">
       <td>{{item.apartmentNumber}}</td>
       <td>{{item.name}}</td>
@@ -45,6 +49,7 @@
       <td>{{item.status}}</td>
       <td><input type='button' class="btn" value="batton"></td>
     </tr>
+    </tbody>
   </table>
   <!--<div class="container">-->
     <!--<h2>Modal Example</h2>-->

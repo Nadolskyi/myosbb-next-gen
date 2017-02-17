@@ -8,7 +8,7 @@ import { ContractsConfig } from './contracts.config'
 import { EventConfigs } from './event.config';
 
 @Component({
-  selector: `event`,
+  selector: `events`,
   styleUrls: ['../../../assets/css/manager.page.layout.scss'],
   templateUrl: './events.template.html'
 })

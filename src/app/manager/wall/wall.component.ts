@@ -11,6 +11,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { myosbbLink } from '../../../shared/models/localhost.config';
 import { WallService } from './wall.service';
+import { Compo } from '../../common/component';
 
 @Component({
   selector: 'wall',

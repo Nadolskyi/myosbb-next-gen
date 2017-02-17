@@ -21,8 +21,8 @@ export class UsersComponent implements OnInit {
 
 public getUsers(){ this.tratata().subscribe(
     data=>{
-        let dupa:any=data.json()
-        this.mockData = dupa;
+        let users:any=data.json()
+        this.users = users;
       },
     )
   }

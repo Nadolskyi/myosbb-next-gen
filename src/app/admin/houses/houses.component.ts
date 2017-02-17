@@ -21,8 +21,8 @@ export class HousesComponent implements OnInit {
 
 public getHouses(){ this.tratata().subscribe(
     data=>{
-        let dupa:any=data.json()
-        this.mockData = dupa;
+        let houses:any=data.json()
+        this.houses = houses;
       },
     )
   }

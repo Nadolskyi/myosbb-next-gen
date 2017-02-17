@@ -3,12 +3,12 @@
 <br>
 <table class="table table-hover">
     <tr>
-        <th>Firstname:</th>
-        <th>Lastname:</th>
-        <th>Age:</th>
-        <th>Action:</th>
+        <th>Адреса</th>
+        <th>Номер</th>
+        <th>Площа</th>
+        <th>Опції</th>
     </tr>
-    <tr *ngFor="let c of mockData" class="info">
+    <tr *ngFor="let c of apartments" class="info">
         <td>{{c.house.street.name}}</td>
         <td>{{c.number}}</td>
         <td>{{c.square}}</td>

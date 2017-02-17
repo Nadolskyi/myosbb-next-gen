@@ -21,8 +21,8 @@ export class OSBBComponent implements OnInit {
 
 public getOsbb(){ this.tratata().subscribe(
     data=>{
-        let dupa:any=data.json()
-        this.mockData = dupa;
+        let OSBB:any=data.json()
+        this.OSBB = OSBB;
       },
     )
   }

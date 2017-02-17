@@ -22,8 +22,8 @@ console.log(mockData);
 
 public getEvents(){ this.tratata().subscribe(
     data=>{
-        let dupa:any=data.json()
-        this.mockData = dupa;
+        let events:any=data.json()
+        this.events = events;
       },
     )
   }

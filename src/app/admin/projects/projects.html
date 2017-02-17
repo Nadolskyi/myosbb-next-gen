@@ -3,13 +3,14 @@
 <br>
 <table class="table table-hover">
     <tr>
-        <th>Firstname:</th>
-        <th>Lastname:</th>
-        <th>Age:</th>
-        <th>Notice:</th>
-        <th>Action:</th>
+        <th>Назва</th>
+        <th>Автор</th>
+        <th>Дата</th>
+        <th>Призначено</th>
+        <th>Статус</th>
+        <th>На обговоренні</th>
     </tr>
-    <tr *ngFor="let c of mockData" class="info">
+    <tr *ngFor="let c of projects" class="info">
         <td>{{c.name}}</td>
         <td>{{c.user.firstName+' '+c.user.lastName}}</td>
         <td>{{c.time | date: 'dd/MM/yyyy'}}</td>

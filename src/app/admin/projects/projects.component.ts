@@ -21,8 +21,8 @@ export class ProjectsComponent implements OnInit {
 
 public getProject(){ this.tratata().subscribe(
     data=>{
-        let dupa:any=data.json()
-        this.mockData = dupa;
+        let projects:any=data.json()
+        this.projects = projects;
       },
     )
   }

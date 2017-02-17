@@ -3,21 +3,27 @@
 <br>
 <table class="table table-hover">
     <tr>
-        <th>Firstname:</th>
-        <th>Lastname:</th>
-        <th>Age:</th>
-        <th>Notice:</th>
-        <th>Action:</th>
+        <th>Назва</th>
+        <th>Початок</th>
+        <th>Кінець</th>
+        <th>Повтор</th>
+        <th>Автор</th>
+        <th>Статус</th>
+        <th>Деталі</th>
+        <th>Додаткова інформація</th>
+        <th>Дії</th>
     </tr>
-    <tr *ngFor="let c of mockData" class="info">
+    <tr *ngFor="let c of events" class="info">
         <td>{{c.title}}</td>
-        <td>{{c.start}}</td>
-        <td>{{c.end}}</td>
+        <td>{{c.start | date: 'dd/MM/yyyy'}}</td>
+        <td>{{c.end | date: 'dd/MM/yyyy'}}</td>
         <td>{{c.repeat}}</td>
         <td>{{c.author.firstName+' '+c.author.lastName}}</td>
-        <td> <button class="btn">{{c.status}}</button></td>
         <td>
-            <button class="btn">Switch</button>
+            <button class="btn">{{c.status}}</button>
+        </td>
+        <td>
+            <button class="btn">Перейти</button>
         </td>
         <td>{{c.description}}</td>
         <td>

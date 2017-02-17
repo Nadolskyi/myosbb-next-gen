@@ -57,8 +57,8 @@ ngOnInit():any {
   }
   public tratata():Observable<any> {
         let options=this.loginService.getRequestOptionArgs();
-        let userUrl = 'http://localhost:8080/myosbb/restful/users/';
-        return this.http.get(userUrl,options);
+        let userUrl = 'http://localhost:8080/myosbb/restful/bill/1';
+        return this.http.post(userUrl,options);
     }
   public onSubmit(){
     this.loginService.sendCredentials(this.model).subscribe(

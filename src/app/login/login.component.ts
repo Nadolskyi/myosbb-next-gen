@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
 import {Observable} from "rxjs/Observable";
 import {Http, Request, RequestOptionsArgs, Response, RequestOptions, ConnectionBackend, Headers} from '@angular/http';
 @Component({
-  selector: 'login', 
+  selector: 'login',
   providers: [LoginService],
   styleUrls: [ './login.css' ],
   templateUrl: './login.component.html',
@@ -18,6 +18,7 @@ import {Http, Request, RequestOptionsArgs, Response, RequestOptions, ConnectionB
 export class LoginComponent implements OnInit {
 ngOnInit():any {
         this.isLoggedIn = this.loginService.checkLogin();
+
     }
   constructor(
     public appState: AppState,private http:Http,private loginService:LoginService, private _router:Router
@@ -45,22 +46,22 @@ ngOnInit():any {
       if (this.loginService.checkLogin()) {
           this.role = this.decodeAccessToken(localStorage.getItem("access_token"))["authorities"][0];
       }
-  }  
+  }
 
   public tester(){
     this.tratata().subscribe(
     data=>{
         let dupa:any=data.json()
-        console.log(dupa); 
+        console.log(dupa);
       }
     )
   }
   public tratata():Observable<any> {
         let options=this.loginService.getRequestOptionArgs();
-        let userUrl = 'http://localhost:8080/myosbb/restful/bill/1';
-        return this.http.post(userUrl,options);
+        let userUrl = 'http://localhost:8080/myosbb/restful/bill/?status=ALL';
+        return this.http.get(userUrl,options);
     }
-  public onSubmit(){
+  public onSubmit() {
     this.loginService.sendCredentials(this.model).subscribe(
       data => {
         if (!this.loginService.checkLogin()) {
@@ -73,24 +74,26 @@ ngOnInit():any {
                       this.model.password = "";
                       this.isLoggedIn = true;
                       this.setRole();
+                    this.tratata();
                       switch (this.getRole()){
                         case "ROLE_USER":
-                        this._router.navigate(['./']);
+                        this._router.navigate(['./manager']);
                         break;
                         case "ROLE_ADMIN":
-                        this._router.navigate(['./']);
+                        this._router.navigate(['./manager']);
                         break;
                         case "ROLE_MANAGER":
-                        this._router.navigate(['./']);
+                        this._router.navigate(['./manager']);
                         break;
                       }
+
                   }
               )
-         }     
+         }
       }
     )
   }
-  public tokenParseInLocalStorage(data:any) { 
+  public tokenParseInLocalStorage(data:any) {
         localStorage.setItem("access_token", data.access_token);
         localStorage.setItem("token_type", data.token_type);
         localStorage.setItem("expires_in", new Date().setSeconds(data.expires_in));

@@ -1,0 +1,94 @@
+<div class="content">
+  <breadcrumb [header]="title"></breadcrumb>
+  <!--<table class="table table-striped table-advance table-hover" style="table-layout: fixed;">-->
+    <!--<thead>-->
+    <!--<tr>-->
+      <!--<th class="sorting" style="width:25%"><i class="fa fa-bullhorn"> </i> {{'nameTicket'}}-->
+        <!--<a style="{cursor:pointer}" (click)="sortBy('name')">-->
+          <!--<span class="fa fa-fw fa-sort pull-left"></span></a>-->
+      <!--</th>-->
+
+      <!--<th class="sorting" style="width:15%;min-width:3%"><i class=" fa fa-edit"></i>-->
+        <!--{{'authorTicket'}}-->
+        <!--<a style="{cursor:pointer}" (click)="sortBy('user')">-->
+          <!--<span class="fa fa-fw fa-sort pull-left"></span></a></th>-->
+
+      <!--<th class="sorting" style="width:15%;min-width:3%"><i class=" fa fa-edit"></i>-->
+        <!--{{'dateTicket'}}-->
+        <!--<a style="{cursor:pointer}" (click)="sortBy('time')">-->
+          <!--<span class="fa fa-fw fa-sort pull-left"></span></a></th>-->
+
+      <!--<th class="sorting" style="width:15%;min-width:10%">-->
+        <!--<i class=" fa fa-edit"></i> {{'answer'}}-->
+        <!--<a style="{cursor:pointer}" (click)="sortBy('assigned')">-->
+          <!--<span class="fa fa-fw fa-sort pull-left"></span></a></th>-->
+
+      <!--<th class="sorting" style="width:10%;"><i class=" fa fa-edit"></i>-->
+        <!--{{'state'}}-->
+        <!--<a style="cursor:pointer;width:8%;min-width:8%" (click)="sortBy('state')">-->
+          <!--<span class="fa fa-fw fa-sort pull-left"></span></a></th>-->
+
+      <!--<th class="sorting" style="width:10%;min-width:10%"><i class=" fa fa-edit"></i>-->
+        <!--{{'discussed' }}</th>-->
+
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+    <!--<tr *ngFor="let item of data">-->
+      <!--<td class="nameTabl"><a class="nameTablA" (click)="singleTicket(item.ticketId)">-->
+        <!--{{item.name}}</a>-->
+      <!--</td>-->
+      <!--<td style="width:30px;">{{item.user.firstName}} {{item.user.lastName}}</td>-->
+      <!--<td>-->
+        <!--&lt;!&ndash;{{getTime(item.time)}}&ndash;&gt;-->
+      <!--</td>-->
+      <!--<td style="margin: 15px;">{{item.assigned.firstName}} {{item.assigned.lastName}}</td>-->
+      <!--<td>-->
+
+        <!--<div *ngIf=" item.state == 'NEW' || item.state == '0'  ">-->
+                            <!--<span class="label btn-round label-info " style="margin: 5px;"-->
+                                  <!--list="assign">{{ 'new'  }}</span>-->
+        <!--</div>-->
+        <!--<div *ngIf=" item.state == '1' || item.state == 'IN_PROGRESS'">-->
+          <!--<span class="label btn-round label-success" style=" text-align: center;margin: 5px;">{{ 'in_progress'  }}</span>-->
+
+        <!--</div>-->
+        <!--<div *ngIf=" item.state == '2' || item.state == 'DONE'">-->
+                            <!--<span class="label btn-round label-danger"-->
+                                  <!--style=" text-align: center;margin: 5px;">{{ 'done'  }}</span>-->
+        <!--</div>-->
+      <!--</td>-->
+
+
+      <!--<td>-->
+
+        <!--<div *ngIf="item.discussed == null">-->
+          <!--{{ 'no' }}-->
+        <!--</div>-->
+
+        <!--<div *ngIf="item.discussed != null">-->
+          <!--{{ 'yes'}}-->
+        <!--</div>-->
+      <!--</td>-->
+      <!--<td>-->
+        <!--&lt;!&ndash;<div *ngIf="isCreator()||(item.user.firstName == currentUser.firstName && item.user.lastName == currentUser.lastName)">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="dropdown">&ndash;&gt;-->
+        <!--&lt;!&ndash;<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"&ndash;&gt;-->
+        <!--&lt;!&ndash;data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">&ndash;&gt;-->
+        <!--&lt;!&ndash;{{'optionsTicket'}}&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="caret"></span>&ndash;&gt;-->
+        <!--&lt;!&ndash;</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">&ndash;&gt;-->
+        <!--&lt;!&ndash;<li><a style="cursor: pointer"&ndash;&gt;-->
+        <!--&lt;!&ndash;(click)=" initUpdatedTicket(item); editForm.initUpdatedTicket(item);">&ndash;&gt;-->
+        <!--&lt;!&ndash;{{'editTicket'}}</a></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li><a style="cursor: pointer" (click)="delForm.openDelModal(item)">{{'deleteTicket'&ndash;&gt;-->
+        <!--&lt;!&ndash;}}</a></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+      <!--</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+  <!--</table>-->
+</div>

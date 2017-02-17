@@ -24,11 +24,8 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { HomeComponent } from './home';
 import { LoginComponent } from './login';
-import { AboutComponent } from './about';
-import { XLargeDirective } from './home/x-large';
-import {AppHeader} from './header';
+import { AppHeader } from './header';
 
 
 import '../styles/styles.scss';
@@ -52,13 +49,9 @@ type StoreType = {
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
-
+    AppHeader,
     AppComponent,
-    AboutComponent,
-    HomeComponent,
-    LoginComponent,
-    XLargeDirective,
-    AppHeader
+    LoginComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,

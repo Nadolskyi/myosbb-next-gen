@@ -1,1 +1,1 @@
-export * from './single.ticket.component.manager';
+export * from './ticket.component';

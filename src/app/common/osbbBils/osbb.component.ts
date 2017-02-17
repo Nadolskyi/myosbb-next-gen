@@ -15,17 +15,9 @@ import { hardcodeData } from './osbb.hardcode';
 export class OsbbBillsComponent {
   public data = hardcodeData.rows;
   public title: string = `Osbb`;
-  constructor(private http: Http) {
-    console.log(hardcodeData.rows);
 
-}
-  public hardcodedConfig() {
-  //   return this.http.get('tsconfig.json')
-  //     .subscribe(res => this.data = res.json());
+  constructor(private http: Http) {
 
   }
-
-
-
 }
 

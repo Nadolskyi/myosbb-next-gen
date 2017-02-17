@@ -1,4 +1,5 @@
-<!--<div class="content">-->
+<div class="content">
+  <breadcrumb [header]="title"></breadcrumb>
   <!--<table class="table table-striped table-advance table-hover" style="table-layout: fixed;">-->
     <!--<thead>-->
     <!--<tr>-->
@@ -38,7 +39,9 @@
         <!--{{item.name}}</a>-->
       <!--</td>-->
       <!--<td style="width:30px;">{{item.user.firstName}} {{item.user.lastName}}</td>-->
-      <!--<td>{{getTime(item.time)}}</td>-->
+      <!--<td>-->
+        <!--&lt;!&ndash;{{getTime(item.time)}}&ndash;&gt;-->
+      <!--</td>-->
       <!--<td style="margin: 15px;">{{item.assigned.firstName}} {{item.assigned.lastName}}</td>-->
       <!--<td>-->
 
@@ -68,28 +71,24 @@
         <!--</div>-->
       <!--</td>-->
       <!--<td>-->
-        <!--<div *ngIf="isCreator()||(item.user.firstName == currentUser.firstName && item.user.lastName == currentUser.lastName)">-->
-          <!--<div class="dropdown">-->
-            <!--<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"-->
-                    <!--data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">-->
-              <!--{{'optionsTicket'}}-->
-              <!--<span class="caret"></span>-->
-            <!--</button>-->
-            <!--<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">-->
-              <!--<li><a style="cursor: pointer"-->
-                     <!--(click)=" initUpdatedTicket(item); editForm.initUpdatedTicket(item);">-->
-                <!--{{'editTicket'}}</a></li>-->
-              <!--<li><a style="cursor: pointer" (click)="delForm.openDelModal(item)">{{'deleteTicket'-->
-                <!--}}</a></li>-->
-            <!--</ul>-->
-          <!--</div>-->
-        <!--</div>-->
+        <!--&lt;!&ndash;<div *ngIf="isCreator()||(item.user.firstName == currentUser.firstName && item.user.lastName == currentUser.lastName)">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="dropdown">&ndash;&gt;-->
+        <!--&lt;!&ndash;<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"&ndash;&gt;-->
+        <!--&lt;!&ndash;data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">&ndash;&gt;-->
+        <!--&lt;!&ndash;{{'optionsTicket'}}&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="caret"></span>&ndash;&gt;-->
+        <!--&lt;!&ndash;</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">&ndash;&gt;-->
+        <!--&lt;!&ndash;<li><a style="cursor: pointer"&ndash;&gt;-->
+        <!--&lt;!&ndash;(click)=" initUpdatedTicket(item); editForm.initUpdatedTicket(item);">&ndash;&gt;-->
+        <!--&lt;!&ndash;{{'editTicket'}}</a></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li><a style="cursor: pointer" (click)="delForm.openDelModal(item)">{{'deleteTicket'&ndash;&gt;-->
+        <!--&lt;!&ndash;}}</a></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
       <!--</td>-->
-
-
-
     <!--</tr>-->
-
     <!--</tbody>-->
   <!--</table>-->
-<!--</div>-->
+</div>

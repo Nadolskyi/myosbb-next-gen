@@ -15,7 +15,8 @@ import { AppState } from './app.service';
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
-    './app.component.scss'
+    './app.component.scss',
+    '../assets/css/default.style.scss'
   ],
   template: `
     <nav class="black-bg">
@@ -26,7 +27,7 @@ import { AppState } from './app.service';
       </a>
     </nav>
     <main>
-      <router-outlet></router-outlet>
+      <router-outlet class="container-fluid"></router-outlet>
     </main>
   `
 })

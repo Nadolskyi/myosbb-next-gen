@@ -1,5 +1,4 @@
 import {Component} from "@angular/core";
-// import {ProviderComponent} from "../../../user/provider/provider.component";
 
 @Component({
     selector: 'provider',

@@ -1,6 +1,9 @@
 import {Component} from '@angular/core';
 import { myosbbLink } from '../../app.webpackHardcode.service';
-import {Http, Response} from "@angular/http";
+import {
+  Http,
+  Response
+} from "@angular/http";
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -15,17 +18,6 @@ import { ContractsConfig } from './contracts.config';
 export class ContractsComponent {
   public data = ContractsConfig;
   public title: string = 'Contracts';
-  constructor(private http: Http) {
-    console.log(ContractsConfig);
-
-  }
-  public hardcodedConfig() {
-    //   return this.http.get('tsconfig.json')
-    //     .subscribe(res => this.data = res.json());
-
-  }
-
-
-
+  constructor(private http: Http) {  }
 }
 

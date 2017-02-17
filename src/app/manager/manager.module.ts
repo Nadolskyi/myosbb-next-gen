@@ -1,19 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-
 import { RouterModule } from '@angular/router';
-
 import { routes } from './manager.routes';
 
 import { ManagerComponent } from './manager.component';
 import { ManagerSidebarMenuComponent } from "./sidebarmenu/sidebarmenu.component";
 import { WallComponent } from './wall';
-import { HouseShowManagerComponent } from  '../common/house';
+import { HouseComponent } from  '../common/house';
 import { EventsComponent } from '../common/events';
 import { OsbbBillsComponent } from '../common/osbbBils';
 import { ContractsComponent } from  '../common/contracts';
-import { TicketSingleManagerComponent } from '../common/ticket';
+import { TicketComponent } from '../common/ticket';
 import { ProviderManagerComponent } from '../common/provider';
 import { ApartmentComponent } from '../common/apartment';
 import { CalendarComponent } from '../common/calendar';
@@ -24,7 +22,7 @@ import { BreadcrumbComponent } from './breadcrumb';
   declarations: [
     ManagerComponent,
     WallComponent,
-    HouseShowManagerComponent,
+    HouseComponent,
     EventsComponent,
     ApartmentComponent,
     ContactsComponent,
@@ -33,7 +31,7 @@ import { BreadcrumbComponent } from './breadcrumb';
     ProviderManagerComponent,
     OsbbBillsComponent,
     ContractsComponent,
-    TicketSingleManagerComponent,
+    TicketComponent,
     ManagerSidebarMenuComponent,
     ],
   imports: [

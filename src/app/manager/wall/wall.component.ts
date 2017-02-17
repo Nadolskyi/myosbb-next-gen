@@ -1,6 +1,3 @@
-/**
- * Created by stadn on 2/12/2017.
- */
 import {
   Component,
   OnInit
@@ -11,7 +8,6 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { myosbbLink } from '../../../shared/models/localhost.config';
 import { WallService } from './wall.service';
-import { Compo } from '../../common/component';
 
 @Component({
   selector: 'wall',
@@ -19,6 +15,7 @@ import { Compo } from '../../common/component';
   styleUrls: ['../../../assets/css/manager.page.layout.scss'],
   templateUrl: './wall.template.html'
 })
+
 export class WallComponent implements OnInit {
   public resData: any;
   constructor(
@@ -26,7 +23,7 @@ export class WallComponent implements OnInit {
     public wall: WallService
   ) {}
   public ngOnInit() {
-    this.wall.somemethod(4).subscribe(data => {
+    this.wall.getWallData(4).subscribe(data => {
       this.resData = data;
     });
   }

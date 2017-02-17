@@ -1,15 +1,18 @@
-import {Component} from '@angular/core';
-import { myosbbLink } from '../../app.webpackHardcode.service';
-import {Http, Response} from "@angular/http";
+import { Component} from '@angular/core';
+import {
+  Http,
+  Response
+} from "@angular/http";
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { ticketConfig } from './tocket.config';
+import { myosbbLink } from '../../app.webpackHardcode.service';
+import { ticketConfig } from './ticket.config';
 
 @Component({
-    selector: 'ticket-manager',
+    selector: 'ticket',
     styleUrls: ['../../../assets/css/manager.page.layout.scss'],
-    // templateUrl: './ticket.component.html'
+    // templateUrl: 'tickets.component.html'
   template: `<div class="content">
     <breadcrumb [header]="title"></breadcrumb>
   <table class="table table-striped table-advance table-hover" style="table-layout: fixed;">
@@ -109,19 +112,12 @@ import { ticketConfig } from './tocket.config';
   </table>
 </div>
 `
-    // styleUrls: ['src/app/house/house.css', 'src/shared/css/loader.css', 'src/shared/css/general.css'],
-    // directives: [MessageComponent]
+
 })
-export class TicketSingleManagerComponent {
+
+export class TicketComponent {
   public data = ticketConfig.rows;
   public title: string = 'Ticket';
-  constructor(private http: Http) {
-    console.log(ticketConfig.rows);
 
-  }
-  public hardcodedConfig() {
-    //   return this.http.get('tsconfig.json')
-    //     .subscribe(res => this.data = res.json());
-
-  }
+  constructor(private http: Http) { }
 }

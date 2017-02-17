@@ -57,7 +57,7 @@ ngOnInit():any {
   }
   public tratata():Observable<any> {
         let options=this.loginService.getRequestOptionArgs();
-        let userUrl = 'http://localhost:8080/myosbb/restful/house/all';
+        let userUrl = 'http://localhost:8080/myosbb/restful/users/';
         return this.http.get(userUrl,options);
     }
   public onSubmit(){

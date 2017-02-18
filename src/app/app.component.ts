@@ -15,19 +15,6 @@ import { AppState } from './app.service';
     './app.component.scss',
     '../assets/css/default.style.scss'
   ],
-
-  // template: `
-  //   <nav class="black-bg">
-  //     <a [routerLink]=" ['./'] "
-  //       routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-  //       <i class="fa fa-home fa-lg" aria-hidden="true">
-  //       <b>Наш Двір</b></i>
-  //     </a>
-  //   </nav>
-  //   <main>
-  //     <router-outlet class="container-fluid"></router-outlet>
-  //   </main>
-  // `
   templateUrl: './app.html'
 })
 export class AppComponent implements OnInit {

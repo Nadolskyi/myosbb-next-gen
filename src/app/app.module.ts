@@ -26,6 +26,8 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { LoginComponent } from './login';
 import { AppHeader } from './header';
+import { SidebarComponent } from './sidebar';
+import { AdminComponent } from './admin';
 
 
 import '../styles/styles.scss';
@@ -51,7 +53,9 @@ type StoreType = {
   declarations: [
     AppHeader,
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    SidebarComponent,
+    AdminComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,

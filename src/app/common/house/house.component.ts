@@ -8,7 +8,6 @@ import { Http,
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { myosbbLink } from '../../../shared/models/localhost.config';
 import { HouseService } from './house.service';
 
 @Component(

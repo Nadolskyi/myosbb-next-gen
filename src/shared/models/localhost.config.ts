@@ -1,2 +1,2 @@
-export const myosbbLink = HARDCODE_FOR_LOCALHOST_MYOSBB;
+export const externalServerLink = HARDCODE_FOR_LOCALHOST_MYOSBB;
 

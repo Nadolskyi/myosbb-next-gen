@@ -1,31 +1,17 @@
 <div class="content">
-  <div class="panel-heading">
-    <div class="row">
-      <breadcrumb [header]="title"></breadcrumb>
+  <breadcrumb [header]="title"></breadcrumb>
 
-      <!-- BILLS header -->
-      <div class="col-xs-7">
-        <h4><i class="fa fa-angle-right"></i>{{' bills'}}</h4>
-      </div>
-      <div class="col-xs-3">
-        <div *ngIf="false" id="example_filter" class="pull-right" title="search">
-          <!-- DISABLED MANUALY -->
-          <input #name (keyup.enter)="onClickSearchByParam(name.value)" type="search" class="form-control input-sm" placeholder="пошук..."
-                 aria-controls="example" maxlength="20" minlength="1">
-        </div>
-      </div>
-      <!-- REFRESH BUTTON -->
+  <div class="panel-heading">
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-default">App</button>
+      <button type="button" class="btn btn-default">Pending</button>
+      <button type="button" class="btn btn-default">Paid</button>
       <div class="col-xs-2 columns columns-right btn-group pull-right">
         <button (click)="refresh()" style="height: 30px; width: 45px" class="btn btn-default" type="button" name="refresh" title="Refresh">
           <i class="glyphicon glyphicon-refresh icon-refresh"></i>
         </button>
       </div>
     </div>
-  </div>
-  <div class="btn-group" role="group" aria-label="...">
-    <button type="button" class="btn btn-default">App</button>
-    <button type="button" class="btn btn-default">Pending</button>
-    <button type="button" class="btn btn-default">Paid</button>
   </div>
   <table class='table'>
     <thead>

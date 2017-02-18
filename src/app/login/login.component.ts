@@ -48,19 +48,6 @@ ngOnInit():any {
       }
   }
 
-  public tester(){
-    this.tratata().subscribe(
-    data=>{
-        let dupa:any=data.json()
-        console.log(dupa);
-      }
-    )
-  }
-  public tratata():Observable<any> {
-        let options=this.loginService.getRequestOptionArgs();
-        let userUrl = 'http://localhost:8080/myosbb/restful/bill/?status=ALL';
-        return this.http.get(userUrl,options);
-    }
   public onSubmit() {
     this.loginService.sendCredentials(this.model).subscribe(
       data => {
@@ -74,13 +61,12 @@ ngOnInit():any {
                       this.model.password = "";
                       this.isLoggedIn = true;
                       this.setRole();
-                    this.tratata();
                       switch (this.getRole()){
                         case "ROLE_USER":
-                        this._router.navigate(['./manager']);
+                        this._router.navigate(['./']);
                         break;
                         case "ROLE_ADMIN":
-                        this._router.navigate(['./manager']);
+                        this._router.navigate(['./']);
                         break;
                         case "ROLE_MANAGER":
                         this._router.navigate(['./manager']);

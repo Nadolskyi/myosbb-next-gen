@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import { myosbbLink } from '../../app.webpackHardcode.service';
 import {
   Http,
   Response
@@ -7,7 +6,6 @@ import {
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { hardcodeData } from './osbb.hardcode';
 
 @Component({
   selector: 'osbb',
@@ -16,11 +14,9 @@ import { hardcodeData } from './osbb.hardcode';
 })
 
 export class OsbbBillsComponent {
-  public data = hardcodeData.rows;
+  public data: any;
   public title: string = `Osbb`;
 
-  constructor(private http: Http) {
-
-  }
+  constructor() { }
 }
 

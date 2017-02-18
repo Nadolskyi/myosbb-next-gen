@@ -77,12 +77,6 @@ import { RouterModule } from "@angular/router";
           <span> {{ 'contracts'}}</span>
         </a>
       </li>
-      <li>
-        <a [routerLink]="['wall']">
-          <i class="fa fa-bookmark"></i>
-          <span> {{ 'wall'}}</span>
-        </a>
-      </li>
        <li>
         <a [routerLink]="['contacts']">
           <i class="fa fa-bookmark"></i>

@@ -42,7 +42,7 @@
     </thead>
     <tbody>
 
-    <tr *ngFor="let contract of data.rows" [class.success]="contract.active"
+    <tr *ngFor="let contract of resData" [class.success]="contract.active"
         [class.danger]="!contract.active">
       <td>{{ contract.provider.name }} <img style="max-height: 30px; max-width: 30px"></td>
       <td>{{ contract.dateStart }}</td>

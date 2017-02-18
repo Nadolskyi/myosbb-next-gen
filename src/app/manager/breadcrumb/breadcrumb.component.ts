@@ -5,7 +5,7 @@ import { Http, Response } from '@angular/http';
 @Component(
   {
     selector: 'breadcrumb',
-    // styleUrls: ['../../../assets/css/manager.page.layout.scss'],
+    styleUrls: ['./breadcrumb.scss'],
     template: `
       <ol class="breadcrumb">
         <li class="breadcrumb-item active"><a [routerLink]="['../wall']">{{'Manager'}}</a></li>

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { myosbbLink } from '../../app.webpackHardcode.service';
 import {
   Http,
@@ -7,17 +7,28 @@ import {
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { ContractsConfig } from './contracts.config';
+import { ContractsService } from "./contracts.service";
+import { LoginService } from '../../login/login.service';
 
 @Component({
   selector: 'contracts',
   styleUrls: ['../../../assets/css/manager.page.layout.scss'],
-  templateUrl: './contracts.component.html'
+  templateUrl: './contracts.component.html',
+  providers: [ ContractsService, LoginService ]
 })
 
-export class ContractsComponent {
-  public data = ContractsConfig;
+export class ContractsComponent implements OnInit{
+  public resData: any;
   public title: string = 'Contracts';
-  constructor(private http: Http) {  }
+  constructor(
+    private http: Http,
+    public login: LoginService,
+    public contract: ContractsService
+  ) {  }
+  public ngOnInit() {
+    this.contract.getContractsData().subscribe(data => {
+      this.resData = data.rows;
+    })
+  }
 }
 

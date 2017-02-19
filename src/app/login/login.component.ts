@@ -10,7 +10,7 @@ import {User} from './User'
 import {Observable} from "rxjs/Observable";
 import {Http, Request, RequestOptionsArgs, Response, RequestOptions, ConnectionBackend, Headers} from '@angular/http';
 @Component({
-  selector: 'login', 
+  selector: 'login',
   providers: [LoginService],
   styleUrls: [ './login.css' ],
   templateUrl: './login.component.html',
@@ -46,7 +46,7 @@ ngOnInit():any {
       if (this.loginService.checkLogin()) {
           this.role = this.decodeAccessToken(localStorage.getItem("access_token"))["authorities"][0];
       }
-  }  
+  }
   public onSubmit(){
     this.loginService.sendCredentials(this.model).subscribe(
       data => {
@@ -71,16 +71,19 @@ ngOnInit():any {
                       }
                   }
               )
-         }     
+         }
       }
     )
   }
-  public tokenParseInLocalStorage(data:any) { 
+  public tokenParseInLocalStorage(data:any) {
         localStorage.setItem("access_token", data.access_token);
         localStorage.setItem("token_type", data.token_type);
         localStorage.setItem("expires_in", new Date().setSeconds(data.expires_in));
         localStorage.setItem("scope", data.scope);
         localStorage.setItem("jti", data.jti);
         localStorage.setItem("refresh_token", data.refresh_token);
-    }
+  }
+  createAccount() {
+     this._router.navigate(['registration']);
+  }
 }

@@ -11,8 +11,6 @@ import { HouseAboutComponent } from './houses/house';
 export const adminRoutes: Routes = [
     {
         path: 'admin',
-        //canActivate: [AdminLoginGuard],
-
         children: [
             { path: 'osbb', component: OSBBComponent },
             { path: '', redirectTo: 'osbb', pathMatch: 'full' },

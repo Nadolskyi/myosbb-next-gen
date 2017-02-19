@@ -1,6 +1,8 @@
-table, .panel-body {
-	background: #fff;
+table,
+.panel-body {
+    background: #fff;
 }
+
 table {
-   font-size: 17px;
+    font-size: 17px;
 }

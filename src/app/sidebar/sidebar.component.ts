@@ -2,23 +2,24 @@ import {
   Component,
   OnInit
 } from '@angular/core';
+import {NgSwitch,NgSwitchDefault} from '@angular/common'
 import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'sidebar-component',
   templateUrl:'./sidebar.html',
-  providers: [LoginService],
+  providers: [LoginService,NgSwitch],
   styleUrls: ['./sidebar.style.css']
 
 })
 export class SidebarComponent implements OnInit{
+ public authRole: string;
  public ngOnInit(): any {
-  	let authRole: string;
   	this.loginService.setRole();
-    authRole = this.loginService.getRole();
-    console.log(authRole);
+    this.authRole = this.loginService.getRole();
+    console.log(this.authRole);
   }
   constructor(
     public loginService: LoginService
-  ) {}  
+  ) {}
 }

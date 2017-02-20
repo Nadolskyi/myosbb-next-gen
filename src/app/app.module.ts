@@ -33,6 +33,9 @@ import { OsbbContactsComponent } from './user/osbb-contacts';
 import { LoginComponent } from './login';
 import { AppHeader } from './header';
 import { SetLanguageComponent } from './set-language/';
+import { UserCabinetComponent} from './user/user-cabinet';
+import { ProfileComponent} from './user/user-cabinet/profile';
+import { ProfileSidebarComponent} from './user/user-cabinet/profile-sidebar';
 
 // pipes
 import { CapitalizeFirstLetterPipe } from './common/pipes/capitalize-first-letter';
@@ -64,7 +67,10 @@ type StoreType = {
     OsbbContactsComponent,
     LoginComponent,
     AppHeader,
-    SetLanguageComponent
+    SetLanguageComponent,
+    UserCabinetComponent,
+    ProfileComponent,
+    ProfileSidebarComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,

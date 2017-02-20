@@ -15,21 +15,24 @@ import {
   PreloadAllModules
 } from '@angular/router';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
-
 /*
  * Platform and Environment providers/directives/pipes
  */
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
+import { LoginService } from './login/login.service.ts';
+import { CurrentUserService } from './common/services/current.user.service.ts'
 // App is our top level component
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
+
 import { UserComponent } from './user';
-import { AppHeaderComponent } from './app-header';
 import { SidebarMenuComponent } from './sidebar-menu';
-import { NoContentComponent } from './no-content';
 import { OsbbContactsComponent } from './user/osbb-contacts';
+import { LoginComponent } from './login';
+import { AppHeader } from './header';
+import { SetLanguageComponent } from './set-language/';
 
 // pipes
 import { CapitalizeFirstLetterPipe } from './common/pipes/capitalize-first-letter';
@@ -48,7 +51,6 @@ type StoreType = {
   restoreInputValues: () => void,
   disposeOldHosts: () => void
 };
-
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
@@ -58,10 +60,11 @@ type StoreType = {
     AppComponent,
     UserComponent,
     SidebarMenuComponent,
-    NoContentComponent,
-    AppHeaderComponent,
     CapitalizeFirstLetterPipe,
-    OsbbContactsComponent
+    OsbbContactsComponent,
+    LoginComponent,
+    AppHeader,
+    SetLanguageComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -69,14 +72,16 @@ type StoreType = {
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
     TranslateModule.forRoot({
-            provide: TranslateLoader,
-            useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
-            deps: [Http]
-        })
+        provide: TranslateLoader,
+        useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
+        deps: [Http]
+    })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    LoginService,
+    CurrentUserService
   ]
 })
 export class AppModule {

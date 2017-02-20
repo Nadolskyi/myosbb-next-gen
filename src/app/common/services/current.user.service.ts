@@ -1,9 +1,9 @@
 import { Injectable, Component } from "@angular/core";
 import { User } from "../models/User";
 import { Response } from "@angular/http";
-import { LoginService } from "../../app/login/login.service";
+import { LoginService } from "../../login/login.service";
 import { Http, Headers }  from "@angular/http";
-import { ApiService } from 'api.service';
+import { ApiService } from './api.service';
 import { Observable } from "rxjs/Observable";
 import { Router } from '@angular/router';
 
@@ -11,22 +11,26 @@ import { Router } from '@angular/router';
 @Injectable()
 export class CurrentUserService {
 
-    private getUrl: string = ApiService + '/restful/user';
-    private _pathUrl = ApiService;
+    private getUrl: string = ApiService.serverUrl + '/restful/user';
+    private _pathUrl = ApiService.serverUrl;
     private role: string = "";
     public currentUser: User;
 
-    constructor(private _loginservice:LoginService,
-    private http:Http,
-    private router:Router
+    constructor(
+        private _loginservice: LoginService,
+        private http:Http,
+        private router:Router
     ) {
         this.currentUser = new User();
         this.initUser();
         this.setRole();
+        console.log('constructor');
     }
 
     setUser(user:User) {
+
         this.currentUser = user;
+        console.log(user);
     }
 
     setUserPromise(user:User) {
@@ -35,13 +39,16 @@ export class CurrentUserService {
     }
 
     getUser():User {
+        console.log(this.currentUser);
         return this.currentUser;
     }
 
-    initUser():User {
+    initUser() {
+        console.log('blaba');
         if (this._loginservice.checkLogin()) {
             this._loginservice.sendToken().subscribe(data=> {
-                this.setUser(data);
+                this.setUser(<User>data.json());
+                console.log('initUser');
             })
         }
     }
@@ -51,9 +58,11 @@ export class CurrentUserService {
     }
 
     setRole() {
+        console.log('setRole');
         if (this._loginservice.checkLogin()) {
             this.role = this.decodeAccessToken(localStorage.getItem("access_token"))["authorities"][0];
         }
+        console.log(this.role);
     }
 
     public  decodeAccessToken(access_token:string) {

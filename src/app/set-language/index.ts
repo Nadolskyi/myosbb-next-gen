@@ -1,1 +1,1 @@
-export * from './sidebar-menu.component';
+export * from './set-language.component';

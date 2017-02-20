@@ -7,7 +7,6 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { AppState } from './app.service';
-import { TranslateService } from 'ng2-translate';
 
 /*
  * App Component
@@ -19,23 +18,16 @@ import { TranslateService } from 'ng2-translate';
   styleUrls: [
     './app.component.scss'
   ],
-  template: `
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-  `
+  templateUrl: './app.html'
 })
 export class AppComponent implements OnInit {
 
   constructor(
-    public appState: AppState,
-    private translate: TranslateService
+    public appState: AppState
   ) {}
 
   public ngOnInit() {
-    this.translate.setDefaultLang('en');
   }
-
 }
 
 /*

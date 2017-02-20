@@ -1,14 +1,15 @@
-import { Injectable } from "@angular/core";
-import { Http, Headers } from "@angular/http";
+import { Injectable } from '@angular/core';
+import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-import "rxjs/add/operator/map";
-import "rxjs/add/operator/toPromise";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/catch';
 
-import { IOsbb } from "../../../../shared/models/osbb";
-import { OsbbDTO } from "../../../../shared/models/osbbDTO";
-import ApiService = require("../../../../shared/services/api.service");
+import { IOsbb } from '../models/osbb';
+import { OsbbDTO } from '../models/osbbDTO';
+import { ApiService } from './api.service';
+import { LoginService } from "../../login/login.service";
 
 const attachmentUploadUrl = ApiService.serverUrl + '/restful/attachment';
 
@@ -16,7 +17,8 @@ const attachmentUploadUrl = ApiService.serverUrl + '/restful/attachment';
 export class OsbbService {
 
     private url:string = ApiService.serverUrl + '/restful/osbb';
-    constructor(private http: Http) {
+    constructor(private http: Http,
+        private _loginservice: LoginService) {
     }
 
     getAllOsbb(): Promise<IOsbb[]> {
@@ -30,7 +32,7 @@ export class OsbbService {
         return new Promise((resolve, reject) => {
             let formData: FormData = new FormData(),
             xhr: XMLHttpRequest = new XMLHttpRequest();
-            formData.append("file", file, file.name);
+            formData.append('file', file, file.name);
             xhr.onreadystatechange = () => {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
@@ -41,7 +43,7 @@ export class OsbbService {
                 }
             };
             xhr.open('POST', attachmentUploadUrl + '/logo', true);
-            xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("access_token"));
+            xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem('access_token'));
             xhr.send(formData);
         });
     }
@@ -70,15 +72,15 @@ export class OsbbService {
     }
 
     getDTOOsbbById(osbbId: number): Promise<OsbbDTO> {
-         let url = this.url + "/dto/" + osbbId;
-         return this.http.get(url)
+         let url = this.url + '/dto/' + osbbId;
+         return this.http.get(url, this._loginservice.getRequestOptionArgs())
                  .toPromise()
                  .then(res => res.json())
                  .catch(this.handleError);
     }
 
     getOsbbById(osbbId: number): Promise<IOsbb> {
-         let url = this.url + "/" + osbbId;
+         let url = this.url + '/' + osbbId;
          return this.http.get(url)
                  .toPromise()
                  .then(res => res.json())

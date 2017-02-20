@@ -2,19 +2,19 @@ import { Component, OnInit } from '@angular/core';
 
 import { OsbbDTO } from '../../common/models/osbbDTO';
 import { User } from '../../common/models/User';
-// import { OsbbService } from './../common/services/osbb.service';
-import { CurrentUserService } from './../common/services/current.user.service';
+import { OsbbService } from '../../common/services/osbb.service';
+import { CurrentUserService } from '../../common/services/current.user.service';
 
 
 @Component({
     selector: 'user-menu-osbb-contacts',
     templateUrl: './osbb-contacts.html',
     styleUrls: ['./osbb-contacts.css'],
-    // providers: [OsbbService],
+    providers: [OsbbService],
 })
-export class OsbbContactsComponent {// implements OnInit {
+export class OsbbContactsComponent implements OnInit {
 
-/*    private userOsbb: OsbbDTO;
+    private userOsbb: OsbbDTO;
     private user: User;
     private osbbRetrieved = false;
 
@@ -25,7 +25,7 @@ export class OsbbContactsComponent {// implements OnInit {
     ngOnInit(): any {
         console.log('Initializing OSBB contacts...');
         this.getUser();
-        this.getOsbb();
+       this.getOsbb();
     }
 
     getUser() {
@@ -34,7 +34,7 @@ export class OsbbContactsComponent {// implements OnInit {
     }
 
     getOsbb() {
-        console.log(this.user);
+        console.log(this.user.osbbId);
         this.osbbService.getDTOOsbbById(this.user.osbbId)
             .then(osbb => {
                 this.userOsbb = osbb;
@@ -42,5 +42,5 @@ export class OsbbContactsComponent {// implements OnInit {
                 console.log(this.userOsbb);
                 this.osbbRetrieved = true;
             });
-    }*/
+    }
 }

@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TranslateService } from 'ng2-translate';
 
 @Component({
-    selector: 'app-sidebar-menu',
-    templateUrl: './sidebar-menu.component.html',
-    styleUrls: ['./sidebar-menu.component.css']
+    selector: 'set-language',
+    templateUrl: './set-language.component.html',
+    styleUrls: ['./set-language.component.css']
 })
-export class SidebarMenuComponent {
-  constructor() {
-    console.log('sidebar');
+export class SetLanguageComponent implements OnInit {
+  public lanKey: string;
+
+  constructor(private translate: TranslateService) {}
+
+  public ngOnInit() {
+    this.translate.setDefaultLang('en');
+    this.lanKey = 'en';
+  }
+  setLanguage(key) {
+    this.translate.use(key);
+    this.lanKey = key;
   }
 }

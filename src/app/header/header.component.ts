@@ -2,6 +2,7 @@ import {
   Component
 } from '@angular/core';
 
+
 @Component({
   selector: 'app-header',
   templateUrl:'./header.html'
@@ -9,5 +10,5 @@ import {
 export class AppHeader{
   public logOut(){
     localStorage.clear();
-  }    
+  }
 }

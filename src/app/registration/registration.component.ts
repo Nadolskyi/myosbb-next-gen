@@ -43,11 +43,10 @@ export class RegistrationComponent implements OnInit {
     this.genders = ['Female', 'Male'];
   }
   SenderJoin(): any {
-    this.toasterService.pop('Succes, created' + this.newUser.firstName);
+    this.toasterService.pop('success', 'created', this.newUser.firstName);
     this.registerService.registerUser(this.newUser)
       .subscribe(
         data => {
-          this.toasterService.pop('Succes, created' + this.newUser.firstName);
           this.newUser = data;
         },
         error => {

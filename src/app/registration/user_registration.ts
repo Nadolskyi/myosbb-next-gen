@@ -1,4 +1,3 @@
-import assign = require("core-js/library/fn/object/assign");
 export class UserRegistration {
     userId:number;
     firstName:string;

@@ -1,3 +1,4 @@
+import assign = require("core-js/library/fn/object/assign");
 export class User {
     userId:number;
     firstName:string;
@@ -9,7 +10,7 @@ export class User {
     gender:string;
     role:string;
     activated:boolean;
-    
+
     constructor() {
         this.userId = new Number();
         this.firstName = new String();

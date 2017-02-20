@@ -4,9 +4,7 @@ import {
 
 @Component({
   selector: 'common-component',
-  templateUrl:'./common.html'
-
+  templateUrl: './common.html'
 })
-export class CommonComponent{
- 
+export class CommonComponent {
 }

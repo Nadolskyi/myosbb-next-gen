@@ -4,23 +4,17 @@ import { Http, Response, Headers,
 import { Observable } from 'rxjs/Observable';
 import { ApiService } from './api.service';
 import { Component } from '@angular/core';
-
 import { Router } from '@angular/router';
 
 @Injectable()
-export class LoginService{
-  private _pathUrl = ApiService.serverUrl;
-  private tokenName: string = 'access_token';
+export class LoginService {
+  public _pathUrl = ApiService.serverUrl;
+  public tokenName: string = 'access_token';
   public role: string = '';
   public isLoggedIn: boolean;
-  public logInError: boolean = false;
   public currentUser: any;
-
-  constructor(private http: Http, public _router: Router) {
+  constructor(public http: Http, public _router: Router) {
   }
-
-
-
   public sendCredentials(model) {
       let options = this.getRequestOptionArgs();
       let tokenUrl = this._pathUrl + '/oauth/token';
@@ -55,9 +49,7 @@ export class LoginService{
         options.headers.append(ApiService.ACCEPT, ApiService.APP_JSON);
     }
     return options;
-    }
-
-
+  }
   public  decodeAccessToken( accessToken: string) {
     return JSON.parse(window.atob(accessToken.split('.')[1]));
    }
@@ -90,11 +82,11 @@ export class LoginService{
         }
       );
     }
-    public tokenParseInLocalStorage(data: any) {
+  public tokenParseInLocalStorage(data: any) {
     localStorage.setItem('access_token', data.access_token);
     localStorage.setItem('token_type', data.token_type);
     localStorage.setItem('scope', data.scope);
     localStorage.setItem('jti', data.jti);
     localStorage.setItem('refresh_token', data.refresh_token);
-    }
   }
+}

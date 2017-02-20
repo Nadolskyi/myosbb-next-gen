@@ -25,11 +25,9 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { LoginComponent } from './login';
-import { AppHeader } from './header';
+import { AppHeaderComponent } from './header';
 import { SidebarComponent } from './sidebar';
 import { CommonComponent } from './common';
-
-
 import '../styles/styles.scss';
 import '../styles/headings.css';
 
@@ -51,7 +49,7 @@ type StoreType = {
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
-    AppHeader,
+    AppHeaderComponent,
     AppComponent,
     LoginComponent,
     SidebarComponent,

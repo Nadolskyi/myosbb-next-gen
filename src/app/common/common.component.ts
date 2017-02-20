@@ -1,15 +1,12 @@
 import {
-  Component,
-  OnInit,
+  Component
 } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { myosbbLink } from '../../shared/models/localhost.config';
 
 @Component({
-  selector: 'ticket',
-  template: ``
+  selector: 'common-component',
+  templateUrl:'./common.html'
+
 })
-
-export class ComComponent {
-
+export class CommonComponent{
+ 
 }

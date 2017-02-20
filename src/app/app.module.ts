@@ -27,7 +27,7 @@ import { AppState, InternalStateType } from './app.service';
 import { LoginComponent } from './login';
 import { AppHeader } from './header';
 import { SidebarComponent } from './sidebar';
-import { AdminComponent } from './admin';
+import { CommonComponent } from './common';
 
 
 import '../styles/styles.scss';
@@ -55,7 +55,7 @@ type StoreType = {
     AppComponent,
     LoginComponent,
     SidebarComponent,
-    AdminComponent
+    CommonComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,

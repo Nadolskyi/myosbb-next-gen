@@ -1,20 +1,20 @@
 <aside>
     <div id="sidebar" class="nav-collapse animated  bounceInDown ">
         <!-- sidebar menu start-->
-        <ul class="sidebar-menu" id="nav-accordion" [ngSwitch]=5>
+        <ul class="sidebar-menu" id="nav-accordion">
             <li class="sub-menu">
                 <a [routerLink]="['osbb']">
                     <i class="fa fa-home fa-fw fa-4x"></i>
                     <span>{{'osbb' }}</span>
                 </a>
             </li>
-            <li class="sub-menu" *ngSwitchCase=2>
+            <li class="sub-menu">
                 <a [routerLink]="['houses']">
                     <i class="fa fa-user"></i>
                     <span>{{'houses'}}</span>
                 </a>
             </li>
-            <li class="sub-menu" *ngSwitchCase=2>
+            <li class="sub-menu">
                 <a [routerLink]="['apartments']">
                     <i class="fa fa-building-o"></i>
                     <span>{{'rents'}}</span>
@@ -26,7 +26,7 @@
                     <span>{{ 'tickets'}}</span>
                 </a>
             </li>
-            <li class="sub-menu" *ngSwitchCase=2>
+            <li class="sub-menu">
                 <a [routerLink]="['calendar']">
                     <i class="fa fa-calendar"></i>
                     <span>{{'calendar'}}</span>

@@ -6,10 +6,10 @@ import { Http, Response } from '@angular/http';
 import { myosbbLink } from '../../shared/models/localhost.config';
 
 @Component({
-  selector: 'contacts',
-  styleUrls: ['../../assets/css/manager.page.layout.scss'],
-  templateUrl: './contacts.component.html'
+  selector: 'ticket',
+  template: ``
 })
-export class ContactsComponent {
+
+export class ComComponent {
 
 }

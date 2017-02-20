@@ -1,1 +1,1 @@
-export { ComModule } from 'common.module';
+export * from './common.component';

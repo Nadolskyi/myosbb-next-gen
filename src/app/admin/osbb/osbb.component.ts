@@ -14,6 +14,7 @@ import { Observable } from "rxjs/Observable";
   styleUrls: ['../styleTables.css'],
 })
 export class OSBBComponent implements OnInit {
+  public OSBB: string[];
   public localState: any;
   constructor(
     public route: ActivatedRoute,public http:Http,public loginService:LoginService

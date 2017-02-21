@@ -15,6 +15,8 @@ import { Observable } from "rxjs/Observable";
 })
 export class UsersComponent implements OnInit {
   public localState: any;
+  public users: string[];
+
   constructor(
     public route: ActivatedRoute,public http:Http,public loginService:LoginService
   ) {}

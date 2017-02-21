@@ -2,10 +2,11 @@ import {
   Component,
   OnInit
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Http, Response } from "@angular/http";
 import { LoginService } from '../../login/login.service'
 import { Observable } from "rxjs/Observable";
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   providers: [LoginService],
@@ -15,8 +16,10 @@ import { Observable } from "rxjs/Observable";
 })
 export class HousesComponent implements OnInit {
   public localState: any;
+  public houses: string[];
+
   constructor(
-    public route: ActivatedRoute,public http:Http,public loginService:LoginService
+    public route: ActivatedRoute,public http:Http,public loginService:LoginService,private router: Router,
   ) {}
 
 public getHouses(){ this.tratata().subscribe(
@@ -33,8 +36,11 @@ public getHouses(){ this.tratata().subscribe(
         return this.http.get(userUrl,options);
     }
   }
+  
+    onNavigate(id: number) {
+          this.router.navigate(['./admin/houses/house', id]);
+        }
     ngOnInit(): any {
         this.getHouses();
     }
-
-}
+ }

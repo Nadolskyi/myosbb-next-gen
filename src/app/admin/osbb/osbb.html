@@ -11,7 +11,7 @@
         <th>Дії</th>
     </tr>
     <tr *ngFor="let c of OSBB" class="info">
-        <td><a [routerLink]=" ['../houses'] " routerLinkActive="active">{{c.name}}</a></td>
+        <td><a  [routerLink]=" ['../houses'] " >{{c.name}}</a></td>
         <td>{{c.description}}</td>
         <td>{{c.houseNumber}}</td>
         <td>{{c.district.name}}</td>

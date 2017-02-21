@@ -16,7 +16,7 @@ export const adminRoutes: Routes = [
             { path: '', redirectTo: 'osbb', pathMatch: 'full' },
             { path: 'houses', component: HousesComponent },
             { path: 'projects', component: ProjectsComponent },
-            { path: 'houses/house', component: HouseAboutComponent },
+            { path: 'houses/house/:id', component: HouseAboutComponent },
             { path: 'apartments', component: ApartmentsComponent },
             { path: 'events', component: EventsComponent },
             { path: 'users', component: UsersComponent },

@@ -19,7 +19,7 @@
         <td>{{c.apartmentCount}}</td>
         <td>{{c.osbbName}}</td>
         <td>
-            <button class="btn"><a [routerLink]=" ['./house'] " routerLinkActive="active">Switch</a></button>
+            <button class="btn" (click)="onNavigate(c.houseId)" >Switch</button>
         </td>
         <td>{{c.description}}</td>
         <td>

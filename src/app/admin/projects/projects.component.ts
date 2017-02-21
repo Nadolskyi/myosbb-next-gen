@@ -15,6 +15,8 @@ import { Observable } from "rxjs/Observable";
 })
 export class ProjectsComponent implements OnInit {
   public localState: any;
+  public projects: string[];
+
   constructor(
     public route: ActivatedRoute,public http:Http,public loginService:LoginService
   ) {}

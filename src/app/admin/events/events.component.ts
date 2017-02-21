@@ -14,8 +14,8 @@ import { Observable } from "rxjs/Observable";
   styleUrls: ['../styleTables.css'],
 })
 export class EventsComponent implements OnInit {
-console.log(mockData);
   public localState: any;
+  public events: string[];
   constructor(
     public route: ActivatedRoute,public http:Http,public loginService:LoginService
   ) {}

@@ -65,23 +65,23 @@ export class LoginService {
     }
   }
   public onSubmit(model) {
-      this.sendCredentials(model).subscribe(
-        (data) => {
-          if (!this.checkLogin()) {
-            this.tokenParseInLocalStorage(data.json());
-            this.sendToken().subscribe(
-              (data) => {
-                let user: any = data.json();
-                this.setUser(user);
-                this.isLoggedIn = true;
-                this.setRole();
-                this._router.navigate(['./common']);
-              }
-            );
-           }
+    this.sendCredentials(model).subscribe(
+      (data) => {
+        if (!this.checkLogin()) {
+          this.tokenParseInLocalStorage(data.json());
+          this.sendToken().subscribe(
+            (subData) => {
+              let user: any = subData.json();
+              this.setUser(user);
+              this.isLoggedIn = true;
+              this.setRole();
+              this._router.navigate(['./common']);
+            }
+          );
         }
-      );
-    }
+      }
+    );
+  }
   public tokenParseInLocalStorage(data: any) {
     localStorage.setItem('access_token', data.access_token);
     localStorage.setItem('token_type', data.token_type);

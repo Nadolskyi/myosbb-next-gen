@@ -9,8 +9,6 @@
           <br>
           <input type="password" id="password" class="form-control" name="password" placeholder="{{'password'}}"
             minlength="4" maxlength="16" required [(ngModel)]="model.password">
-          <div class="alert alert-danger" *ngIf="logInError">
-          <strong>{{'user_not_found'}}</strong>Try again</div>
           <input type="hidden"/>
           <label class="checkbox">
             <span class="pull-right">

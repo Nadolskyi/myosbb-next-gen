@@ -1,1 +1,1 @@
-export { ComModule } from 'common.module';
+export { CommontModule } from './common.module';

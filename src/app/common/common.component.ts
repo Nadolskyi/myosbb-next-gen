@@ -1,14 +1,13 @@
-import {
-  Component,
-  OnInit,
-} from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ticket',
-  template: ``
+  selector: 'common',
+  template: `
+    <sidebar-component></sidebar-component>
+    <router-outlet></router-outlet>
+  `,
 })
 
-export class ComComponent {
+export class CommonComponent {
 
 }

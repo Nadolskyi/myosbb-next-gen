@@ -1,0 +1,32 @@
+import {Component, OnInit} from '@angular/core';
+import {
+  Http,
+  Response
+} from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import { TicketService } from './ticket.service';
+import { LoginService } from '../../shared/login/login.service';
+
+@Component({
+    selector: 'ticket',
+    styleUrls: ['../../../assets/css/manager.page.layout.scss'],
+    templateUrl: 'tickets.component.html',
+  providers: [ TicketService, LoginService ]
+})
+
+export class TicketComponent implements OnInit {
+  public resData: any;
+  public title: string = 'Contracts';
+  constructor(
+    private http: Http,
+    public login: LoginService,
+    public contract: TicketService
+  ) {  }
+  public ngOnInit() {
+    this.contract.getTicketData().subscribe(data => {
+      this.resData = data;
+    })
+  }
+}

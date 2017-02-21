@@ -15,6 +15,8 @@ import {
   PreloadAllModules
 } from '@angular/router';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+import { ToasterModule, ToasterService } from 'angular2-toaster';
+import { FileSelectDirective, } from 'ng2-file-upload';
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -30,6 +32,7 @@ import { AppState, InternalStateType } from './app.service';
 import { UserComponent } from './user';
 import { SidebarMenuComponent } from './sidebar-menu';
 import { OsbbContactsComponent } from './user/osbb-contacts';
+import { OsbbDocumentsAndReportsComponent } from './user/osbb-docs-and-reports';
 import { LoginComponent } from './login';
 import { AppHeader } from './header';
 import { SetLanguageComponent } from './set-language/';
@@ -64,7 +67,9 @@ type StoreType = {
     OsbbContactsComponent,
     LoginComponent,
     AppHeader,
-    SetLanguageComponent
+    SetLanguageComponent,
+    OsbbDocumentsAndReportsComponent,
+    FileSelectDirective
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -75,13 +80,15 @@ type StoreType = {
         provide: TranslateLoader,
         useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
         deps: [Http]
-    })
+    }),
+    ToasterModule
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
     LoginService,
-    CurrentUserService
+    CurrentUserService,
+    ToasterService
   ]
 })
 export class AppModule {

@@ -20,7 +20,7 @@ export class EventsService {
   ) { }
 
   getEventData(): Observable<any> {
-    return this.http.get(`${API_URL}/event/`, this.login.getRequestOptionArgs())
+    return this.http.get(`${API_URL}/restful/event/`, this.login.getRequestOptionArgs())
       .map((res: Response) => res.json())
       .catch((error) => Observable.throw(error));
   }

@@ -20,7 +20,7 @@ export class TicketService {
   ) { }
 
   getTicketData(): Observable<any> {
-    return this.http.get(`${API_URL}/ticket/`, this.login.getRequestOptionArgs())
+    return this.http.get(`${API_URL}/restful/ticket/`, this.login.getRequestOptionArgs())
       .map((res: Response) => res.json())
       .catch((error) => Observable.throw(error));
   }

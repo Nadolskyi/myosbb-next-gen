@@ -20,7 +20,7 @@ export class OsbbService {
   ) { }
 
   getEventData(): Observable<any> {
-    return this.http.get(`${API_URL}/osbb`, this.login.getRequestOptionArgs())
+    return this.http.get(`${API_URL}/restful/osbb`, this.login.getRequestOptionArgs())
       .map((res: Response) => res.json())
       .catch((error) => Observable.throw(error));
   }

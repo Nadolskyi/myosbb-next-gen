@@ -11,7 +11,7 @@ import { API_URL } from '../../../shared/models/localhost.config';
 export class WallService {
   constructor(private http: Http) {  }
   getWallData(osbbId: number): Observable<any> {
-    return this.http.get(`${API_URL}/creator/osbb/${osbbId}`)
+    return this.http.get(`${API_URL}/restful/creator/osbb/${osbbId}`)
       .map((res: Response) => res.json())
       .catch((error) => Observable.throw(error));
   }

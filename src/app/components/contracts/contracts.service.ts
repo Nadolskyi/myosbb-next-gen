@@ -20,7 +20,7 @@ export class ContractsService {
   ) { }
 
   getContractsData(): Observable<any> {
-    return this.http.get(`${API_URL}/contract?pageNum=1&&actv=false`, this.login.getRequestOptionArgs())
+    return this.http.get(`${API_URL}/restful/contract?pageNum=1&&actv=false`, this.login.getRequestOptionArgs())
       .map((res: Response) => res.json())
       .catch((error) => Observable.throw(error));
   }

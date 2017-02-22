@@ -19,7 +19,7 @@
         <td>{{c.apartmentCount}}</td>
         <td>{{c.osbbName}}</td>
         <td>
-            <button class="btn" (click)="onNavigate(c.houseId)" >Switch</button>
+            <button class="btn" (click)="onNavigate(c.houseId)" >Перейти</button>
         </td>
         <td>{{c.description}}</td>
         <td>
@@ -27,7 +27,7 @@
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Options
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Delete</a></li>
+                    <li><a (click)="openDelModal(c.houseId)">Delete</a></li>
                     <li><a href="#">Edit</a></li>
                 </ul>
             </div>

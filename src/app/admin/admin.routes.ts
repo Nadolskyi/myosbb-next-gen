@@ -6,6 +6,8 @@ import { ApartmentsComponent } from './apartments';
 import { EventsComponent } from './events';
 import { UsersComponent } from './users';
 import { HouseAboutComponent } from './houses/house';
+import { eventsDetailComponent } from './events/eventsDetail';
+
 
 
 export const adminRoutes: Routes = [
@@ -17,6 +19,7 @@ export const adminRoutes: Routes = [
             { path: 'houses', component: HousesComponent },
             { path: 'projects', component: ProjectsComponent },
             { path: 'houses/house/:id', component: HouseAboutComponent },
+            { path: 'events/eventsDetail/:id', component: eventsDetailComponent },
             { path: 'apartments', component: ApartmentsComponent },
             { path: 'events', component: EventsComponent },
             { path: 'users', component: UsersComponent },

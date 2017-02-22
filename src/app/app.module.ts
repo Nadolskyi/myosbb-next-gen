@@ -31,6 +31,7 @@ import { XLargeDirective } from './home/x-large';
 import { OSBBComponent } from './admin/osbb';
 import { HousesComponent } from './admin/houses';
 import { HouseAboutComponent } from './admin/houses/house';
+import { eventsDetailComponent } from './admin/events/eventsDetail';
 import { ProjectsComponent } from './admin/projects';
 import { ApartmentsComponent } from './admin/apartments';
 import { EventsComponent } from './admin/events';
@@ -65,6 +66,7 @@ type StoreType = {
     LoginComponent,
     HousesComponent,
     HouseAboutComponent,
+    eventsDetailComponent,
     ProjectsComponent,
     XLargeDirective,
     OSBBComponent,

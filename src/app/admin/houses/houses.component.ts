@@ -1,7 +1,9 @@
 import {
   Component,
-  OnInit
+  OnInit,
+  ViewChild
 } from '@angular/core';
+import { ModalDirective } from "ng2-bootstrap";
 import { Router, ActivatedRoute } from '@angular/router';
 import { Http, Response } from "@angular/http";
 import { LoginService } from '../../login/login.service'
@@ -17,11 +19,16 @@ import 'rxjs/add/operator/switchMap';
 export class HousesComponent implements OnInit {
   public localState: any;
   public houses: string[];
+  public houseId: number;
+  @ViewChild('delModal') private delModal: ModalDirective;
 
   constructor(
     public route: ActivatedRoute,public http:Http,public loginService:LoginService,private router: Router,
   ) {}
-
+public openDelModal(houseId: number) {
+        this.houseId = houseId;
+        this.delModal.show();
+    }
 public getHouses(){ this.tratata().subscribe(
     data=>{
         let houses:any=data.json()

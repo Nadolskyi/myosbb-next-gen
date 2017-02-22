@@ -23,7 +23,7 @@
             <button class="btn">{{c.status}}</button>
         </td>
         <td>
-            <button class="btn">Перейти</button>
+            <button class="btn"(click)="onNavigate(c.id)">Перейти</button>
         </td>
         <td>{{c.description}}</td>
         <td>

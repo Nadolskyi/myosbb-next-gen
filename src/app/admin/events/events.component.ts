@@ -2,7 +2,7 @@ import {
   Component,
   OnInit
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Http, Response } from "@angular/http";
 import { LoginService } from '../../login/login.service';
 import { Observable } from "rxjs/Observable";
@@ -17,7 +17,7 @@ export class EventsComponent implements OnInit {
   public localState: any;
   public events: string[];
   constructor(
-    public route: ActivatedRoute,public http:Http,public loginService:LoginService
+    public route: ActivatedRoute,public http:Http,public loginService:LoginService,private router: Router,
   ) {}
 
 public getEvents(){ this.tratata().subscribe(
@@ -34,6 +34,9 @@ public getEvents(){ this.tratata().subscribe(
         return this.http.get(userUrl,options);
     }
   }
+  onNavigate(id: number) {
+          this.router.navigate(['./admin/events/eventsDetail', id]);
+        }
     ngOnInit(): any {
         this.getEvents();
     }

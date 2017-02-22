@@ -24,8 +24,8 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { LoginComponent } from './login';
-import { AppHeader } from './header';
+import { LoginComponent } from './common/login';
+import { AppHeader } from './common/header';
 
 
 import '../styles/styles.scss';

@@ -5,18 +5,23 @@ import { RouterModule } from '@angular/router';
 import { routes } from './manager.routes';
 
 import { ManagerComponent } from './manager.component';
-import { ManagerSidebarMenuComponent } from "./sidebarmenu/sidebarmenu.component";
-import { WallComponent } from './wall';
-import { HouseComponent } from  '../common/house';
-import { EventsComponent } from '../common/events';
-import { OsbbBillsComponent } from '../common/osbbBils';
-import { ContractsComponent } from  '../common/contracts';
-import { TicketComponent } from '../common/ticket';
-import { ProviderManagerComponent } from '../common/provider';
-import { ApartmentComponent } from '../common/apartment';
-import { CalendarComponent } from '../common/calendar';
-import { ContactsComponent } from '../contacts';
-import { BreadcrumbComponent } from './breadcrumb';
+import { WallComponent } from '../components/wall';
+import { HouseComponent } from  '../components/house';
+import { EventsComponent } from '../components/events';
+// import { OsbbBillsComponent } from '../components/osbbBils';
+import { ContractsComponent } from  '../components/contracts';
+import { TicketComponent } from '../components/ticket';
+import { ProviderComponent } from '../components/provider';
+import { ApartmentComponent } from '../components/apartment';
+import { CalendarComponent } from '../components/calendar';
+import { ContactsComponent } from '../components/contacts';
+import { BreadcrumbComponent } from '../components/breadcrumb';
+import { SidebarComponent } from '../common/sidebar';
+import { DocsComponent } from '../components/docs';
+import { SubTicketComponent } from '../components/ticket/subticket';
+import { ChartsModule } from "ng2-charts/ng2-charts";
+
+
 
 @NgModule({
   declarations: [
@@ -26,18 +31,21 @@ import { BreadcrumbComponent } from './breadcrumb';
     EventsComponent,
     ApartmentComponent,
     ContactsComponent,
+    DocsComponent,
     BreadcrumbComponent,
     CalendarComponent,
-    ProviderManagerComponent,
-    OsbbBillsComponent,
+    ProviderComponent,
+    // OsbbBillsComponent,
     ContractsComponent,
     TicketComponent,
-    ManagerSidebarMenuComponent,
+    SidebarComponent,
+    SubTicketComponent
     ],
   imports: [
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
+    ChartsModule
   ],
 })
 

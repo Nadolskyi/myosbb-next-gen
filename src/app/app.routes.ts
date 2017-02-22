@@ -1,12 +1,9 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './login';
-// import { NoContentComponent } from './no-content';
-
-import { DataResolver } from './app.resolver';
+import { LoginComponent } from './common/login';
 
 export const ROUTES: Routes = [
-  // { path: '',      component: NoContentComponent },
   { path: 'login',  component: LoginComponent },
-  { path: 'manager', loadChildren: './manager#ManagerModule'}
-  // { path: '**',    component: NoContentComponent },
+  { path: 'manager', loadChildren: './manager#ManagerModule' },
+  { path: 'admin', loadChildren: './admin#AdminModule' },
+  { path: 'user', loadChildren: './user#UserModule' }
 ];

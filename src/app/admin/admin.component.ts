@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'manager',
+  selector: 'admin',
   template: `
     <sidebar-component></sidebar-component>
     <router-outlet></router-outlet>
   `,
 })
 
-export class ManagerComponent {
+export class AdminComponent {
 
 }

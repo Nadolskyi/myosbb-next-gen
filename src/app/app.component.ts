@@ -6,10 +6,13 @@ import {
   OnInit,
   ViewEncapsulation
 } from '@angular/core';
+import { LoginService } from './login/login.service';
+import { Router } from '@angular/router';
 import { AppState } from './app.service';
 
 @Component({
   selector: 'app',
+  providers: [ LoginService ],
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
     './app.component.scss',
@@ -22,12 +25,13 @@ export class AppComponent implements OnInit {
   public name = 'Наш Двір';
   public url = 'https://twitter.com/AngularClass';
 
-  constructor(
-    public appState: AppState
-  ) { }
-
+  constructor(public loginService: LoginService, public _router: Router,
+              public appState: AppState) {}
   public ngOnInit() {
-    console.log('Initial App State', this.appState.state);
+    if (this.loginService.checkLogin()) {
+      this._router.navigate(['./common']);
+    }else {
+      this._router.navigate(['./login']);
+    }
   }
-
 }

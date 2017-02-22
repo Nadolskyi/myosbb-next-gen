@@ -5,13 +5,8 @@
     <b>Наш Двір</b></i>
   </a>
   <div class="logination">
-    <a  [routerLink]=" ['../login'] "
-      routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-      <button type="button" class="btn btn-success"><i class="fa fa-sign-in">  LogIn</i></button>
-    </a>
-    <a  [routerLink]=" ['../'] "
-      routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-      <button type="button" class="btn btn-warning" (click)="logOut()"><i class="fa fa-sign-out">  LogOut</i></button>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf=isLoginned>
+      <button type="button" class="btn btn-warning" (click)="logOut()"><i class="fa fa-sign-out">LogOut</i></button>
     </a>
   </div>
 </nav>

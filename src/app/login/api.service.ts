@@ -1,10 +1,10 @@
 export class ApiService {
-  public static serverUrl = 'http://localhost:8080/myosbb';
-  public static AUTH = 'Authorization';
-  public static CONTENT_TYPE = 'Content-Type';
-  public static APP_JSON = `application/json`;
-  public static APP_XWFU = `application/x-www-form-urlencoded`;
-  public static ACCEPT = 'Accept';
-  public static BASIC_TOKEN = `Basic  Y2xpZW50YXBwOjEyMzQ1Ng==`;
-  public static BEARER = 'Bearer ';
+  public static get serverUrl() { return 'http://java.training.local:8080/myosbb'; }
+  public static get AUTH() { return 'Authorization'; }
+  public static get CONTENT_TYPE() { return 'Content-Type'; }
+  public static get APP_JSON() { return 'application/json'; }
+  public static get APP_XWFU() { return 'application/x-www-form-urlencoded'; }
+  public static get ACCEPT() { return 'Accept'; }
+  public static get BASIC_TOKEN() { return 'Basic  Y2xpZW50YXBwOjEyMzQ1Ng=='; }
+  public static get BEARER() { return 'Bearer'; }
 }

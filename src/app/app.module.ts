@@ -5,20 +5,9 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { SelectModule } from 'ng2-select';
 import { MomentModule } from 'angular2-moment';
 import { ToasterModule, ToasterService } from 'angular2-toaster';
-import {
-  NgModule,
-  ApplicationRef
-} from '@angular/core';
-import {
-  removeNgStyles,
-  createNewHosts,
-  createInputTransfer
-} from '@angularclass/hmr';
-import {
-  RouterModule,
-  PreloadAllModules
-} from '@angular/router';
-
+import { NgModule, ApplicationRef } from '@angular/core';
+import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
@@ -27,6 +16,7 @@ import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegistrationComponent } from './registration';
+import { RegistrationSuccessComponent } from './registration/registration-sucess';
 import { AboutComponent } from './about';
 import { XLargeDirective } from './home/x-large';
 
@@ -52,6 +42,7 @@ type StoreType = {
     HomeComponent,
     LoginComponent,
     RegistrationComponent,
+    RegistrationSuccessComponent,
     XLargeDirective
   ],
   imports: [

@@ -1,19 +1,16 @@
-export class UserRegistration {
+import { Apartment } from "./apartment.interface";
+import { House } from "./house";
+export class User {
     userId:number;
     firstName:string;
     lastName:string;
     birthDate:string;
     email:string;
-    password:string;
     phoneNumber:string;
     osbbId:number;
     gender:string;
+    role:string;
     activated:boolean;
-    apartmentId:number;
-    role:number;
-    house:number;
-
-    constructor() {
-        this.role = 1;
-    }
+    apartment:any;
+    house:House;
 }

@@ -99,7 +99,6 @@ export class LoginService {
   setUser(user:User) {
 
         this.currentUser = user;
-        console.log(user);
     }
 
     setUserPromise(user:User) {
@@ -108,16 +107,13 @@ export class LoginService {
     }
 
     getUser():User {
-        console.log(this.currentUser);
         return this.currentUser;
     }
 
     initUser() {
-        console.log('blaba');
         if (this.checkLogin()) {
             this.sendToken().subscribe(data=> {
                 this.setUser(<User>data.json());
-                console.log('initUser');
             })
         }
     }
@@ -127,11 +123,9 @@ export class LoginService {
     }
 
     setRole() {
-        console.log('setRole');
         if (this.checkLogin()) {
             this.role = this.decodeAccessToken(localStorage.getItem("access_token"))["authorities"][0];
         }
-        console.log(this.role);
     }
 
     getUserById(id:number):Observable<any> {

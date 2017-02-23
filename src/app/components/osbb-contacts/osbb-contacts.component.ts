@@ -21,23 +21,18 @@ export class OsbbContactsComponent implements OnInit {
      }
 
     ngOnInit(): any {
-        console.log('Initializing OSBB contacts...');
         this.getUser();
         this.getOsbb();
     }
 
     getUser() {
         this.user = this.userSevice.getUser();
-        console.log('Current user is ' + this.user.firstName + ' ' + this.user.lastName+' '+this.user.osbbId);
     }
 
     getOsbb() {
-        console.log(this.user.osbbId);
         this.osbbService.getDTOOsbbById(this.user.osbbId)
             .then(osbb => {
                 this.userOsbb = osbb;
-                console.log('Retrieving OSBB for ' + this.user.firstName + ' ' + this.user.lastName);
-                console.log(this.userOsbb);
                 this.osbbRetrieved = true;
             });
     }

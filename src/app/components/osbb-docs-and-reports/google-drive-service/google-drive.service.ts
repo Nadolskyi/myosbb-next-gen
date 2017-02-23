@@ -46,8 +46,6 @@ export class GoogleDriveService {
     }
 
     update(id: string, name: string): Observable<DriveFile> {
-        console.log(id);
-        console.log(name);
         return this.http.put(this.controllerUrl + '/update/' + id, name)
             .map(response => response.json())
             .catch(error => Observable.throw(error));
@@ -59,7 +57,6 @@ export class GoogleDriveService {
         xhr.open('GET', url, true);
         xhr.withCredentials = false;
         xhr.responseType = 'blob';
-        console.log('Preparing download...');
 
         xhr.onreadystatechange = function () {
             if (xhr.readyState != 4) return;
@@ -71,13 +68,11 @@ export class GoogleDriveService {
                 var blob = new Blob([this.response], {type: mimeType});
                 saveAs(blob, fileName);
             } else {
-                console.error('Error while loading resources');
             }
 
         };
 
         let serverTimeout: any = setTimeout(()=> {
-            console.log('terminating server connection d/t too long connection time');
             xhr.abort();
         }, 15000);
 

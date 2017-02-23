@@ -110,7 +110,6 @@ export class OsbbService {
     }
 
     private handleError(error: any):Promise<any> {
-        console.log('HandleError', error);
         return Promise.reject(error.message || error);
     }
 

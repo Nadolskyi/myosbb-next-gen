@@ -101,7 +101,6 @@ export class OsbbDocumentsAndReportsComponent implements OnInit {
     private getFile(id: string) {
         this.driveService.getFile(id).subscribe(
             data => this.editable = data,
-            error => console.log(error)
         );
     }
 
@@ -144,7 +143,6 @@ export class OsbbDocumentsAndReportsComponent implements OnInit {
                 this.files = data;
                 this.sortFiles();
             },
-            error => console.error(error)
         );
         this.uploader.setOptions({ url: uploadUrl + '/' + this.currentFolder });
     }

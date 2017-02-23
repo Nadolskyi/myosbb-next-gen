@@ -1,4 +1,4 @@
-<div class="content-section implementation">
+<div class="calendar__content-section implementation">
     <p-schedule [events]="events" (onViewRender)="loadEvents($event)" [header]="header" [eventLimit]="4" [editable]="true" [aspectRatio]="2.2" (onDayClick)="handleDayClick($event)" (onEventClick)="handleEventClick($event)" [locale]="es">
     </p-schedule>
     <p-dialog header="Event Details" [(visible)]="dialogVisible" [responsive]="true" showEffect="clip" [modal]="true" [contentStyle]="{'overflow':'visible'}"

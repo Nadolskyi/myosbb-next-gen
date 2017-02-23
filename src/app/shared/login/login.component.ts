@@ -6,7 +6,6 @@ import { LoginService } from './login.service';
 import { ApiService } from './api.service';
 @Component({
   selector: 'login',
-  providers: [LoginService],
   styleUrls: [ './login.css' ],
   templateUrl: './login.component.html'
 })

@@ -9,8 +9,9 @@ import { TicketComponent  } from '../components/ticket';
 import { ProviderComponent } from '../components/provider';
 import { ApartmentComponent } from '../components/apartment';
 import { CalendarComponent } from '../components/calendar';
-import { ContactsComponent } from '../components/contacts';
 import { SubTicketComponent } from '../components/ticket/subticket';
+import { OsbbDocumentsAndReportsComponent } from '../components/osbb-docs-and-reports';
+import { OsbbContactsComponent } from '../components/osbb-contacts';
 
 export const ManagerRoutes: Routes = [
   { path: 'manager',  component: ManagerComponent,
@@ -26,6 +27,7 @@ export const ManagerRoutes: Routes = [
       { path: 'provider', component: ProviderComponent },
       { path: 'apartment', component: ApartmentComponent },
       { path: 'calendar', component: CalendarComponent },
-      { path: 'contacts', component: ContactsComponent }
+      { path: 'contacts', component: OsbbContactsComponent },
+      { path: 'documents-and-reports', component: OsbbDocumentsAndReportsComponent },
     ]},
 ];

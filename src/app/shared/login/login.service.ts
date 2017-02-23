@@ -28,16 +28,14 @@ export class LoginService {
       return this.http.get(userUrl, options);
   }
   public checkLogin(): boolean {
-        return  ((localStorage.getItem(this.tokenName) !== null)
-         && (localStorage.getItem(this.tokenName) !== '')) ? true : false;
+        return  (!!localStorage.getItem(this.tokenName)) ? true : false;
    }
   public getRequestOptionArgs(options?: RequestOptionsArgs, url?: string): RequestOptionsArgs {
     if (!options) {
         options = new RequestOptions();
         options.headers = new Headers();
     }
-    if ((localStorage.getItem(this.tokenName) !== null)
-      && (localStorage.getItem(this.tokenName) !== '')) {
+    if (!!localStorage.getItem(this.tokenName)) {
             options.headers.append(LoginConstants.AUTH, LoginConstants.BEARER
              + localStorage.getItem(this.tokenName));
             options.headers.append(LoginConstants.CONTENT_TYPE, LoginConstants.APP_JSON);

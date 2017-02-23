@@ -9,7 +9,7 @@ import { SidebarConstants } from './sidebar.constants';
 @Component({
   selector: 'sidebar-component',
   templateUrl: './sidebar.html',
-  providers: [ LoginService, NgSwitch ],
+  providers: [ NgSwitch ],
   styleUrls: ['./sidebar.style.css']
 
 })

@@ -26,23 +26,21 @@ export class AppComponent implements OnInit {
     public loginService: LoginService
   ) { }
   public ngOnInit() {
-    if (this.loginService.checkLogin()) {
-      this.loginService.setRole();
-      this.authRole = this.loginService.getRole();
-      switch (this.authRole) {
-        case "ROLE_USER":
-          this._router.navigate(['./user']);
-          break;
-        case "ROLE_ADMIN":
-          this._router.navigate(['./admin']);
-          break;
-        case "ROLE_MANAGER":
-          this._router.navigate(['./manager']);
-          break;
-      }
-    } else {
-      this._router.navigate(['./login']);
+    this.loginService.setRole();
+    this.authRole = this.loginService.getRole();
+    switch (this.authRole) {
+      case 'ROLE_USER':
+        this._router.navigate(['./user']);
+        break;
+      case 'ROLE_ADMIN':
+        this._router.navigate(['./admin']);
+        break;
+      case 'ROLE_MANAGER':
+        this._router.navigate(['./manager']);
+        break;
+      default :
+        this._router.navigate(['./login']);
+        break;
     }
   }
 }
-

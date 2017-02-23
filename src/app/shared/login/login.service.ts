@@ -63,29 +63,30 @@ export class LoginService {
   public onSubmit(model) {
     this.sendCredentials(model).subscribe(
       (data) => {
-        if (!this.checkLogin()) {
-          this.tokenParseInLocalStorage(data.json());
-          this.sendToken().subscribe(
-            (subData) => {
-              let user: any = subData.json();
-              this.isLoggedIn = true;
-              this.setRole();
-              localStorage.setItem('user', user.userId);
-              this.setUser(user);
-              switch (this.getRole()) {
-                case "ROLE_USER":
-                  this._router.navigate(['./user']);
-                  break;
-                case "ROLE_ADMIN":
-                  this._router.navigate(['./admin']);
-                  break;
-                case "ROLE_MANAGER":
-                  this._router.navigate(['./manager']);
-                  break;
-              }
+        this.tokenParseInLocalStorage(data.json());
+        this.sendToken().subscribe(
+          (subData) => {
+            let user: any = subData.json();
+            this.isLoggedIn = true;
+            this.setRole();
+            localStorage.setItem('user', user.userId);
+            this.setUser(user);
+            switch (this.getRole()) {
+              case 'ROLE_USER':
+                this._router.navigate(['./user']);
+                break;
+              case 'ROLE_ADMIN':
+                this._router.navigate(['./admin']);
+                break;
+              case 'ROLE_MANAGER':
+                this._router.navigate(['./manager']);
+                break;
+              default :
+                this._router.navigate(['./login']);
+                break;
             }
-          );
-        }
+          }
+        );
       }
     );
   }

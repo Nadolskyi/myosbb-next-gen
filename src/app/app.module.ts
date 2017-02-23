@@ -37,9 +37,9 @@ import { SubTicketComponent } from './components/ticket/subticket';
 import { LoginService } from './shared/login/login.service';
 import '../styles/styles.scss';
 import '../styles/headings.css';
-import {AdminComponent} from "./admin/admin.component";
-import {UserComponent} from "./user/user.component";
-import {ManagerComponent} from "./manager/manager.component";
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+import { ManagerComponent } from './manager/manager.component';
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
   AppState

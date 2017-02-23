@@ -26,6 +26,7 @@ export const UserRoutes: Routes = [
       { path: 'provider', component: ProviderComponent },
       { path: 'apartment', component: ApartmentComponent },
       { path: 'calendar', component: CalendarComponent },
-      { path: 'contacts', component: ContactsComponent }
+      { path: 'contacts', component: ContactsComponent },
+      
     ]},
 ];

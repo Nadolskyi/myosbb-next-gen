@@ -20,25 +20,29 @@ import {
  */
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
-// App is our top level component
-import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { LoginComponent } from './shared/login';
-import { AppHeader } from './shared/header';
-import { WallComponent } from './components/wall';
-import { HouseComponent } from  './components/house';
-import { EventsComponent } from './components/events';
-import { OsbbBillsComponent } from './components/osbbBils';
-import { ContractsComponent } from  './components/contracts';
-import { TicketComponent } from './components/ticket';
-import { ProviderComponent } from './components/provider';
-import { ApartmentComponent } from './components/apartment';
-import { CalendarComponent } from './components/calendar';
-import { ContactsComponent } from './components/contacts';
-import { BreadcrumbComponent } from './components/breadcrumb';
-import { SidebarComponent } from './shared/sidebar';
-import { SubTicketComponent } from './components/ticket/subticket';
+// App is our top level component
+import { AppComponent }          from './app.component';
+import { LoginComponent }        from './shared/login';
+import { AppHeader }             from './shared/header';
+import { WallComponent }         from './components/wall';
+import { HouseComponent }        from  './components/house';
+import { EventsComponent }       from './components/events';
+import { OsbbBillsComponent }    from './components/osbbBils';
+import { ContractsComponent }    from  './components/contracts';
+import { TicketComponent }       from './components/ticket';
+import { ProviderComponent }     from './components/provider';
+import { ApartmentComponent }    from './components/apartment';
+import { CalendarComponent }     from './components/calendar';
+import { ContactsComponent }     from './components/contacts';
+import { BreadcrumbComponent }   from './components/breadcrumb';
+import { SidebarComponent }      from './shared/sidebar';
+import { SubTicketComponent }    from './components/ticket/subticket';
+
+import { UserCabinetModule } from './components/user-cabinet/user-cabinet.module';
+
+
 // import { ChartsModule } from "ng2-charts/ng2-charts";
 
 import '../styles/styles.scss';
@@ -83,12 +87,14 @@ type StoreType = {
     ContractsComponent,
     TicketComponent,
     SidebarComponent,
-    SubTicketComponent
+    SubTicketComponent,
+
   ],
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
     HttpModule,
+    UserCabinetModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection

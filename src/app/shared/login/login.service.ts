@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers,
  RequestOptions, RequestOptionsArgs } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { ApiService } from './api.service';
+import { LoginConstants } from './login.constants';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable()
 export class LoginService {
-  public _pathUrl = ApiService.serverUrl;
+  public _pathUrl = LoginConstants.serverUrl;
   public tokenName: string = 'access_token';
   public role: string = '';
   public isLoggedIn: boolean;
@@ -28,8 +28,6 @@ export class LoginService {
       return this.http.get(userUrl, options);
   }
   public checkLogin(): boolean {
-        console.log( ((localStorage.getItem(this.tokenName) !== null)
-         && (localStorage.getItem(this.tokenName) !== '') ) ? 'LogedIn' : 'LogOut' );
         return  ((localStorage.getItem(this.tokenName) !== null)
          && (localStorage.getItem(this.tokenName) !== '')) ? true : false;
    }
@@ -40,13 +38,13 @@ export class LoginService {
     }
     if ((localStorage.getItem(this.tokenName) !== null)
       && (localStorage.getItem(this.tokenName) !== '')) {
-            options.headers.append(ApiService.AUTH, ApiService.BEARER
+            options.headers.append(LoginConstants.AUTH, LoginConstants.BEARER
              + localStorage.getItem(this.tokenName));
-            options.headers.append(ApiService.CONTENT_TYPE, ApiService.APP_JSON);
+            options.headers.append(LoginConstants.CONTENT_TYPE, LoginConstants.APP_JSON);
     } else {
-        options.headers.append(ApiService.AUTH, ApiService.BASIC_TOKEN);
-        options.headers.append(ApiService.CONTENT_TYPE, ApiService.APP_XWFU);
-        options.headers.append(ApiService.ACCEPT, ApiService.APP_JSON);
+        options.headers.append(LoginConstants.AUTH, LoginConstants.BASIC_TOKEN);
+        options.headers.append(LoginConstants.CONTENT_TYPE, LoginConstants.APP_XWFU);
+        options.headers.append(LoginConstants.ACCEPT, LoginConstants.APP_JSON);
     }
     return options;
   }
@@ -55,11 +53,7 @@ export class LoginService {
    }
   public setUser(user?: any) {
     this.currentUser = user;
-    return this.currentUser;
-   }
-   public getUser () {
-
-   }
+  }
   public getRole(): string {
     return this.role;
   }

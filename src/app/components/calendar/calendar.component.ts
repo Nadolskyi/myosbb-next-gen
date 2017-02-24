@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { EventsService } from '../events/events.service';
 import { LoginService } from '../../shared/login/login.service';
+import { CalendarConstants } from './calendar.const';
 import {
   Http,
   Response
@@ -15,14 +16,13 @@ export class CalendarComponent implements OnInit {
     public header: any;
     public es: any;
     public event: MyEvent;
-    public dialogVisible: boolean = false;
-    public idGen: number = 100;
-    constructor(
- 	    public eventService: EventsService,
-        private http: Http,
- 	    public login: LoginService
-    ) { }
+    public dialogVisible: boolean;
+    public idGen: number;
+    constructor(public eventService: EventsService, private http: Http, public login: LoginService) { }
     public ngOnInit() {
+        console.log(CalendarConstants.dayNames);
+        this.dialogVisible = false;
+        this.idGen = 100;
         this.events = [
             {
                 title: 'Подія на цілий день',
@@ -47,13 +47,7 @@ export class CalendarComponent implements OnInit {
             center: 'title',
             right: 'month,agendaWeek,agendaDay'
         };
-        this.es = {
-            dayNames: ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'Пятниця', 'Субота'],
-            dayNamesShort: ['Нед', 'Пон', 'Вівт', 'Сер', 'Чет', 'Пят', 'Суб'],
-            dayNamesMin: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-            monthNames: [ 'Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень' ],
-            monthNamesShort: [ 'Січ', 'Лют', 'Бер', 'Квіт', 'Трав', 'Черв', 'Лип', 'Серп', 'Вер', 'Жовт', 'Лист', 'Груд' ]
-        };
+        this.es = CalendarConstants;
     }
     public handleDayClick(event) {
         this.event = new MyEvent();

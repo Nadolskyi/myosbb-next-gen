@@ -1,7 +1,8 @@
 import {
-  Component
+  Component, OnInit
 } from '@angular/core';
 import { LoginService } from './login.service';
+
 @Component({
   selector: 'login',
   styleUrls: [ './login.css' ],
@@ -9,7 +10,7 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent {
   public model = { username : '', password : ''};
-    constructor(public loginService: LoginService
+    constructor(public loginService: LoginService,
     ) {}
   public logIn() {
     this.loginService.onSubmit(this.model);

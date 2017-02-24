@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../login/login.service';
 @Component({
   selector: 'app-header',
+  styleUrls: [ './header.scss' ],
   templateUrl: './header.html'
 })
 export class AppHeaderComponent {
@@ -12,5 +13,6 @@ export class AppHeaderComponent {
     ) {}
   public logOut() {
     localStorage.clear();
+    this._router.navigate(['./login']);
   }
 }

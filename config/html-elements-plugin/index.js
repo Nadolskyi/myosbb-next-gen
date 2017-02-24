@@ -40,7 +40,7 @@ const RE_ENDS_WITH_BS = /\/$/;
  * @returns {string}
  */
 function createTag(tagName, attrMap, publicPath) {
-  publicPath = publicPath || '';
+  publicPath = publicPath || process.env.publicPath || '/myosbb/';
 
   // add trailing slash if we have a publicPath and it doesn't have one.
   if (publicPath && !RE_ENDS_WITH_BS.test(publicPath)) {

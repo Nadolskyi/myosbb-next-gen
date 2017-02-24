@@ -58,8 +58,7 @@ module.exports = function (env) {
        *
        * See: http://webpack.github.io/docs/configuration.html#output-path
        */
-      path: helpers.root('dist'),
-
+      path: helpers.root(process.env.BUILD_PATH || '../resources/public'),
       /**
        * Specifies the name of each output file on disk.
        * IMPORTANT: You must not specify an absolute path here!
@@ -157,6 +156,7 @@ module.exports = function (env) {
       new DefinePlugin({
         'ENV': JSON.stringify(METADATA.ENV),
         'HMR': METADATA.HMR,
+        'API_SERVER': JSON.stringify(process.env.API_SERVER || '/myosbb'),
         'process.env': {
           'ENV': JSON.stringify(METADATA.ENV),
           'NODE_ENV': JSON.stringify(METADATA.ENV),

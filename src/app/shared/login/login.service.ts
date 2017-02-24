@@ -5,15 +5,19 @@ import { Observable } from 'rxjs/Observable';
 import { ApiService } from './api.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../../models/User';
 
 @Injectable()
 export class LoginService {
   public _pathUrl = ApiService.serverUrl;
+  public getUrl: string = ApiService.serverUrl + '/restful/user';
   public tokenName: string = 'access_token';
-  public role: string = '';
+  public role: string = "";
   public isLoggedIn: boolean;
-  public currentUser: any;
-  constructor(public http: Http, public _router: Router) {
+  public currentUser: User;
+
+  constructor(public http: Http, public _router: Router,
+    ) {
   }
   public sendCredentials(model) {
       let options = this.getRequestOptionArgs();
@@ -53,21 +57,7 @@ export class LoginService {
   public  decodeAccessToken( accessToken: string) {
     return JSON.parse(window.atob(accessToken.split('.')[1]));
    }
-  public setUser(user?: any) {
-    this.currentUser = user;
-    return this.currentUser;
-   }
-   public getUser () {
 
-   }
-  public getRole(): string {
-    return this.role;
-  }
-  public setRole() {
-    if (this.checkLogin()) {
-      this.role = this.decodeAccessToken(localStorage.getItem(this.tokenName))['authorities'][0];
-    }
-  }
   public onSubmit(model) {
     this.sendCredentials(model).subscribe(
       (data) => {
@@ -104,4 +94,53 @@ export class LoginService {
     localStorage.setItem('jti', data.jti);
     localStorage.setItem('refresh_token', data.refresh_token);
   }
-}
+
+
+  setUser(user:User) {
+
+        this.currentUser = user;
+        console.log(this.currentUser);
+    }
+
+    setUserPromise(user:User) {
+        this.currentUser = user;
+        return this.currentUser;
+    }
+
+    getUser():User {
+      console.log(this.currentUser)
+        return this.currentUser;
+
+
+    }
+
+    initUser() {
+        console.log('blaba');
+        if (this.checkLogin()) {
+            this.sendToken().subscribe(data=> {
+                this.setUser(<User>data.json());
+                console.log('initUser');
+            })
+        }
+    }
+
+    getRole():string {
+        return this.role;
+    }
+
+    setRole() {
+        console.log('setRole');
+        if (this.checkLogin()) {
+            this.role = this.decodeAccessToken(localStorage.getItem("access_token"))["authorities"][0];
+        }
+        console.log(this.role);
+    }
+
+    getUserById(id:number):Observable<any> {
+          let url = `${this.getUrl}/${id}`;
+        return this.http.get(url)
+            .map((response)=> response.json())
+            .catch((error)=>Observable.throw(error));
+    }
+
+    }

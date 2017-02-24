@@ -24,38 +24,93 @@
             <div class="panel-body">
                 <div class="col-xs-12">
                     <label class="col-xs-6"><b>{{ 'nameUser' }}</b></label>
-                    <span class="col-xs-6">{{'currentUser.firstName'}}</span>
+                    <span class="col-xs-6">{{currentUser.firstName}}</span>
                 </div>
 
                 <div class="col-xs-12">
                     <label class="col-xs-6"><b>{{ 'surname' }}</b></label>
-                    <span class="col-xs-6">{{'currentUser.lastName'}}</span>
+                    <span class="col-xs-6">{{currentUser.lastName}}</span>
                 </div>
 
                 <div class="col-xs-12">
                     <label class="col-xs-6"><b>{{ 'birthday' }}</b></label>
-                    <span class="col-xs-6">{{'getTime(currentUser.birthDate)'}}</span>
+                    <span class="col-xs-6">{{getTime(currentUser.birthDate)}}</span>
                 </div>
 
                 <div class="col-xs-12">
                     <label class="col-xs-6"><b>{{ 'email'}}</b></label>
-                    <span class="col-xs-6">{{'currentUser.email'}}</span>
+                    <span class="col-xs-6">{{currentUser.email}}</span>
                 </div>
 
                 <div class="col-xs-12">
                     <label class="col-xs-6"><b>{{ 'phone'}}</b></label>
-                    <span class="col-xs-6">{{'currentUser.phoneNumber'}}</span>
+                    <span class="col-xs-6">{{currentUser.phoneNumber}}</span>
                 </div>
 
                 <div class="col-xs-12">
                    <label class="col-xs-6"><b>{{ 'gender' }}</b></label>
-                   <span class="col-xs-6">{{'currentUser.gender'}}</span>
+                   <span class="col-xs-6">{{currentUser.gender}}</span>
                 </div>
                 <div class="col-xs-12"> </div>
             </div>
         </div>
         <div class="col-xs-12 panel panel-default images right-user-panel">
 
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="editModal"  role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modalLabel">CHANGE YOUR PROFILE</h4>
+            </div>
+            <div class="modal-body row">
+                <div class="col-xs-12">
+                    <label class="col-xs-6"><b>{{ 'nameUser' }}</b></label>
+                    <input class="form-control" name="nameUser" [(ngModel)]="updateUser.firstName" type="text"
+                           required>
+                </div>
+                <div class="col-xs-12">
+                    <label class="col-xs-6"><b>{{ 'surname' }}</b></label>
+                    <input class="form-control" name="surname" [(ngModel)]="updateUser.lastName" type="text"
+                           required>
+
+                </div>
+                <div class="col-xs-12">
+                    <label class="col-xs-6"><b>{{ 'birthday'}}</b></label>
+                    <input class="form-control" name="birthDate" [(ngModel)]="updateUser.birthDate" type="date"
+                           required>
+                </div>
+                <div class="col-xs-12">
+                    <label class="col-xs-6"><b>{{ 'email' }}</b></label>
+                    <input class="form-control placeholder-no-fix" name="email"
+                           [(ngModel)]="updateUser.email" placeholder="Введіть свій Email"
+                           type="text" required>
+                </div>
+                <div class="col-xs-12">
+                    <label class="col-xs-6"><b>{{ 'phone' }}</b></label>
+                    <input class="form-control" name="phoneNumber"
+                           [(ngModel)]="updateUser.phoneNumber" type="text"
+                           placeholder="(___) ___-____" required>
+                </div>
+                <div class="col-xs-12 gender">
+                    <label for="sel1" class="col-xs-6"><b>{{ 'gender' }}</b></label>
+                    <select class="form-control" [(ngModel)]="updateUser.gender" id="sel1">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+                <div class="col-xs-12">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="col-xs-3 btn btn-danger">{{ 'close' }}</button>
+                <button (click)="changeUser()" data-dismiss="modal" class="col-xs-3  btn btn-primary">{{ 'save'}}</button>
+            </div>
         </div>
     </div>
 </div>

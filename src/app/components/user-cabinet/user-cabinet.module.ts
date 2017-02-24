@@ -10,6 +10,7 @@ import { ProfileSidebarComponent }   from './profile-sidebar/profile-sidebar.com
 import { SettingsComponent }         from './settings/settings.component';
 import { UserCabinetComponent }      from './user-cabinet.component';
 
+import {ApiService} from "../../shared/login/api.service";
 @NgModule({
   imports:      [ 
     CommonModule,
@@ -23,6 +24,6 @@ import { UserCabinetComponent }      from './user-cabinet.component';
     SettingsComponent,
     UserCabinetComponent
   ],
-  providers: [  ]
+  providers: [ApiService]
 })
 export class UserCabinetModule { }

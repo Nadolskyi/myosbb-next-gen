@@ -40,6 +40,7 @@ import { BreadcrumbComponent }   from './components/breadcrumb';
 import { SidebarComponent }      from './shared/sidebar';
 import { SubTicketComponent }    from './components/ticket/subticket';
 
+import { LoginService }        from './shared/login/login.service';
 import { UserCabinetModule } from './components/user-cabinet/user-cabinet.module';
 
 
@@ -99,7 +100,8 @@ type StoreType = {
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    LoginService
   ]
 })
 export class AppModule {

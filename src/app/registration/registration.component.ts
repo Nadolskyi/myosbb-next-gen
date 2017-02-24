@@ -14,7 +14,9 @@ import { House } from './models/house';
 import { City } from './models/addressDTO';
 import { Street } from './models/addressDTO';
 import { ToasterService } from 'angular2-toaster';
+import { RegistrationMasks } from './registration.constant';
 import * as moment from 'moment';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-registration',
@@ -26,9 +28,9 @@ export class RegistrationComponent implements OnInit {
   public options = ['Приєднатись до існуючого ОСББ', 'Створити нове ОСББ'];
   public newUser: UserRegistration = new UserRegistration();
   public newOsbb: OsbbRegistration = new OsbbRegistration();
-  public textmask = [/[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/, /[A-zА-яІ-і]/];
-  public phoneMask = ['+' , '3', '8' , '(', /[0]/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/];
-  public alphabet: string[] = ['a' , 'b' , 'c' , 'd' , 'e' , 'f' , 'g' , 'h' , 'i' , 'j' , 'k' , 'l' , 'm' , 'n' , 'o' , 'p' , 'q' , 'r' , 's' , 't' , 'u' , 'v' , 'w' , 'x' , 'y' , 'z' ];
+  public textmask = RegistrationMasks.textMask;
+  public phoneMask = RegistrationMasks.phoneMask;
+  public alphabet: string[] = RegistrationMasks.alphabet;
   public genders: string[];
   public itemRegion: SelectItem;
   public itemCity: SelectItem;
@@ -62,7 +64,11 @@ export class RegistrationComponent implements OnInit {
   private osbbList: IOsbb[] = [];
   private apartmentList: IApartment[] = [];
 
-  constructor(private http: Http, private router: Router, private registerService: RegisterService, private toasterService: ToasterService, private addressServise: AddressService) {
+  constructor(private http: Http,
+              private router: Router,
+              private registerService: RegisterService,
+              private toasterService: ToasterService,
+              private addressServise: AddressService) {
     this.newUser.password = '';
     this.newUser.activated = false;
     this.newOsbb.creationDate = new Date();
@@ -72,7 +78,6 @@ export class RegistrationComponent implements OnInit {
     this.itemCity = new SelectItem();
     this.itemStreet = new SelectItem();
   }
-
   public ngOnInit() {
     this.listAllOsbb();
     this.ListAllRegion();
@@ -108,52 +113,38 @@ export class RegistrationComponent implements OnInit {
   }
   public fillOsbb(): string[] {
     let tempArr: string[] = [];
-    for (let osbbObject of this.osbbList) {
-      tempArr.push(osbbObject.name);
-    }
+    _.map(this.osbbList, (osbbObject) => { tempArr.push(osbbObject.name); });
     return tempArr;
   }
   public fillRegion(): string[] {
     let stri: string;
     let tempArr: string[] = [];
-    for (let reg of this.regionList) {
-      tempArr.push(reg.name);
-    }
+    _.map(this.regionList, (reg) => { tempArr.push(reg.name); });
     return tempArr;
   }
   public fillCities(): string[] {
     let tempArr: string[] = [];
-    for (let city of this.cityList) {
-      tempArr.push(city.name);
-    }
+    _.map(this.cityList, (city) => { tempArr.push(city.name); });
     return tempArr;
   }
   public fillStreet(): string[] {
     let tempArr: string[] = [];
-    for (let street of this.streetList) {
-      tempArr.push(street.name);
-    }
+    _.map(this.streetList, (street) => { tempArr.push(street.name); });
     return tempArr;
   }
   public fillOsbbById(): number[] {
     let tempArr: number[] = [];
-    for (let osbbObject of this.osbbList) {
-      tempArr.push(osbbObject.osbbId);
-    }
+    _.map(this.osbbList, (osbbObject) => { tempArr.push(osbbObject.osbbId); });
     return tempArr;
   }
   public fillHouses(): string[] {
     let tempArr: string[] = [];
-    for (let houseObject of this.houseList) {
-      tempArr.push('' + houseObject.numberHouse);
-    }
+    _.map(this.houseList, (houseObject) => { tempArr.push('' + houseObject.numberHouse); });
     return tempArr;
   }
   public fillApartment(): string[] {
     let tempArr: string[] = [];
-    for (let apartmentObject of this.apartmentList) {
-      tempArr.push('' + apartmentObject.number);
-    }
+    _.map(this.apartmentList, (apartmentObject) => { tempArr.push('' + apartmentObject.number); });
     return tempArr;
   }
   public selectedOsbb(value: any) {
@@ -165,12 +156,12 @@ export class RegistrationComponent implements OnInit {
   }
   public getOsbbByName(name: string): Osbb {
     let selectedOsbb: Osbb = new Osbb();
-    for (let osbb of this.osbbList) {
+    _.map(this.osbbList, (osbb) => {
       if (osbb.name.match(name)) {
         selectedOsbb = osbb;
-        break;
+        return false;
       }
-    }
+    });
     return selectedOsbb;
   }
   public ListAllRegion() {
@@ -195,22 +186,22 @@ export class RegistrationComponent implements OnInit {
   }
   public getCityByName(name: string): City {
     let city: City = new City();
-    for (let ci of this.cityList) {
-      if (ci.name.match(name)) {
+    _.map(this.cityList, (ci) => {
+      if ( ci.name.match(name)) {
         city = ci;
-        break;
+        return false;
       }
-    }
+    });
     return city;
   }
   public getStreetByName(name: string): Street {
     let street: Street = new Street();
-    for (let str of this.streetList) {
-      if (str.name.match(name)) {
+    _.map(this.streetList, (str) => {
+      if ( str.name.match(name)) {
         street = str;
-        break;
+        return false;
       }
-    }
+    });
     return street;
   }
   public selectedHouse(value: any) {
@@ -222,12 +213,12 @@ export class RegistrationComponent implements OnInit {
   public getApartmentByApartmentNumber(apartmentNumber: string): number {
     let apartmentID: number = 0;
     let apNumber = +apartmentNumber;
-    for (let ap of this.apartmentList) {
-      if (ap.number === apNumber) {
+    _.map(this.apartmentList, (ap) => {
+      if ( ap.number === apNumber ) {
         apartmentID = ap.apartmentId;
-        break;
+        return false;
       }
-    }
+    });
     return apartmentID;
   }
   public findHouseAndOsbbId() {
@@ -257,8 +248,7 @@ export class RegistrationComponent implements OnInit {
       this.IsRegistered = false;
       this.IsRegisteredOsbb = true;
       this.isJoinedOsbb = false;
-    }
-    else if (status === this.options[0]) {
+    } else if (status === this.options[0]) {
       this.IsRegistered = false;
       this.isJoinedOsbb = true;
       this.IsRegisteredOsbb = false;
@@ -277,19 +267,15 @@ export class RegistrationComponent implements OnInit {
   }
   public selectedGender(value: any) {
     let gender: string = value.text;
-    if ( gender === 'Female' || gender === 'Жінка' ) {
-      this.newUser.gender = 'Female';
-    }
-      else {
-        this.newUser.gender = 'Male';
-      }
+    this.newUser.gender = ( gender === 'Female' || gender === 'Жінка' ) ? 'Female' : 'Male';
     this.isSelectGender = true;
   }
   public SenderOsbbAndUser() {
     this.registerService.registerOsbb(this.newOsbb)
       .subscribe(
         (data) => {
-          this.toasterService.pop('success', '', 'Осбб ' + this.newOsbb.name + ' було успішно зареєстроване!');
+          this.toasterService.pop('success', '', 'Осбб ' + this.newOsbb.name +
+          ' було успішно зареєстроване!');
         },
         (error) => {
           this.handleErrors(error);
@@ -299,23 +285,13 @@ export class RegistrationComponent implements OnInit {
     this.checkOnUserPassword = false;
     let passwordConfirm: string = this.confirmPassword;
     let userPassword: string = this.newUser.password;
-    if (passwordConfirm.length !== 0) {
-        this.matchError = passwordConfirm !== userPassword;
-    }
-  }
-  public getAddress(place: Object) {
-    this.newOsbb.address = place['formatted_address'];
-    let location = place['geometry']['location'];
-    let lat = location.lat();
-    let lng = location.lng();
+    if (passwordConfirm) { this.matchError = passwordConfirm !== userPassword; }
   }
   public confirmPassLength() {
     let userPassword: string = this.newUser.password;
     this.lengthError = userPassword.length < 4 || userPassword.length > 16;
     this.matchCheck();
-    if (this.matchError) {
-      this.checkOnUserPassword = true;
-    }
+    if (this.matchError) { this.checkOnUserPassword = true; }
   }
   public removedGender() {
     this.isSelectGender = false;
@@ -326,12 +302,7 @@ export class RegistrationComponent implements OnInit {
   public checkDate() {
     let date = new Date();
     let res = this.castBirthDateStringToDate().valueOf() - date.valueOf();
-    if (res >= 0) {
-      this.birthDateError = true;
-    }
-    else {
-      this.birthDateError = false;
-    }
+    this.birthDateError = (res >= 0) ? true : false;
   }
   public Back() {
     this.isJoinedOsbb = false;
@@ -340,12 +311,12 @@ export class RegistrationComponent implements OnInit {
   }
   public getRegionByName(name: string): Region {
     let region: Region = new Region();
-    for (let reg of this.regionList) {
+    _.map(this.regionList, (reg) => {
       if (reg.name.match(name)) {
         region = reg;
-        break;
+        return false;
       }
-    }
+    });
     return region;
   }
   public listAllCitiesByRegion(id: number) {
@@ -359,7 +330,7 @@ export class RegistrationComponent implements OnInit {
       });
   }
   public selectedRegion(value: any) {
-    if (this.cities.length !== 0) {
+    if (this.cities.length) {
       this.itemCity.text = '';
       this.itemStreet.text = '';
       this.itemHouse.text = '';
@@ -393,7 +364,7 @@ export class RegistrationComponent implements OnInit {
       });
   }
   public selectedCity(value: any) {
-    if (this.streets.length !== 0) {
+    if (this.streets.length) {
        this.itemStreet.text = '';
        this.itemHouse.text = '';
        this.streets = [];
@@ -405,7 +376,7 @@ export class RegistrationComponent implements OnInit {
     this.listAllStreetsByCity(city.id);
   }
   public selectedStreet(value: any) {
-    if (this.houses.length !== 0) {
+    if (this.houses.length) {
       this.itemHouse.text = '';
       this.houses = [];
       this.isSelectedHouse = false;
@@ -414,6 +385,12 @@ export class RegistrationComponent implements OnInit {
     let street: Street = this.getStreetByName(value.text);
     this.streetId = street.id;
     this.listAllHousesByStreet(street.id);
+  }
+  public getAddress(place: Object) {
+    this.newOsbb.address = place['formatted_address'];
+    let location = place['geometry']['location'];
+    let lat = location.lat();
+    let lng = location.lng();
   }
   public autoGeneratePassword() {
     const minLength: number = 4;
@@ -431,11 +408,9 @@ export class RegistrationComponent implements OnInit {
         const rand: number = Math.floor(Math.random() * (maxThreshold) + minThreshold);
         if (rand % divider === indexOFLowercaseLetter) {
           password += this.alphabet[Math.floor(Math.random() * this.alphabet.length)];
-        }
-        else if (rand % divider === indexOFUppercaseLetter) {
+        } else if (rand % divider === indexOFUppercaseLetter) {
           password += this.alphabet[Math.floor(Math.random() * this.alphabet.length)].toUpperCase();
-        }
-        else {
+        } else {
           password += Math.floor(Math.random() * randomArea).toString();
         }
         ind++;

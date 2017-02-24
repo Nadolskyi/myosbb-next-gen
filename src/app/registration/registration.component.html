@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row animated  zoomIn ">
         <div class="col-md-12">
-            <div class="registration-form  center-block" *ngIf="IsRegistered">
+            <div class="registration-form center-block" *ngIf="IsRegistered">
                 <form class="ui form " (ngSubmit)="onSubmitUser(newUser.status)" #registerForm="ngForm">
                     <div class="form-header">
                         <h3>{{'user_registration'}}</h3>
@@ -40,7 +40,7 @@
                                 <label>{{'birthday'}}</label>
                                 <input class="form-control" name="birthDate" [(ngModel)]="newUser.birthDate" (blur)="checkDate()" type="date" required>
                                 <div class="col-xs-12 centered">
-                                    <label style="color: red" *ngIf='birthDateError' class="error" disabled=true>{{'errorBirthDateMsg'}}</label>
+                                    <label *ngIf='birthDateError' class="error" disabled=true>{{'errorBirthDateMsg'}}</label>
                                 </div>
                             </div>
                         </div>
@@ -49,8 +49,8 @@
                                 <label>{{'password'}}</label>
                                 <input class="form-control placeholder-no-fix col-xs-6" name="password" [(ngModel)]="newUser.password" (blur)="confirmPassLength()" placeholder="{{'enter_pass'}}" type="password" minlength="4" maxlength="16" required>
                                 <div class="col-xs-12 centered">
-                                    <label style="color: red" *ngIf='lengthError' class="error" disabled=true>{{'passLengthError'}}</label>
-                                    <label style="color: red" *ngIf='!lengthError && matchError && checkOnUserPassword' class="error" disabled=true>{{'passMatchError'}}
+                                    <label *ngIf='lengthError' class="error" disabled=true>{{'passLengthError'}}</label>
+                                    <label *ngIf='!lengthError && matchError && checkOnUserPassword' class="error" disabled=true>{{'passMatchError'}}
                                     </label>
                                 </div>
                             </div>
@@ -58,15 +58,13 @@
                                 <label>{{'confirm_pass'}}</label>
                                 <input class="form-control placeholder-no-fix col-xs-6" [(ngModel)]="confirmPassword" name="confirmPassword" (blur)="matchCheck()" placeholder="{{'confirm_pass'}}" type="password" minlength="4" maxlength="16" required>
                                 <div class="col-xs-12 centered">
-                                    <label style="color: red" *ngIf='!checkOnUserPassword && matchError' class="error" disabled=true>{{'passMatchError'}}</label>
+                                    <label *ngIf='!checkOnUserPassword && matchError' class="error" disabled=true>{{'passMatchError'}}</label>
                                 </div>
                             </div>
                             <br>
                         </div>
                     </div>
                     <div class="row form-footer">
-                        <hr>
-                        <br>
                         <div class="col-xs-6">
                             <a class="btn btn-danger col-xs-12" href="javascript:history.back()">{{ 'cancel' }}</a>
                         </div>
@@ -114,15 +112,11 @@
                                 <input class="form-control placeholder-no-fix" name="logoUrl" [(ngModel)]="newOsbb.logoUrl" type="text">
                                 <div class="text-xs-center">
                                     <br>
-                                    <img src="{{newOsbb.logoUrl}}" class="img-rounded" style="height: auto; max-height: 300px; max-width: 300px;display: block;
-              margin: 0 auto; ">
+                                    <img src="{{newOsbb.logoUrl}}" class="osbb-logo img-rounded">
                                 </div>
                             </div>
                         </div>
-                        <br>
-                        <hr>
                         <div class="row form-footer">
-                            <br>
                             <div class="col-xs-6">
                                 <a class="btn btn-danger col-xs-12" (click)="Back()">Назад</a>
                             </div>
@@ -165,11 +159,8 @@
                             <input class="captcha" type="text" placeholder="{{ 'captcha' }}" (keyup)="initTextUser($event)">
                             <a class="refresh" (click)="autoGeneratePassword()"> <img src="assets/img/captcha.jpg" width="35" height="35"></a>
                         </div>
-                        <br>
-                        <hr>
                     </div>
                     <div class="row form-footer">
-                        <br>
                         <div class="col-xs-6">
                             <a class="btn btn-danger col-xs-12" (click)="Back()">{{ 'cancel' }}</a>
                         </div>

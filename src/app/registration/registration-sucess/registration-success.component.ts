@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslatePipe } from 'ng2-translate';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'register-success',
@@ -9,8 +8,4 @@ import { Router } from '@angular/router';
 })
 
 export class RegistrationSuccessComponent {
-
-  constructor(private router: Router) {
-
-  }
 }

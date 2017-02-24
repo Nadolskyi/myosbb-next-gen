@@ -13,13 +13,9 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegistrationComponent } from './registration';
 import { RegistrationSuccessComponent } from './registration/registration-sucess';
-import { AboutComponent } from './about';
-import { XLargeDirective } from './home/x-large';
-
 import '../styles/styles.scss';
 import '../styles/headings.css';
 
@@ -38,12 +34,9 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    AboutComponent,
-    HomeComponent,
     LoginComponent,
     RegistrationComponent,
     RegistrationSuccessComponent,
-    XLargeDirective
   ],
   imports: [
     BrowserModule,

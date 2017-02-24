@@ -13,7 +13,6 @@ import { LoginService } from '../../shared/login/login.service';
 @Injectable()
 
 export class EventsService {
-
   constructor(
     private http: Http,
     public login: LoginService

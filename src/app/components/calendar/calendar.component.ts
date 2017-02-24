@@ -20,7 +20,6 @@ export class CalendarComponent implements OnInit {
     public idGen: number;
     constructor(public eventService: EventsService, private http: Http, public login: LoginService) { }
     public ngOnInit() {
-        console.log(CalendarConstants.dayNames);
         this.dialogVisible = false;
         this.idGen = 100;
         this.events = [

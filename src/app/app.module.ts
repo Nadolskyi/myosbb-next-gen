@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { TextMaskModule } from 'angular2-text-mask';
 import {
   NgModule,
   ApplicationRef
@@ -96,6 +97,7 @@ type StoreType = {
     FormsModule,
     HttpModule,
     UserCabinetModule,
+    TextMaskModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection

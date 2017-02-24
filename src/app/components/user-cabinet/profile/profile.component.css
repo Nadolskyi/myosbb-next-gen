@@ -21,7 +21,7 @@
     pading-bottom:29px;
 }
 .images{
-    height:23.5%;
+    height:20.5%;
 }
 .panel{
     padding: 20px 10px 20px 10px;
@@ -40,6 +40,7 @@
     margin-top: 20px;
     text-align: left;
     color: #00838F;
+    font-weight: bold;
 }
 .right-user-data{
     height:70%;
@@ -51,7 +52,7 @@
     text-align: left;
 }
 .right-user-panel{
-    height: 28%;
+    height: 26%;
 }
 .profile-text{
     color: #607D8B;
@@ -63,6 +64,7 @@
 .modal-body label{
     color: #00838F;
     margin-top: 10px;
+    font-weight: bold;
 }
 .modal-body input {
     color: #607D8B;

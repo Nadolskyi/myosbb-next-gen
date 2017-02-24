@@ -2,7 +2,9 @@ import { NgModule }           from '@angular/core';
 import { CommonModule }       from '@angular/common';
 import { FormsModule }        from '@angular/forms';
 import { RouterModule }       from '@angular/router';
-import { routesCabinet }             from './user-cabinet.routes.ts';
+import { routesCabinet }      from './user-cabinet.routes.ts';
+import { TextMaskModule }     from 'angular2-text-mask';
+
 
 import { UserBillsComponent }        from './user-bills/user-bills.component';
 import { ProfileComponent }          from './profile/profile.component';
@@ -15,6 +17,7 @@ import {ApiService} from "../../shared/login/api.service";
   imports:      [ 
     CommonModule,
     FormsModule,
+    TextMaskModule,
     RouterModule.forChild(routesCabinet),
   ],
   declarations: [ 
@@ -22,8 +25,11 @@ import {ApiService} from "../../shared/login/api.service";
     ProfileComponent,
     ProfileSidebarComponent,
     SettingsComponent,
-    UserCabinetComponent
+    UserCabinetComponent,
+
+    
   ],
-  providers: [ApiService]
+  providers: [ApiService],
+
 })
 export class UserCabinetModule { }

@@ -168,3 +168,6 @@ ul.sidebar-menu li a.active i {
 .nav-collapse.collapse {
     display: inline;
 }
+.img-circle{
+    width: 60px;
+}

@@ -4,25 +4,27 @@ import {Router}                 from '@angular/router';
 import {User}                   from '../../../models/User';
 import {ProfileService}         from "./profile.service";
 import {LoginService }          from "../../../shared/login/login.service";
-
-
+import {ProfileConstants}       from "./profile.constants";
 
  
 @Component({
   selector: 'profile',  
-  providers: [ProfileService],
+  providers: [ProfileService,ProfileConstants],
   styleUrls: [ './profile.component.css' ],
   templateUrl: './profile.component.html',
   
 })
 
 export class ProfileComponent implements OnInit {
-    currentUser:User;
-    updateUser:User;
+    public currentUser:User;
+    public updateUser:User;
+    public emailMask = ProfileConstants.EMAIL_MASK;
+    public textMask = ProfileConstants.TEXT_MASK;
+    public phoneMask = ProfileConstants.PHONE_MASK;
+
     private expToken:string;
 
     constructor(private router:Router, private profileService:ProfileService,private currentUserService: LoginService) {
-        //this.updateUser = Object.assign({}, this.currentUser);
         this.expToken = localStorage.getItem('expires_in');
         this.expToken = new Date(parseInt(this.expToken)).toLocaleString();
         
@@ -53,7 +55,5 @@ export class ProfileComponent implements OnInit {
              this.updateUser = Object.assign({}, this.currentUser);
          });
      }
-
-    
 
 }

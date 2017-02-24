@@ -13,11 +13,29 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { LoginComponent } from './login';
+import { LoginComponent } from './shared/login';
 import { RegistrationComponent } from './registration';
 import { RegistrationSuccessComponent } from './registration/registration-sucess';
+import { AppHeader } from './shared/header';
+import { WallComponent } from './components/wall';
+import { HouseComponent } from  './components/house';
+import { EventsComponent } from './components/events';
+import { OsbbBillsComponent } from './components/osbbBils';
+import { ContractsComponent } from  './components/contracts';
+import { TicketComponent } from './components/ticket';
+import { ProviderComponent } from './components/provider';
+import { ApartmentComponent } from './components/apartment';
+import { CalendarComponent } from './components/calendar';
+import { ContactsComponent } from './components/contacts';
+import { BreadcrumbComponent } from './components/breadcrumb';
+import { SidebarComponent } from './shared/sidebar';
+import { SubTicketComponent } from './components/ticket/subticket';
+// import { ChartsModule } from "ng2-charts/ng2-charts";
 import '../styles/styles.scss';
 import '../styles/headings.css';
+import {AdminComponent} from "./admin/admin.component";
+import {UserComponent} from "./user/user.component";
+import {ManagerComponent} from "./manager/manager.component";
 
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
@@ -33,10 +51,27 @@ type StoreType = {
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
+    AppHeader,
     AppComponent,
     LoginComponent,
     RegistrationComponent,
     RegistrationSuccessComponent,
+    ManagerComponent,
+    AdminComponent,
+    UserComponent,
+    WallComponent,
+    HouseComponent,
+    EventsComponent,
+    ApartmentComponent,
+    ContactsComponent,
+    BreadcrumbComponent,
+    CalendarComponent,
+    ProviderComponent,
+    OsbbBillsComponent,
+    ContractsComponent,
+    TicketComponent,
+    SidebarComponent,
+    SubTicketComponent
   ],
   imports: [
     BrowserModule,

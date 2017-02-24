@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers,
  RequestOptions, RequestOptionsArgs } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { ApiService } from './api.service';
+import { LoginConstants } from './login.constants';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { API_URL } from '../../../shared/models/localhost.config';
 
 @Injectable()
 export class LoginService {
-  public _pathUrl = ApiService.serverUrl;
+  public _pathUrl = API_URL;
   public tokenName: string = 'access_token';
   public role: string = '';
   public isLoggedIn: boolean;
@@ -28,25 +29,21 @@ export class LoginService {
       return this.http.get(userUrl, options);
   }
   public checkLogin(): boolean {
-        console.log( ((localStorage.getItem(this.tokenName) !== null)
-         && (localStorage.getItem(this.tokenName) !== '') ) ? 'LogedIn' : 'LogOut' );
-        return  ((localStorage.getItem(this.tokenName) !== null)
-         && (localStorage.getItem(this.tokenName) !== '')) ? true : false;
+        return  (!!localStorage.getItem(this.tokenName)) ? true : false;
    }
   public getRequestOptionArgs(options?: RequestOptionsArgs, url?: string): RequestOptionsArgs {
     if (!options) {
         options = new RequestOptions();
         options.headers = new Headers();
     }
-    if ((localStorage.getItem(this.tokenName) !== null)
-      && (localStorage.getItem(this.tokenName) !== '')) {
-            options.headers.append(ApiService.AUTH, ApiService.BEARER
+    if (!!localStorage.getItem(this.tokenName)) {
+            options.headers.append(LoginConstants.AUTH, LoginConstants.BEARER
              + localStorage.getItem(this.tokenName));
-            options.headers.append(ApiService.CONTENT_TYPE, ApiService.APP_JSON);
+            options.headers.append(LoginConstants.CONTENT_TYPE, LoginConstants.APP_JSON);
     } else {
-        options.headers.append(ApiService.AUTH, ApiService.BASIC_TOKEN);
-        options.headers.append(ApiService.CONTENT_TYPE, ApiService.APP_XWFU);
-        options.headers.append(ApiService.ACCEPT, ApiService.APP_JSON);
+        options.headers.append(LoginConstants.AUTH, LoginConstants.BASIC_TOKEN);
+        options.headers.append(LoginConstants.CONTENT_TYPE, LoginConstants.APP_XWFU);
+        options.headers.append(LoginConstants.ACCEPT, LoginConstants.APP_JSON);
     }
     return options;
   }
@@ -55,11 +52,7 @@ export class LoginService {
    }
   public setUser(user?: any) {
     this.currentUser = user;
-    return this.currentUser;
-   }
-   public getUser () {
-
-   }
+  }
   public getRole(): string {
     return this.role;
   }
@@ -71,29 +64,30 @@ export class LoginService {
   public onSubmit(model) {
     this.sendCredentials(model).subscribe(
       (data) => {
-        if (!this.checkLogin()) {
-          this.tokenParseInLocalStorage(data.json());
-          this.sendToken().subscribe(
-            (subData) => {
-              let user: any = subData.json();
-              this.isLoggedIn = true;
-              this.setRole();
-              localStorage.setItem('user', user.userId);
-              this.setUser(user);
-              switch (this.getRole()) {
-                case "ROLE_USER":
-                  this._router.navigate(['./user']);
-                  break;
-                case "ROLE_ADMIN":
-                  this._router.navigate(['./admin']);
-                  break;
-                case "ROLE_MANAGER":
-                  this._router.navigate(['./manager']);
-                  break;
-              }
+        this.tokenParseInLocalStorage(data.json());
+        this.sendToken().subscribe(
+          (subData) => {
+            let user: any = subData.json();
+            this.isLoggedIn = true;
+            this.setRole();
+            localStorage.setItem('user', user.userId);
+            this.setUser(user);
+            switch (this.getRole()) {
+              case 'ROLE_USER':
+                this._router.navigate(['./user']);
+                break;
+              case 'ROLE_ADMIN':
+                this._router.navigate(['./admin']);
+                break;
+              case 'ROLE_MANAGER':
+                this._router.navigate(['./manager']);
+                break;
+              default :
+                this._router.navigate(['./login']);
+                break;
             }
-          );
-        }
+          }
+        );
       }
     );
   }

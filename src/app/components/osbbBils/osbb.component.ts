@@ -14,7 +14,7 @@ import { ChartsModule } from "ng2-charts/ng2-charts";
 
 
 @Component({
-  selector: 'osbb',
+  selector: 'osbbBills',
   styleUrls: ['../../../assets/css/manager.page.layout.scss'],
   templateUrl: './osbb.component.html',
   providers: [ LoginService ]

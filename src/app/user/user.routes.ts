@@ -1,7 +1,7 @@
 import { UserComponent } from './user.component';
 import { Routes } from '@angular/router';
 import { WallComponent } from '../components/wall';
-import { HouseComponent } from '../components/house';
+import { HouseComponent } from '../components/houses';
 import { EventsComponent } from '../components/events';
 import { OsbbBillsComponent } from '../components/osbbBils';
 import { ContractsComponent } from '../components/contracts';

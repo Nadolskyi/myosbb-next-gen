@@ -27,9 +27,10 @@ import { AppState, InternalStateType } from './app.service';
 import { LoginComponent } from './shared/login';
 import { AppHeader } from './shared/header';
 import { WallComponent } from './components/wall';
-import { HouseComponent } from  './components/house';
+import { HouseComponent } from  './components/houses';
 import { EventsComponent } from './components/events';
 import { OsbbBillsComponent } from './components/osbbBils';
+import { OSBBComponent } from './components/osbb';
 import { ContractsComponent } from  './components/contracts';
 import { TicketComponent } from './components/ticket';
 import { ProviderComponent } from './components/provider';
@@ -39,6 +40,10 @@ import { ContactsComponent } from './components/contacts';
 import { BreadcrumbComponent } from './components/breadcrumb';
 import { SidebarComponent } from './shared/sidebar';
 import { SubTicketComponent } from './components/ticket/subticket';
+import { HouseAboutComponent } from './components/house';
+import { eventsDetailComponent } from './components/events/eventsDetail';
+import { UsersComponent } from './components/users';
+
 // import { ChartsModule } from "ng2-charts/ng2-charts";
 
 import '../styles/styles.scss';
@@ -73,7 +78,9 @@ type StoreType = {
     UserComponent,
     WallComponent,
     HouseComponent,
+    OSBBComponent,
     EventsComponent,
+    eventsDetailComponent,
     ApartmentComponent,
     ContactsComponent,
     BreadcrumbComponent,
@@ -83,7 +90,9 @@ type StoreType = {
     ContractsComponent,
     TicketComponent,
     SidebarComponent,
-    SubTicketComponent
+    HouseAboutComponent,
+    SubTicketComponent,
+    UsersComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,

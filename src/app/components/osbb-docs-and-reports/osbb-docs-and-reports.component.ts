@@ -42,7 +42,7 @@ export class OsbbDocumentsAndReportsComponent implements OnInit {
   public ngOnInit() {
     this.currentRole = this.loginService.getRole();
     this.editMode = false;
-    this.newFolder = new DriveFile();
+    this.clearForm();
     this.editable = new DriveFile();
     this.uploader = new FileUploader({
       url: this.docsConsts.default.uploadUrl + '/' + this.currentFolder,
@@ -63,6 +63,11 @@ export class OsbbDocumentsAndReportsComponent implements OnInit {
         (error) => this.toasterService.pop('error', name + ' ' + this.translate('exist'))
         );
     }
+    this.clearForm();
+  }
+
+  public clearForm() {
+    this.newFolder = new DriveFile();
   }
 
   public delete() {

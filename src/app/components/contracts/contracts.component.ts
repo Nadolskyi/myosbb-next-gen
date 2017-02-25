@@ -7,7 +7,7 @@ import {
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { ContractsService } from "./contracts.service";
+import { ContractsService } from './contracts.service';
 import { LoginService } from '../../shared/login/login.service';
 
 @Component({
@@ -17,7 +17,7 @@ import { LoginService } from '../../shared/login/login.service';
   providers: [ ContractsService, LoginService ]
 })
 
-export class ContractsComponent implements OnInit{
+export class ContractsComponent implements OnInit {
   public resData: any;
   public title: string = 'Contract';
   constructor(
@@ -26,7 +26,7 @@ export class ContractsComponent implements OnInit{
     public contract: ContractsService
   ) {  }
   public ngOnInit() {
-    this.contract.getContractsData().subscribe(data => {
+    this.contract.getContractsData().subscribe((data) => {
       this.resData = data.rows;
     })
   }

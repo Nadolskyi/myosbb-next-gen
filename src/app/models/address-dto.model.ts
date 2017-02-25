@@ -1,6 +1,4 @@
-import { SelectItem } from './ng2-select-item.interface';
-
-export class AddressDTO implements SelectItem {
+export class AddressDTO {
     id: number;
     text: string;
 }

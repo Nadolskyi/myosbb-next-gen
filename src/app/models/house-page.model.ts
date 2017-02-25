@@ -1,6 +1,6 @@
-import { Street } from "./addressDTO";
+import { Street } from "./address-dto.model";
 
-export class HousePageObject {
+export class HousePage {
     houseId: number;
     street: Street;
     zipCode: string;

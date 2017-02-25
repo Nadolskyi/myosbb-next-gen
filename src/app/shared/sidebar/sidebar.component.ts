@@ -8,7 +8,7 @@ import { LoginService } from '../login/login.service';
 @Component({
   selector: 'sidebar-component',
   templateUrl: './sidebar.html',
-  providers: [ LoginService, NgSwitch ],
+  providers: [NgSwitch],
   styleUrls: ['./sidebar.style.css']
 
 })
@@ -20,6 +20,5 @@ export class SidebarComponent implements OnInit {
   public ngOnInit(): any {
     this.loginService.setRole();
     this.authRole = this.loginService.getRole();
-    console.log(this.authRole);
   }
 }

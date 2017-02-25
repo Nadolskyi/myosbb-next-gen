@@ -1,5 +1,5 @@
-import { Attachment } from './attachment';
-import { Street, District } from './addressDTO';
+import { Attachment } from './attachment.model';
+import { Street, District } from './address-dto.model';
 
 export class OsbbDTO {
     osbbId: number;

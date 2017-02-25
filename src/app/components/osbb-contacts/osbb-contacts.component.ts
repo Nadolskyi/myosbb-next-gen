@@ -1,39 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 
-import { OsbbDTO } from '../../models/osbbDTO';
-import { User } from '../../models/User';
+import { OsbbDTO } from '../../models/osbb-dto.model';
+import { User } from '../../models/user.model';
 import { OsbbService } from '../../services/osbb.service';
 import { LoginService } from '../../shared/login/login.service';
 
 @Component({
-    selector: 'user-menu-osbb-contacts',
-    templateUrl: './osbb-contacts.html',
-    styleUrls: ['./osbb-contacts.css'],
+  selector: 'user-menu-osbb-contacts',
+  templateUrl: './osbb-contacts.html',
+  styleUrls: ['./osbb-contacts.scss'],
 })
 export class OsbbContactsComponent implements OnInit {
 
-    private userOsbb: OsbbDTO;
-    private user: User;
-    private osbbRetrieved = false;
+  public userOsbb: OsbbDTO;
+  public user: User;
+  public osbbRetrieved = false;
 
-    constructor(private osbbService: OsbbService, private userSevice: LoginService) {
-        this.userOsbb = null;
-     }
+  constructor(private osbbService: OsbbService, private loginService: LoginService) {}
 
-    ngOnInit(): any {
-        this.getUser();
-        this.getOsbb();
-    }
+  public ngOnInit(): any {
+    this.user = this.loginService.getUser();
+    this.getOsbb();
+  }
 
-    getUser() {
-        this.user = this.userSevice.getUser();
-    }
-
-    getOsbb() {
-        this.osbbService.getDTOOsbbById(this.user.osbbId)
-            .then(osbb => {
-                this.userOsbb = osbb;
-                this.osbbRetrieved = true;
-            });
-    }
+  public getOsbb() {
+    this.osbbService.getDTOOsbbById(this.user.osbbId)
+      .then( (osbb) => {
+        this.userOsbb = osbb;
+        this.osbbRetrieved = true;
+      });
+  }
 }

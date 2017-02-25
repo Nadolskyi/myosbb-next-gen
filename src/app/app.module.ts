@@ -38,7 +38,6 @@ import { TicketComponent } from './components/ticket';
 import { ProviderComponent } from './components/provider';
 import { ApartmentComponent } from './components/apartment';
 import { CalendarComponent } from './components/calendar';
-import { ContactsComponent } from './components/contacts';
 import { BreadcrumbComponent } from './components/breadcrumb';
 import { SidebarComponent } from './shared/sidebar';
 import { SubTicketComponent } from './components/ticket/subticket';
@@ -49,15 +48,16 @@ import { OsbbContactsComponent } from './components/osbb-contacts';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
-import { AdminComponent } from "./admin/admin.component";
-import { UserComponent } from "./user/user.component";
-import { ManagerComponent } from "./manager/manager.component";
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+import { ManagerComponent } from './manager/manager.component';
 
 // pipes
 import { CapitalizeFirstLetterPipe } from './pipes/capitalize-first-letter';
 
 // services
 import { OsbbService } from './services/osbb.service';
+import { OsbbConstants } from './services/osbb.constants';
 import { LoginService } from './shared/login/login.service';
 
 // Application wide providers
@@ -88,7 +88,6 @@ type StoreType = {
     HouseComponent,
     EventsComponent,
     ApartmentComponent,
-    ContactsComponent,
     BreadcrumbComponent,
     CalendarComponent,
     ProviderComponent,
@@ -120,6 +119,7 @@ type StoreType = {
     APP_PROVIDERS,
     ToasterService,
     OsbbService,
+    OsbbConstants,
     LoginService
   ]
 })

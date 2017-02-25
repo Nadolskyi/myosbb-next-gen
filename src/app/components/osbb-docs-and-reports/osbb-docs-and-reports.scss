@@ -1,3 +1,14 @@
+.documents-wrapper {
+    margin-left: 210px;
+    margin-top: 60px;
+    .documents-footer {
+        button {
+            margin-left:24px;
+            margin-bottom:12px;
+        }
+    }
+}
+
 .floating-box {
     display: inline-block;
     width: 160px;
@@ -19,6 +30,7 @@
     font-size: 12px;
     text-overflow: ellipsis;
     vertical-align: top;
+    font-size:12px;
 }
 
 .header-cell {

@@ -1,6 +1,6 @@
 export class DriveFile {
-    id: string;
-    name: string;    
-    parents: string[];
-    folder: boolean;
+  public id: string;
+  public name: string;
+  public parents: string[];
+  public folder: boolean;
 }

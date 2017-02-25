@@ -24,31 +24,12 @@ export class CalendarComponent implements OnInit {
         this.eventService.getEventData().subscribe(events => {this.events = events;});
         this.dialogVisible = false;
         this.idGen = 100;
-        // this.events = [
-        //     {
-        //         title: 'Подія на цілий день',
-        //         start: '2017-02-01'
-        //     },
-        //     {
-        //         title: 'Довга подія',
-        //         start: '2017-02-07',
-        //         end: '2017-02-10'
-        //     },
-        //     {
-        //         title: 'Подія яка повторюється',
-        //         start: '2017-02-19T17:00:00'
-        //     },
-        //     {
-        //         title: 'Подія яка повторюється',
-        //         start: '2017-02-19T19:00:00'
-        //     }
-        // ];
         this.header = {
             left: 'prev,next today',
             center: 'title',
             right: 'month,agendaWeek,agendaDay'
         };
-        this.es = CalendarConstants;
+        this.es = CalendarConstants.es;
     }
     public handleDayClick(event) {
         this.event = new MyEvent();

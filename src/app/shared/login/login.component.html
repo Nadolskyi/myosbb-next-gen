@@ -1,12 +1,11 @@
 <div class="container">
   <div class="row animated form-group zoomIn ">
     <div class="col-md-12">
-      <form class="form-login " (ngSubmit)="logIn()">
+      <form class="form-login" (ngSubmit)="logIn()">
         <h2 class="form-login-heading">{{'sign_in'}}</h2>
         <div class="login-wrapper">
-          <input type="text" id="username" class="form-control" name="username" placeholder="{{'user' }}"
+          <input type="text" id="username" class="form-control" name="username" placeholder="{{'user'}}"
             autofocus maxlength="35" required [(ngModel)]="model.username">
-          <br>
           <input type="password" id="password" class="form-control" name="password" placeholder="{{'password'}}"
             minlength="4" maxlength="16" required [(ngModel)]="model.password">
           <input type="hidden"/>
@@ -16,7 +15,7 @@
             </span>
           </label>
           <button type="submit" class="btn btn-theme btn-block">
-            <i class="fa fa-lock"></i> {{'sign_in' }}
+            <i class="fa fa-lock"></i> {{'sign_in'}}
           </button>
           <div class="registration">
             <button type="button" class="btn btn-link" (click)="registrationPage()">{{'create_account'}}</button>
@@ -25,7 +24,6 @@
       </form>
     </div>
   </div>
-    <!-- Modal -->
   <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal"
      class="modal fade ">
     <div class="modal-dialog animated  zoomIn">
@@ -46,6 +44,5 @@
       </div>
     </div>
   </div>
-    <!-- modal -->
 </div>
 

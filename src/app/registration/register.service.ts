@@ -3,20 +3,19 @@ import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { UserRegistration } from './models/user_registration';
 import { OsbbRegistration } from './models/osbb_registration';
-import { ApiService } from '../shared/login/api.service';
-
+import { RegistrationConstants } from './registration.constant';
+import { LoginConstants } from '../shared/login/login.constants';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 @Injectable()
 export class RegisterService {
-
-  public _pathUrlForUser = ApiService.serverUrl + '/registration/';
-  public _pathUrlForOsbb = ApiService.serverUrl + '/registration/osbb';
-  public houseAllURL: string = ApiService.serverUrl + 'restful/house/all';
-  public houseURL: string = ApiService.serverUrl + '/restful/house';
-  public apartmentURL: string = ApiService.serverUrl + '/restful/apartment/';
-  private creatorURL: string = ApiService.serverUrl + '/restful/creator/osbb/';
-  private osbbURL = ApiService.serverUrl + '/restful/osbb';
+  public _pathUrlForUser = LoginConstants.Login.serverUrl + '/registration/';
+  public _pathUrlForOsbb = LoginConstants.Login.serverUrl + '/registration/osbb';
+  public houseAllURL: string = LoginConstants.Login.serverUrl + 'restful/house/all';
+  public houseURL: string = LoginConstants.Login.serverUrl + '/restful/house';
+  public apartmentURL: string = LoginConstants.Login.serverUrl + '/restful/apartment/';
+  private creatorURL: string = LoginConstants.Login.serverUrl + '/restful/creator/osbb/';
+  private osbbURL = LoginConstants.Login.serverUrl + '/restful/osbb';
 
   constructor(private http: Http) {}
 

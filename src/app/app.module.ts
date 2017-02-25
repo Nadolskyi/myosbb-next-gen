@@ -5,18 +5,29 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { SelectModule } from 'ng2-select';
 import { MomentModule } from 'angular2-moment';
 import { ToasterModule, ToasterService } from 'angular2-toaster';
-import { NgModule, ApplicationRef } from '@angular/core';
-import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
-import { RouterModule, PreloadAllModules } from '@angular/router';
+import {
+  NgModule,
+  ApplicationRef
+} from '@angular/core';
+import {
+  removeNgStyles,
+  createNewHosts,
+  createInputTransfer
+} from '@angularclass/hmr';
+import {
+  RouterModule,
+  PreloadAllModules
+} from '@angular/router';
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { LoginComponent } from './shared/login';
+import { LoginService } from './shared/login/login.service';
 import { RegistrationComponent } from './registration';
 import { RegistrationSuccessComponent } from './registration/registration-sucess';
-import { AppHeader } from './shared/header';
+import { AppHeaderComponent } from './shared/header';
 import { WallComponent } from './components/wall';
 import { HouseComponent } from  './components/house';
 import { EventsComponent } from './components/events';
@@ -30,13 +41,11 @@ import { ContactsComponent } from './components/contacts';
 import { BreadcrumbComponent } from './components/breadcrumb';
 import { SidebarComponent } from './shared/sidebar';
 import { SubTicketComponent } from './components/ticket/subticket';
-// import { ChartsModule } from "ng2-charts/ng2-charts";
 import '../styles/styles.scss';
 import '../styles/headings.css';
-import {AdminComponent} from "./admin/admin.component";
-import {UserComponent} from "./user/user.component";
-import {ManagerComponent} from "./manager/manager.component";
-
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+import { ManagerComponent } from './manager/manager.component';
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
   AppState
@@ -51,7 +60,7 @@ type StoreType = {
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
-    AppHeader,
+    AppHeaderComponent,
     AppComponent,
     LoginComponent,
     RegistrationComponent,
@@ -86,7 +95,8 @@ type StoreType = {
   providers: [
     ENV_PROVIDERS,
     APP_PROVIDERS,
-    ToasterService
+    ToasterService,
+    LoginService
   ]
 })
 export class AppModule {
@@ -100,13 +110,11 @@ export class AppModule {
     if (!store || !store.state) {
       return;
     }
-    console.log('HMR store', JSON.stringify(store, null, 2));
     this.appState._state = store.state;
     if ('restoreInputValues' in store) {
       let restoreInputValues = store.restoreInputValues;
       setTimeout(restoreInputValues);
     }
-
     this.appRef.tick();
     delete store.state;
     delete store.restoreInputValues;
@@ -125,5 +133,4 @@ export class AppModule {
     store.disposeOldHosts();
     delete store.disposeOldHosts;
   }
-
 }

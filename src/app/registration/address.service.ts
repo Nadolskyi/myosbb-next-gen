@@ -1,52 +1,51 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { ApiService } from '../shared/login/api.service';
+import { RegistrationConstants } from './registration.constant';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
 
-const attachmentUploadUrl = 'http://localhost:8080/myosbb/restful/attachment';
-
 @Injectable()
 export class AddressService {
-
-  public addressUrl: string = 'http://localhost:8080/myosbb/restful/address';
+  public addresUrl = RegistrationConstants.Masks;
 
   constructor(private http: Http) {
   }
 
   public getAllRegions(): Observable<any[]> {
-    let url = this.addressUrl + '/region';
+    const url = this.addresUrl.allRegions;
     return this.http.get(url)
       .map((res: Response) => res.json())
       .catch((error) => Observable.throw(error));
   }
   public getAllCitiesOfRegion(regionID: number): Observable<any[]> {
-    let url = this.addressUrl + '/city/' + regionID;
+    const url = this.addresUrl.allCities + regionID;
     return this.http.get(url)
       .map((res: Response) => res.json())
       .catch((error) => Observable.throw(error));
   }
   public getAllStreetsOfCity(cityID: number): Observable<any[]> {
-    let url = this.addressUrl + '/street/' + cityID;
+    const url = this.addresUrl.allStreets + cityID;
     return this.http.get(url)
       .map((res: Response) => res.json())
       .catch((error) => Observable.throw(error));
   }
   public getStreetById(streetID: number): Observable<any> {
-    let url = this.addressUrl + '/street/id/' + streetID;
+    const url = this.addresUrl.streetById + streetID;
     return this.http.get(url)
       .map((res: Response) => res.json())
       .catch((error) => Observable.throw(error));
   }
   public getAllDistrictsOfCity(cityID: number): Observable<any[]> {
-    let url = this.addressUrl + '/district/' + cityID;
+    const url = this.addresUrl.allDistricts + cityID;
     return this.http.get(url)
       .map((res: Response) => res.json())
       .catch((error) => Observable.throw(error));
   }
   public getDistrictById(districtID: number): Observable<any> {
-    let url = this.addressUrl + '/district/id/' + districtID;
+    const url = this.addresUrl.districtById + districtID;
     return this.http.get(url)
       .map((res: Response) => res.json())
       .catch((error) => Observable.throw(error));

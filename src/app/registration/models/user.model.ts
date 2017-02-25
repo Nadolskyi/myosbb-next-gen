@@ -1,5 +1,5 @@
-import { Apartment } from "./apartment.interface";
-import { House } from "./house";
+import { Apartment } from "./apartment.model";
+import { House } from "./house.model";
 export class User {
     userId:number;
     firstName:string;
@@ -11,6 +11,6 @@ export class User {
     gender:string;
     role:string;
     activated:boolean;
-    apartment:any;
+    apartment:Apartment;
     house:House;
 }

@@ -8,7 +8,7 @@
 }
 .registration-form {
   width: 50%;
-  padding-top: 1%;
+  margin: 10% auto;
 }
 .form-header {
   text-align: center;
@@ -70,4 +70,7 @@
   max-width: 300px;
   display: block;
   margin: 0 auto;
+}
+.registration-sucess {
+  margin-top: 100px;
 }

@@ -1,5 +1,4 @@
-import { Attachment } from './attachment';
-import { Street, District } from './addressDTO';
+import { Street, District } from './addressDTO.model';
 
 export class OsbbDTO {
   osbbId: number;
@@ -9,7 +8,7 @@ export class OsbbDTO {
   address: string;
   district: District;
   houseNumber: string;
-  logo: Attachment;
+  logo: any;
   creationDate: Date;
   available: boolean;
   countOfHouses: number;

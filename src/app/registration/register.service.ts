@@ -3,18 +3,20 @@ import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { UserRegistration } from './models/user_registration';
 import { OsbbRegistration } from './models/osbb_registration';
+import { ApiService } from '../shared/login/api.service';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 @Injectable()
 export class RegisterService {
 
-  public _pathUrlForUser = 'http://localhost:8080/myosbb/registration/';
-  public _pathUrlForOsbb = 'http://localhost:8080/myosbb/registration/osbb';
-  public houseAllURL: string = 'http://localhost:8080/myosbb/restful/house/all';
-  public houseURL: string = 'http://localhost:8080/myosbb/restful/house';
-  public apartmentURL: string = 'http://localhost:8080/myosbb/restful/apartment/';
-  private creatorURL: string = 'http://localhost:8080/myosbb/restful/creator/osbb/';
-  private osbbURL = 'http://localhost:8080/myosbb/restful/osbb';
+  public _pathUrlForUser = ApiService.serverUrl + '/registration/';
+  public _pathUrlForOsbb = ApiService.serverUrl + '/registration/osbb';
+  public houseAllURL: string = ApiService.serverUrl + 'restful/house/all';
+  public houseURL: string = ApiService.serverUrl + '/restful/house';
+  public apartmentURL: string = ApiService.serverUrl + '/restful/apartment/';
+  private creatorURL: string = ApiService.serverUrl + '/restful/creator/osbb/';
+  private osbbURL = ApiService.serverUrl + '/restful/osbb';
 
   constructor(private http: Http) {}
 

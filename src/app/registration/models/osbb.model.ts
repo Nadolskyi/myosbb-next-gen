@@ -1,6 +1,5 @@
-import { User } from './User';
-import { Attachment } from './attachment';
-import { Street, District } from './addressDTO';
+import { User } from './user.model';
+import { Street, District } from './addressDTO.model';
 
 export class IOsbb {
   osbbId: number;
@@ -10,7 +9,7 @@ export class IOsbb {
   street: Street;
   district: District;
   houseNumber: string;
-  logo: Attachment;
+  logo: any;
   creationDate: Date;
   available: boolean;
 }
@@ -22,7 +21,7 @@ export class Osbb implements IOsbb {
   district: District;
   creator: User;
   houseNumber: string;
-  logo: Attachment;
+  logo: any;
   creationDate: Date;
   available: boolean;
 }

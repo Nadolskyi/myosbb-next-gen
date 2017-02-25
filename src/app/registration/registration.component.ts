@@ -6,31 +6,29 @@ import { RegisterService } from './register.service';
 import { AddressService } from './address.service';
 import { UserRegistration } from './models/user_registration';
 import { OsbbRegistration } from './models/osbb_registration';
-import { SelectItem } from './models/ng2-select-item.interface';
-import { Osbb, IOsbb } from './models/osbb';
-import { IApartment } from './models/apartment.interface';
-import { Region } from './models/addressDTO';
-import { House } from './models/house';
-import { City } from './models/addressDTO';
-import { Street } from './models/addressDTO';
+import { SelectItem } from './models/ng2-select-item.model';
+import { Osbb, IOsbb } from './models/osbb.model';
+import { IApartment } from './models/apartment.model';
+import { Region, City, Street } from './models/addressDTO.model';
+import { House } from './models/house.model';
 import { ToasterService } from 'angular2-toaster';
-import { RegistrationMasks } from './registration.constant';
+import { RegistrationConstants } from './registration.constant';
 import * as moment from 'moment';
 import * as _ from 'lodash';
 
 @Component({
   selector: 'app-registration',
   providers: [ RegisterService, AddressService, ToasterService ],
-  styleUrls: [ './registration.component.scss' ],
-  templateUrl: './registration.component.html'
+  styleUrls: [ './registration.scss' ],
+  templateUrl: './registration.template.html'
 })
 export class RegistrationComponent implements OnInit {
   public options = ['Приєднатись до існуючого ОСББ', 'Створити нове ОСББ'];
   public newUser: UserRegistration = new UserRegistration();
   public newOsbb: OsbbRegistration = new OsbbRegistration();
-  public textmask = RegistrationMasks.textMask;
-  public phoneMask = RegistrationMasks.phoneMask;
-  public alphabet: string[] = RegistrationMasks.alphabet;
+  public textmask = RegistrationConstants.Masks.textMask;
+  public phoneMask = RegistrationConstants.Masks.phoneMask;
+  public alphabet: string[] = RegistrationConstants.Masks.alphabet;
   public genders: string[];
   public itemRegion: SelectItem;
   public itemCity: SelectItem;

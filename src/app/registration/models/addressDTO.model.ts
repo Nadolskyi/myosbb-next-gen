@@ -1,8 +1,3 @@
-export class AddressDTO {
-  public id: number;
-  public text: string;
-}
-
 export class Region {
   public id: number;
   public name: string;

@@ -19,7 +19,7 @@ import { HouseService } from './house.service';
   }
 )
 
-export class HouseComponent implements OnInit{
+export class HouseComponent implements OnInit {
   public title: string = `Houses`;
   public resData: any;
 
@@ -29,7 +29,7 @@ export class HouseComponent implements OnInit{
   ) { }
 
   public ngOnInit() {
-    this.house.getHouseData().subscribe(data => {
+    this.house.getHouseData().subscribe((data) => {
       this.resData = data;
     });
   }

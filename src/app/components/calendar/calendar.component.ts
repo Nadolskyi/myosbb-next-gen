@@ -14,14 +14,14 @@ import {
 export class CalendarComponent implements OnInit {
     public events: any;
     public header: any;
-    public es: any;
+    public translate: any;
     public event: MyEvent;
     public dialogVisible: boolean;
     public idGen: number;
     public resData: any;
     constructor(public eventService: EventsService, private http: Http, public login: LoginService) { }
     public ngOnInit() {
-        this.eventService.getEventData().subscribe(events => {this.events = events;});
+        this.eventService.getEventData().subscribe(events => { this.events = events; });
         this.dialogVisible = false;
         this.idGen = 100;
         this.header = {
@@ -29,16 +29,12 @@ export class CalendarComponent implements OnInit {
             center: 'title',
             right: 'month,agendaWeek,agendaDay'
         };
-        this.es = CalendarConstants.es;
+        this.translate = CalendarConstants.ukr;
     }
     public handleDayClick(event) {
         this.event = new MyEvent();
         this.event.start = event.date.format();
         this.dialogVisible = true;
-    }
-    public loadEvents(event) {
-        const start = event.view.start;
-        const end = event.view.end;
     }
     public handleEventClick(e) {
         this.event = new MyEvent();
@@ -79,11 +75,12 @@ export class CalendarComponent implements OnInit {
     }
     public findEventIndexById(id: number) {
         let index = -1;
-        this.events.forEach((i) => {
-          if (id === this.events[i].id) {
+        for (let i in this.events) {
+            if (id === this.events[i].id) {
                 index = i;
+                break;
             }
-        });
+        }
         return index;
     }
 }

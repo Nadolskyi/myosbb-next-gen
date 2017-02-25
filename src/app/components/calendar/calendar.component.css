@@ -1,4 +1,4 @@
-.calendar__content-section {
+.calendar__content {
     display: block;
     border-bottom: solid 1px #dde3e6;
     padding-top: 65px;
@@ -9,11 +9,11 @@
     background-color: #f5f7f8;
 }
 
-.calendar__content-section:first-of-type > div > span {
+.calendar__content:first-of-type > div > span {
     line-height: 1.5em;
 } 
 
-.calendar__content-section h2 {
+.calendar__content h2 {
     margin-top: 0;
 }
 

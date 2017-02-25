@@ -5,16 +5,20 @@ import { Observable } from 'rxjs/Observable';
 import { LoginConstants } from './login.constants';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../../models/user.model';
+import { API_URL } from '../../../shared/models/localhost.config.ts';
 
 @Injectable()
 export class LoginService {
   public _pathUrl = LoginConstants.Login;
   public tokenName: string = 'access_token';
-  public role: string = '';
+  public role: string;
   public isLoggedIn: boolean;
-  public currentUser: any;
-  constructor(public http: Http, public _router: Router) {
-  }
+  public currentUser: User;
+  private getUrl: string = API_URL + '/restful/user';
+
+  constructor(public http: Http, public _router: Router,
+    ) {}
   public sendCredentials(model) {
       let options = this.getRequestOptionArgs();
       let tokenUrl = this._pathUrl.serverUrl + '/oauth/token';
@@ -49,17 +53,7 @@ export class LoginService {
   public  decodeAccessToken( accessToken: string) {
     return JSON.parse(window.atob(accessToken.split('.')[1]));
    }
-  public setUser(user?: any) {
-    this.currentUser = user;
-  }
-  public getRole(): string {
-    return this.role;
-  }
-  public setRole() {
-    if (this.checkLogin()) {
-      this.role = this.decodeAccessToken(localStorage.getItem(this.tokenName))['authorities'][0];
-    }
-  }
+
   public onSubmit(model) {
     this.sendCredentials(model).subscribe(
       (data) => {
@@ -99,5 +93,23 @@ export class LoginService {
     localStorage.setItem('scope', data.scope);
     localStorage.setItem('jti', data.jti);
     localStorage.setItem('refresh_token', data.refresh_token);
+  }
+
+  public setUser(user: User) {
+    this.currentUser = user;
+  }
+
+  public getUser(): User {
+    return this.currentUser;
+  }
+
+  public getRole(): string {
+    return this.role;
+  }
+
+  public setRole() {
+    if (this.checkLogin()) {
+      this.role = this.decodeAccessToken(localStorage.getItem(this.tokenName))['authorities'][0];
+    }
   }
 }

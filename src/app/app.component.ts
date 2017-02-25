@@ -17,7 +17,6 @@ import { LoginService } from './shared/login/login.service';
   templateUrl: './app.html'
 })
 export class AppComponent implements OnInit {
-  public angularclassLogo = 'assets/img/favicon.ico';
   public name = 'Наш Двір';
   public authRole: string;
   constructor(

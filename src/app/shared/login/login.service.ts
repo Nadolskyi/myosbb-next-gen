@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class LoginService {
-  public _pathUrl = LoginConstants.serverUrl;
+  public _pathUrl = LoginConstants.Login;
   public tokenName: string = 'access_token';
   public role: string = '';
   public isLoggedIn: boolean;
@@ -17,18 +17,18 @@ export class LoginService {
   }
   public sendCredentials(model) {
       let options = this.getRequestOptionArgs();
-      let tokenUrl = this._pathUrl + '/oauth/token';
+      let tokenUrl = this._pathUrl.serverUrl + '/oauth/token';
       let data = 'username=' + encodeURIComponent(model.username)
        + '&password=' + encodeURIComponent(model.password) + '&grant_type=password';
       return this.http.post(tokenUrl, data, options);
   }
   public sendToken(): Observable<any> {
       let options = this.getRequestOptionArgs();
-      let userUrl = this._pathUrl + '/restful/user/getCurrent';
+      let userUrl = this._pathUrl.serverUrl + '/restful/user/getCurrent';
       return this.http.get(userUrl, options);
   }
   public checkLogin(): boolean {
-        return  (!!localStorage.getItem(this.tokenName)) ? true : false;
+    return  !!localStorage.getItem(this.tokenName);
    }
   public getRequestOptionArgs(options?: RequestOptionsArgs, url?: string): RequestOptionsArgs {
     if (!options) {
@@ -36,13 +36,13 @@ export class LoginService {
         options.headers = new Headers();
     }
     if (!!localStorage.getItem(this.tokenName)) {
-            options.headers.append(LoginConstants.AUTH, LoginConstants.BEARER
+            options.headers.append(this._pathUrl.auth, this._pathUrl.bearer
              + localStorage.getItem(this.tokenName));
-            options.headers.append(LoginConstants.CONTENT_TYPE, LoginConstants.APP_JSON);
+            options.headers.append(this._pathUrl.contentType, this._pathUrl.appJson);
     } else {
-        options.headers.append(LoginConstants.AUTH, LoginConstants.BASIC_TOKEN);
-        options.headers.append(LoginConstants.CONTENT_TYPE, LoginConstants.APP_XWFU);
-        options.headers.append(LoginConstants.ACCEPT, LoginConstants.APP_JSON);
+        options.headers.append(this._pathUrl.auth, this._pathUrl.basicToken);
+        options.headers.append(this._pathUrl.contentType, this._pathUrl.appXwfu);
+        options.headers.append(this._pathUrl.accept, this._pathUrl.appJson);
     }
     return options;
   }
@@ -71,24 +71,27 @@ export class LoginService {
             this.setRole();
             localStorage.setItem('user', user.userId);
             this.setUser(user);
-            switch (this.getRole()) {
-              case 'ROLE_USER':
-                this._router.navigate(['./user']);
-                break;
-              case 'ROLE_ADMIN':
-                this._router.navigate(['./admin']);
-                break;
-              case 'ROLE_MANAGER':
-                this._router.navigate(['./manager']);
-                break;
-              default :
-                this._router.navigate(['./login']);
-                break;
-            }
+            this.switchRole(this.getRole());
           }
         );
       }
     );
+  }
+  public switchRole(data){
+    switch (data) {
+      case 'ROLE_USER':
+        this._router.navigate(['./user']);
+        break;
+      case 'ROLE_ADMIN':
+        this._router.navigate(['./admin']);
+        break;
+      case 'ROLE_MANAGER':
+        this._router.navigate(['./manager']);
+        break;
+      default :
+        this._router.navigate(['./login']);
+        break;
+    }
   }
   public tokenParseInLocalStorage(data: any) {
     localStorage.setItem('access_token', data.access_token);

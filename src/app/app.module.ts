@@ -44,7 +44,6 @@ import { SubTicketComponent } from './components/ticket/subticket';
 import { SetLanguageComponent } from './shared/set-language/';
 import { OsbbDocumentsAndReportsComponent } from './components/osbb-docs-and-reports';
 import { OsbbContactsComponent } from './components/osbb-contacts';
-// import { ChartsModule } from "ng2-charts/ng2-charts";
 
 import '../styles/styles.scss';
 import '../styles/headings.css';

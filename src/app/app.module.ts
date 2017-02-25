@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { TextMaskModule } from 'angular2-text-mask';
+import { SelectModule } from 'ng2-select';
+import { MomentModule } from 'angular2-moment';
+import { ToasterModule, ToasterService } from 'angular2-toaster';
 import {
   NgModule,
   ApplicationRef
@@ -20,6 +24,9 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { LoginComponent } from './shared/login';
+import { LoginService } from './shared/login/login.service';
+import { RegistrationComponent } from './registration';
+import { RegistrationSuccessComponent } from './registration/registration-sucess';
 import { AppHeaderComponent } from './shared/header';
 import { WallComponent } from './components/wall';
 import { HouseComponent } from  './components/house';
@@ -34,7 +41,6 @@ import { ContactsComponent } from './components/contacts';
 import { BreadcrumbComponent } from './components/breadcrumb';
 import { SidebarComponent } from './shared/sidebar';
 import { SubTicketComponent } from './components/ticket/subticket';
-import { LoginService } from './shared/login/login.service';
 import '../styles/styles.scss';
 import '../styles/headings.css';
 import { AdminComponent } from './admin/admin.component';
@@ -50,12 +56,15 @@ type StoreType = {
   restoreInputValues: () => void,
   disposeOldHosts: () => void
 };
+
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
     AppHeaderComponent,
     AppComponent,
     LoginComponent,
+    RegistrationComponent,
+    RegistrationSuccessComponent,
     ManagerComponent,
     AdminComponent,
     UserComponent,
@@ -77,11 +86,16 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
+    TextMaskModule,
+    SelectModule,
+    MomentModule,
+    ToasterModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [
     ENV_PROVIDERS,
     APP_PROVIDERS,
+    ToasterService,
     LoginService
   ]
 })

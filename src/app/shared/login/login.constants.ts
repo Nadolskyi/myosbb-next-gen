@@ -9,6 +9,6 @@ export class LoginConstants {
       accept: 'Accept',
       basicToken: 'Basic  Y2xpZW50YXBwOjEyMzQ1Ng==',
       bearer: 'Bearer'
-    }
+    };
   }
 }

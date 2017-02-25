@@ -1,4 +1,4 @@
-<div  class="container">
+<div class="container">
   <div class="row animated form-group zoomIn ">
     <div class="col-md-12">
       <form class="form-login" (ngSubmit)="logIn()">
@@ -18,9 +18,7 @@
             <i class="fa fa-lock"></i> {{'sign_in'}}
           </button>
           <div class="registration">
-            <a  [routerLink]=" ['./'] "
-              routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'create_account'}}
-            </a>
+            <button type="button" class="btn btn-link" (click)="registrationPage()">{{'create_account'}}</button>
           </div>
         </div>
       </form>

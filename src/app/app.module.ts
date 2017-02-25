@@ -18,6 +18,9 @@ import {
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 import { ToasterModule, ToasterService } from 'angular2-toaster';
 import { FileSelectDirective, } from 'ng2-file-upload';
+import { TextMaskModule } from 'angular2-text-mask';
+import { SelectModule } from 'ng2-select';
+import { MomentModule } from 'angular2-moment';
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -27,6 +30,8 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { LoginComponent } from './shared/login';
+import { RegistrationComponent } from './registration';
+import { RegistrationSuccessComponent } from './registration/registration-sucess';
 import { AppHeaderComponent } from './shared/header';
 import { WallComponent } from './components/wall';
 import { HouseComponent } from  './components/house';
@@ -71,12 +76,15 @@ type StoreType = {
   restoreInputValues: () => void,
   disposeOldHosts: () => void
 };
+
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
     AppHeaderComponent,
     AppComponent,
     LoginComponent,
+    RegistrationComponent,
+    RegistrationSuccessComponent,
     ManagerComponent,
     AdminComponent,
     UserComponent,
@@ -108,7 +116,11 @@ type StoreType = {
         useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
         deps: [Http]
     }),
-    ToasterModule
+    TextMaskModule,
+    SelectModule,
+    MomentModule,
+    ToasterModule,
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [
     ENV_PROVIDERS,

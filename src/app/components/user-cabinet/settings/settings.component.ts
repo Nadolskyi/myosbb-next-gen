@@ -10,6 +10,7 @@ import {LoginService }   from "../../../shared/login/login.service";
   selector: 'settings',  
   providers: [SettingsService],
   templateUrl: './settings.component.html',
+  styleUrls: [ './settings.component.css' ],
   
 })
 
@@ -23,7 +24,7 @@ export class SettingsComponent implements OnInit {
                 
     ) {
         this.currentUser = this.currentUserService.getUser();
-        //this.settings = new Settings();
+        this.settings = new Settings();
             }
 
    ngOnInit() {
@@ -33,41 +34,27 @@ export class SettingsComponent implements OnInit {
 
     save(){
         this.settingsService.save(this.settings);
+        console.log(this.settings.assigned);
                                       
     }
 
     changeAssigned(){
-        this.settings.assigned  = !this.settings.assigned;   
-    }
-
-    setAssigned(){
-      return this.settings.assigned == true ? 'switch-on':'switch-off';
+      console.log(this.settings.assigned);
+        this.settings.assigned  = !this.settings.assigned; 
+      console.log(this.settings.assigned);  
     }
 
     changeCreator(){
         this.settings.creator  = !this.settings.creator;
     }
 
-    setCreator(){
-      return this.settings.creator == true ? 'switch-on':'switch-off';
-    }
-
     changeComment(){
         this.settings.comment  = !this.settings.comment;  
     }
 
-    setComment(){
-      return this.settings.comment == true ? 'switch-on':'switch-off';
-    }
-
-    
     changeAnswer(){
         this.settings.answer  = !this.settings.answer;       
     }
 
-    setAnswer(){
-      return this.settings.answer == true ? 'switch-on':'switch-off';
-    }
-
- 
+    
 }

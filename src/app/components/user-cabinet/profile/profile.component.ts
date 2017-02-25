@@ -18,9 +18,10 @@ import {ProfileConstants}       from "./profile.constants";
 export class ProfileComponent implements OnInit {
     public currentUser:User;
     public updateUser:User;
-    public emailMask = ProfileConstants.EMAIL_MASK;
-    public textMask = ProfileConstants.TEXT_MASK;
-    public phoneMask = ProfileConstants.PHONE_MASK;
+    public profileMask=ProfileConstants.ProfileMask;
+    public emailMask = this.profileMask.emailMask;
+    public textMask = this.profileMask.textMask;
+    public phoneMask = this.profileMask.phoneMask;
 
     private expToken:string;
 

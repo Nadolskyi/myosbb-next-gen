@@ -42,7 +42,7 @@ import { SidebarComponent }      from './shared/sidebar';
 import { SubTicketComponent }    from './components/ticket/subticket';
 
 import { LoginService }        from './shared/login/login.service';
-import { UserCabinetModule } from './components/user-cabinet/user-cabinet.module';
+import { UserCabinetModule }   from './components/user-cabinet/user-cabinet.module';
 
 
 // import { ChartsModule } from "ng2-charts/ng2-charts";

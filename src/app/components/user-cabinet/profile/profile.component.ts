@@ -18,7 +18,7 @@ import {ProfileConstants}       from "./profile.constants";
 export class ProfileComponent implements OnInit {
     public currentUser:User;
     public updateUser:User;
-    public profileMask=ProfileConstants.ProfileMask;
+    public profileMask = ProfileConstants.ProfileMask;
     public emailMask = this.profileMask.emailMask;
     public textMask = this.profileMask.textMask;
     public phoneMask = this.profileMask.phoneMask;
@@ -41,8 +41,6 @@ export class ProfileComponent implements OnInit {
     getCurrentUser(){
         this.currentUser =this.currentUserService.getUser();
         this.updateUser = Object.assign({}, this.currentUser);
-        console.log(this.currentUser);
-        console.log(this.updateUser);
     }
 
     changeUser() {

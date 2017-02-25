@@ -13,7 +13,7 @@ export const ROUTES: Routes = [
   ...ManagerRoutes,
   ...AdminRoutes,
   ...UserRoutes,
-  //...routesCabinet
+  
 
 
 ];

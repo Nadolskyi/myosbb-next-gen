@@ -27,21 +27,17 @@ export class SettingsComponent implements OnInit {
         this.settings = new Settings();
             }
 
-   ngOnInit() {
+    ngOnInit() {
        this.settingsService.getSettingsForUser()
        .then(settings => this.settings = settings);
     }
 
     save(){
         this.settingsService.save(this.settings);
-        console.log(this.settings.assigned);
-                                      
     }
 
     changeAssigned(){
-      console.log(this.settings.assigned);
-        this.settings.assigned  = !this.settings.assigned; 
-      console.log(this.settings.assigned);  
+      this.settings.assigned  = !this.settings.assigned; 
     }
 
     changeCreator(){

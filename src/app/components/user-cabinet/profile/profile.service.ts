@@ -13,9 +13,6 @@ export class ProfileService{
 
     updateUser(user:User){
         this.updateUrl=this.url + user.userId;
-        console.log('Updating user with id: ' + user.userId);
-        console.log("sending http PUT to " +this.updateUrl);    
-        console.log("json obj: " + JSON.stringify(user));
         return this.http.put(this.updateUrl,user,this.loginUserService.getRequestOptionArgs());
     }
 

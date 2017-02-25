@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 export class UserCabinetComponent implements OnInit {
 
   public ngOnInit() {
-    console.log('hello `User` component');
+    
   }
 
 }

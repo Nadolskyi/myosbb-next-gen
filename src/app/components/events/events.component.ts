@@ -31,7 +31,7 @@ export class EventsComponent implements OnInit {
         public event: EventsService,
         private router: Router
     ) {}
-    onNavigate(id: number) {
+    public onNavigate(id: number) {
         if (this.authRole === 'ROLE_ADMIN') {
             this.router.navigate(['./admin/events/', id]);
             return;

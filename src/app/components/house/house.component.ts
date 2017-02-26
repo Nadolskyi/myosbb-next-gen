@@ -12,7 +12,7 @@ import { Subscription } from "rxjs";
 @Component({
     providers: [HouseService, LoginService],
     selector: 'house',
-    templateUrl: './house.html',
+    templateUrl: './house.template.html',
     styleUrls: ['../../../assets/css/manager.page.layout.scss'],
 })
 export class HouseAboutComponent implements OnInit {
@@ -23,7 +23,7 @@ export class HouseAboutComponent implements OnInit {
         public route: ActivatedRoute, public http: Http, public HouseService:HouseService
     ) {}
 
-    ngOnInit(): any {
+    public ngOnInit(): any {
           this.sub = this.route.params.subscribe((params)=> {
            return this.houseId = +params['id'];
             })

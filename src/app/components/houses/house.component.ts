@@ -33,7 +33,7 @@ export class HouseComponent implements OnInit {
         public LoginService: LoginService,
         private router: Router
     ) {}
-    onNavigate(id: number) {
+    public onNavigate(id: number) {
         if (this.authRole === 'ROLE_ADMIN') {
             this.router.navigate(['admin/house', id]);
             return;

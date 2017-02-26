@@ -22,7 +22,7 @@ export class UsersComponent implements OnInit {
     public route: ActivatedRoute,public http:Http,public usersService:usersService
   ) {}
 
-ngOnInit() {
+  public ngOnInit() {
         this.usersService.getUsers().subscribe(data => {
             this.users = data;
         });

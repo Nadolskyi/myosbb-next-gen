@@ -24,7 +24,7 @@ export class eventsDetailComponent implements OnInit {
         public route: ActivatedRoute, public http: Http, public EventsDetailService: EventsDetailService
     ) {}
 
-     ngOnInit(): any {
+    public ngOnInit(): any {
         this.sub = this.route.params.subscribe((params)=> {
             this.eventId = +params['id'];
             this.EventsDetailService.getEventsDetail(this.eventId)

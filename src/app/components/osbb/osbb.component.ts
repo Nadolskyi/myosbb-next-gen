@@ -10,7 +10,7 @@ import { Observable } from "rxjs/Observable";
 @Component({
   providers: [osbbService],
   selector: 'osbb',
-  templateUrl: './osbb.html',
+  templateUrl: './osbb.template.html',
   styleUrls: ['../../../assets/css/manager.page.layout.scss'],
 })
 export class OSBBComponent implements OnInit {
@@ -20,7 +20,7 @@ export class OSBBComponent implements OnInit {
     public route: ActivatedRoute,public http:Http,public osbbService:osbbService
   ) {}
 
- ngOnInit() {
+ public ngOnInit() {
         this.osbbService.getOSBB().subscribe(data => {
             this.OSBB = data;
         });

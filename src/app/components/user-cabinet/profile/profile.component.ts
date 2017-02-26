@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router }                 from '@angular/router';
 
-import { User }                   from '../../../models/User';
+import { User }                   from '../../../models/user.model';
 import { ProfileService }         from './profile.service';
 import { LoginService }           from '../../../shared/login/login.service';
 import { ProfileConstants }       from './profile.constants';
@@ -11,6 +11,7 @@ import { ProfileConstants }       from './profile.constants';
   providers: [ProfileService, ProfileConstants],
   styleUrls: [ './profile.component.css' ],
   templateUrl: './profile.component.html',
+
 })
 
 export class ProfileComponent implements OnInit {
@@ -41,7 +42,7 @@ export class ProfileComponent implements OnInit {
     }
 
     public changeUser() {
-        const osbbId = this.updateUser.osbbId;
+        let osbbId = this.updateUser.osbbId;
         let user: User;
         this.profileService.updateUser(this.updateUser).subscribe((data) => {
             user = <User> data.json();

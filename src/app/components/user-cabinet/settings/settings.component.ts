@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Settings } from './Settings';
-import { User }     from '../../../models/User';
+import { Settings }     from './Settings';
+import { User }         from '../../../models/user.model';
 
 import { SettingsService } from './settings.service';
-import { LoginService }   from '../../../shared/login/login.service';
+import { LoginService }    from '../../../shared/login/login.service';
 
 @Component({
   selector: 'settings',

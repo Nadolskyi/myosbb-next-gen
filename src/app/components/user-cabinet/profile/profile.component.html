@@ -1,6 +1,6 @@
 <div class="profile col-xs-12 slideInRight">
     <div class="top-label">
-        <h3>{{ 'profile'}}</h3>
+        <h3>{{ 'profile' | translate | capitalize  }}</h3>
     </div>
     <div class="panel panel-default col-xs-3  left">
         <div class="panel-body image">
@@ -9,13 +9,13 @@
 
         <button type="button" class=" btn btn-primary col-xs-12" data-toggle="modal" data-target="#editModal">
             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            <span>{{ 'edit' }}</span>
+            <span>{{ 'edit' | translate| capitalize }}</span>
         </button>
         <a  [routerLink]=" ['./settings'] " routerLinkActive="active" 
         [routerLinkActiveOptions]="{exact: true}">
         <button class="col-xs-12 btn btn-primary">
             <i class="glyphicon glyphicon-cog"></i>
-            <span>{{ 'settings' }}</span>
+            <span>{{ 'settings' | translate| capitalize  }}</span>
         </button>
         </a>
     </div>
@@ -23,32 +23,32 @@
         <div class="panel panel-default col-xs-12 profile-text right-user-data">
             <div class="panel-body">
                 <div class="col-xs-12">
-                    <label class="col-xs-6">{{ 'nameUser' }}</label>
-                    <span class="col-xs-6">{{ currentUser.firstName }}</span>
+                    <label class="col-xs-6">{{ 'nameUser' | translate | capitalize  }}</label>
+                    <span class="col-xs-6">{{ currentUser.firstName | capitalize  }}</span>
                 </div>
 
                 <div class="col-xs-12">
-                    <label class="col-xs-6">{{ 'surname' }}</label>
-                    <span class="col-xs-6">{{ currentUser.lastName }}</span>
+                    <label class="col-xs-6">{{ 'surname' | translate | capitalize  }}</label>
+                    <span class="col-xs-6">{{ currentUser.lastName | capitalize  }}</span>
                 </div>
 
                 <div class="col-xs-12">
-                    <label class="col-xs-6">{{ 'birthday' }}</label>
+                    <label class="col-xs-6">{{ 'birthday' | translate | capitalize  }}</label>
                     <span class="col-xs-6">{{ getTime(currentUser.birthDate) }}</span>
                 </div> 
 
                 <div class="col-xs-12">
-                    <label class="col-xs-6">{{ 'email' }}</label>
+                    <label class="col-xs-6">{{ 'email' | translate | capitalize  }}</label>
                     <span class="col-xs-6">{{ currentUser.email }}</span>
                 </div>
 
                 <div class="col-xs-12">
-                    <label class="col-xs-6">{{ 'phone' }}</label>
+                    <label class="col-xs-6">{{ 'phone'| translate | capitalize }}</label>
                     <span class="col-xs-6">{{ currentUser.phoneNumber }}</span>
                 </div>
 
                 <div class="col-xs-12">
-                   <label class="col-xs-6">{{ 'gender' }}</label>
+                   <label class="col-xs-6">{{ 'gender'| translate | capitalize  }}</label>
                    <span class="col-xs-6">{{ currentUser.gender }}</span>
                 </div>
                
@@ -69,31 +69,31 @@
             </div>
             <div class="modal-body row">
                 <div class="col-xs-12">
-                    <label class="col-xs-6">{{ 'nameUser' }}</label>
+                    <label class="col-xs-6">{{ 'nameUser'| translate | capitalize  }}</label>
                     <input class="form-control" name="nameUser" [(ngModel)]="updateUser.firstName" type="text" required>
                 </div>
                 <div class="col-xs-12">
-                    <label class="col-xs-6">{{ 'surname' }}</label>
+                    <label class="col-xs-6">{{ 'surname' | translate | capitalize  }}</label>
                     <input class="form-control" name="surname" [(ngModel)]="updateUser.lastName" type="text" required>
 
                 </div>
                 <div class="col-xs-12">
-                    <label class="col-xs-6">{{ 'birthday'}}</label>
+                    <label class="col-xs-6">{{ 'birthday' | translate | capitalize }}</label>
                     <input class="form-control" name="birthDate" [(ngModel)]="updateUser.birthDate" type="date" required>
                 </div>
                 <div class="col-xs-12">
-                    <label class="col-xs-6">{{ 'email' }}</label>
+                    <label class="col-xs-6">{{ 'email' | translate | capitalize  }}</label>
                     <input  class="form-control placeholder-no-fix" name="email"[(ngModel)]="updateUser.email" placeholder="Введіть свій Email"
                            type="text"  required>
                 </div>
                 <div class="col-xs-12">
-                    <label class="col-xs-6">{{ 'phone' }}</label>
+                    <label class="col-xs-6">{{ 'phone' | translate | capitalize  }}</label>
                     <input class="form-control" name="phoneNumber" [textMask]="{mask:phoneMask}"
                            [(ngModel)]="updateUser.phoneNumber" type="text"
                            placeholder="(___) ___-____" required>
                 </div>
                 <div class="col-xs-12 gender">
-                    <label for="sel1" class="col-xs-6">{{ 'gender' }}</label>
+                    <label for="sel1" class="col-xs-6">{{ 'gender'| translate | capitalize  }}</label>
                     <select class="form-control" [(ngModel)]="updateUser.gender" id="sel1">
                         <option>Male</option>
                         <option>Female</option>
@@ -103,9 +103,9 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button data-dismiss="modal" class="col-xs-3 btn btn-danger">{{ 'close' }}
+                <button data-dismiss="modal" class="col-xs-3 btn btn-danger">{{ 'close' | translate | capitalize }}
                 </button>
-                <button (click)="changeUser()" data-dismiss="modal" class="col-xs-3  btn btn-primary">{{ 'save'}}</button>
+                <button (click)="changeUser()" data-dismiss="modal" class="col-xs-3  btn btn-primary">{{ 'save' | translate| capitalize }}</button>
             </div>
         </div>
     </div>

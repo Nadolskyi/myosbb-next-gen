@@ -16,7 +16,7 @@
             <td>{{item.zipCode}}</td>
             <td>{{item.numberOfInhabitants}}</td>
             <td>{{item.osbbName}}</td>
-            <td><input type="button" class="btn" value="Go to"></td>
+            <td><input type="button" class="btn" value="Go to"(click)="onNavigate(item.houseId)"></td>
             <td>{{item.description}}</td>
           </tr>
         </table>

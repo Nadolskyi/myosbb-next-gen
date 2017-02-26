@@ -49,6 +49,10 @@ import { ROUTES }         from './app.routes';
 import { AppComponent }                from './app.component';
 import { APP_RESOLVER_PROVIDERS }      from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
+import { OSBBComponent } from './components/osbb';
+import { HouseAboutComponent } from './components/house';
+import { EventsDetailComponent } from './components/events/eventsDetail';
+import { UsersComponent } from './components/users';
 import { LoginComponent }              from './shared/login';
 import { RegistrationComponent }       from './registration';
 import { RegistrationSuccessComponent }from './registration/registration-sucess';
@@ -75,7 +79,6 @@ import { UserCabinetModule }   from './components/user-cabinet/user-cabinet.modu
 import '../styles/styles.scss';
 import '../styles/headings.css';
 import { AdminComponent } from './admin/admin.component';
-import { UserComponent } from './user/user.component';
 import { ManagerComponent } from './manager/manager.component';
 
 // pipes
@@ -112,7 +115,9 @@ type StoreType = {
     UserComponent,
     WallComponent,
     HouseComponent,
+    OSBBComponent,
     EventsComponent,
+    EventsDetailComponent,
     ApartmentComponent,
     BreadcrumbComponent,
     CalendarComponent,
@@ -121,7 +126,9 @@ type StoreType = {
     ContractsComponent,
     TicketComponent,
     SidebarComponent,
+    HouseAboutComponent,
     SubTicketComponent,
+    UsersComponent,
     SetLanguageComponent,
     CapitalizeFirstLetterPipe,
     OsbbDocumentsAndReportsComponent,

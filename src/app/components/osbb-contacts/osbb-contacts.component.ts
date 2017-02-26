@@ -19,8 +19,10 @@ export class OsbbContactsComponent implements OnInit {
   constructor(private osbbService: OsbbService, private loginService: LoginService) {}
 
   public ngOnInit(): any {
-    this.user = this.loginService.getUser();
-    this.getOsbb();
+    this.loginService.sendToken().subscribe( (data) => {
+      this.user = data.json();
+      this.getOsbb();
+     });
   }
 
   public getOsbb() {

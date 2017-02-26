@@ -10,11 +10,16 @@ import { Router } from '@angular/router';
   styleUrls: [ './login.css' ],
   templateUrl: './login.component.html'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   public model = { username : '', password : ''};
-    constructor(public loginService: LoginService,
-                private router: Router
+    constructor(
+      public loginService: LoginService,
+      private router: Router
     ) {}
+  public ngOnInit() {
+      this.loginService.switchRole(this.loginService.getRole());
+  }
+
   public logIn() {
     this.loginService.onSubmit(this.model);
     this.model.username = '';

@@ -55,23 +55,22 @@ export class LoginService {
    }
 
   public onSubmit(model) {
-    this.sendCredentials(model).subscribe(
-      (data) => {
+    this.sendCredentials(model)
+      .subscribe((data) => {
         this.tokenParseInLocalStorage(data.json());
-        this.sendToken().subscribe(
-          (subData) => {
-            let user: any = subData.json();
-            this.isLoggedIn = true;
+        if (this.checkLogin()) {
+          this.sendToken().subscribe((subData) => {
             this.setRole();
+            let user: any = subData.json();
             localStorage.setItem('user', user.userId);
-            this.setUser(user);
+            this.currentUser = user;
             this.switchRole(this.getRole());
-          }
-        );
+          });
+        };
       }
     );
   }
-  public switchRole(data){
+  public switchRole(data) {
     switch (data) {
       case 'ROLE_USER':
         this._router.navigate(['./user']);
@@ -95,8 +94,8 @@ export class LoginService {
     localStorage.setItem('refresh_token', data.refresh_token);
   }
 
-  public setUser(user: User) {
-    this.currentUser = user;
+  public setUser() {
+    this.sendToken().subscribe( (data) => this.currentUser = data.json());
   }
 
   public getUser(): User {
@@ -107,9 +106,20 @@ export class LoginService {
     return this.role;
   }
 
+  public getRoleFromLocalStorage(): string {
+    return this.decodeAccessToken(localStorage.getItem(this.tokenName))['authorities'][0];
+  }
+
   public setRole() {
     if (this.checkLogin()) {
-      this.role = this.decodeAccessToken(localStorage.getItem(this.tokenName))['authorities'][0];
+      this.role = this.getRoleFromLocalStorage();
+    }
+  }
+
+  public setData() {
+    if (this.checkLogin()) {
+      this.setRole();
+      this.setUser();
     }
   }
 }

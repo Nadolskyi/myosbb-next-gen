@@ -63,7 +63,7 @@ import { CapitalizeFirstLetterPipe } from './pipes/capitalize-first-letter';
 import { OsbbService } from './services/osbb.service';
 import { OsbbConstants } from './services/osbb.constants';
 import { LoginService } from './shared/login/login.service';
-
+import { LogedInGuard } from './services/loged-in-guard.service';
 // Application wide providers
 
 const APP_PROVIDERS = [
@@ -128,7 +128,8 @@ type StoreType = {
     ToasterService,
     OsbbService,
     OsbbConstants,
-    LoginService
+    LoginService,
+    LogedInGuard
   ]
 })
 export class AppModule {

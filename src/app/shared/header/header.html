@@ -1,6 +1,9 @@
 <nav class="black-bg">
-  <i class="fa fa-home fa-lg header_logo_position" aria-hidden="true">
-  <b>Наш Двір</b></i>
+  <a [routerLink]="['']">
+    <i class="fa fa-home fa-lg header_logo_position" aria-hidden="true">
+      <b>Наш Двір</b>
+    </i>
+  </a>
   <div class="header_button_block">
     <set-language></set-language>
     <button type="button" class="btn btn-warning header_button_position" (click)="logOut()" *ngIf="loginService.checkLogin()"><i class="fa fa-sign-out">LogOut</i></button>

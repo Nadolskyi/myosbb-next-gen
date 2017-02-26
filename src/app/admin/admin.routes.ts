@@ -11,9 +11,12 @@ import { ApartmentComponent } from '../components/apartment';
 import { CalendarComponent } from '../components/calendar';
 import { ContactsComponent } from '../components/contacts';
 import { SubTicketComponent } from '../components/ticket/subticket';
+import { LogedInGuard } from '../services/loged-in-guard.service';
 
 export const AdminRoutes: Routes = [
   { path: 'admin',  component: AdminComponent,
+    canActivate: [LogedInGuard],
+    data: { role: 'ROLE_ADMIN'},
     children: [
       { path: '', redirectTo: 'wall', pathMatch: 'full' },
       { path: 'wall', component: WallComponent },

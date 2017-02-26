@@ -6,21 +6,16 @@ import {
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/toPromise';
 import { API_URL } from '../../../shared/models/localhost.config';
-import { LoginService } from '../../shared/login/login.service';
 
 @Injectable()
 
-export class EventsService {
+export class OsbbService {
 
-  constructor(
-    private http: Http,
-    public login: LoginService
-  ) { }
+  constructor(private http: Http) { }
 
-  public getEventData(): Observable<any> {
-    return this.http.get(`${API_URL}/restful/event/`, this.login.getRequestOptionArgs())
+  public getOSBB(): Observable<any> {
+    return this.http.get(`${API_URL}/restful/osbb`)
       .map((res: Response) => res.json())
       .catch((error) => Observable.throw(error));
   }

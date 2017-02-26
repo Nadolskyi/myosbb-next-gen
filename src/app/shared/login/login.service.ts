@@ -19,6 +19,7 @@ export class LoginService {
 
   constructor(public http: Http, public _router: Router,
     ) {}
+
   public sendCredentials(model) {
       let options = this.getRequestOptionArgs();
       let tokenUrl = this._pathUrl.serverUrl + '/oauth/token';

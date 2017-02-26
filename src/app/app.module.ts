@@ -1,5 +1,7 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+
 import { HttpModule, Http } from '@angular/http';
 import {
   NgModule,
@@ -41,36 +43,42 @@ import { Calendar } from 'primeng/components/calendar/calendar';
 /*
  * Platform and Environment providers/directives/pipes
  */
-import { ENV_PROVIDERS } from './environment';
-import { ROUTES } from './app.routes';
-import { AppComponent } from './app.component';
-import { APP_RESOLVER_PROVIDERS } from './app.resolver';
-import { AppState, InternalStateType } from './app.service';
-import { LoginComponent } from './shared/login';
-import { RegistrationComponent } from './registration';
-import { RegistrationSuccessComponent } from './registration/registration-sucess';
-import { AppHeaderComponent } from './shared/header';
-import { WallComponent } from './components/wall';
-import { HouseComponent } from  './components/house';
-import { EventsComponent } from './components/events';
-import { OsbbBillsComponent } from './components/osbbBils';
-import { ContractsComponent } from  './components/contracts';
-import { TicketComponent } from './components/ticket';
-import { ProviderComponent } from './components/provider';
-import { ApartmentComponent } from './components/apartment';
-import { CalendarComponent } from './components/calendar';
-import { BreadcrumbComponent } from './components/breadcrumb';
-import { SidebarComponent } from './shared/sidebar';
-import { SubTicketComponent } from './components/ticket/subticket';
+import { ENV_PROVIDERS }  from './environment';
+import { ROUTES }         from './app.routes';
 
-import { SetLanguageComponent } from './shared/set-language/';
+import { AppComponent }                from './app.component';
+import { APP_RESOLVER_PROVIDERS }      from './app.resolver';
+import { AppState, InternalStateType } from './app.service';
+import { OSBBComponent } from './components/osbb';
+import { HouseAboutComponent } from './components/house';
+import { EventsDetailComponent } from './components/events/eventsDetail';
+import { UsersComponent } from './components/users';
+import { LoginComponent }              from './shared/login';
+import { RegistrationComponent }       from './registration';
+import { RegistrationSuccessComponent }from './registration/registration-sucess';
+import { AppHeaderComponent }          from './shared/header';
+import { WallComponent }               from './components/wall';
+import { HouseComponent }              from  './components/house';
+import { EventsComponent }             from './components/events';
+import { OsbbBillsComponent }          from './components/osbbBils';
+import { ContractsComponent }          from  './components/contracts';
+import { TicketComponent }             from './components/ticket';
+import { ProviderComponent }           from './components/provider';
+import { ApartmentComponent }          from './components/apartment';
+import { CalendarComponent }           from './components/calendar';
+import { BreadcrumbComponent }         from './components/breadcrumb';
+import { SidebarComponent }            from './shared/sidebar';
+import { SubTicketComponent }          from './components/ticket/subticket';
+
+import { SetLanguageComponent }             from './shared/set-language/';
 import { OsbbDocumentsAndReportsComponent } from './components/osbb-docs-and-reports';
-import { OsbbContactsComponent } from './components/osbb-contacts';
+import { OsbbContactsComponent }            from './components/osbb-contacts';
+
+import { UserCabinetModule }   from './components/user-cabinet/user-cabinet.module';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
 import { AdminComponent } from './admin/admin.component';
-import { UserComponent } from './user/user.component';
 import { ManagerComponent } from './manager/manager.component';
 
 // pipes
@@ -107,7 +115,9 @@ type StoreType = {
     UserComponent,
     WallComponent,
     HouseComponent,
+    OSBBComponent,
     EventsComponent,
+    EventsDetailComponent,
     ApartmentComponent,
     BreadcrumbComponent,
     CalendarComponent,
@@ -116,7 +126,9 @@ type StoreType = {
     ContractsComponent,
     TicketComponent,
     SidebarComponent,
+    HouseAboutComponent,
     SubTicketComponent,
+    UsersComponent,
     SetLanguageComponent,
     CapitalizeFirstLetterPipe,
     OsbbDocumentsAndReportsComponent,
@@ -133,6 +145,7 @@ type StoreType = {
         useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
         deps: [Http]
     }),
+    UserCabinetModule,
     TextMaskModule,
     SelectModule,
     MomentModule,

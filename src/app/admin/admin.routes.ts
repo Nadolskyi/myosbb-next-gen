@@ -7,7 +7,6 @@ import { TicketComponent  } from '../components/ticket';
 import { ProviderComponent } from '../components/provider';
 import { ApartmentComponent } from '../components/apartment';
 import { CalendarComponent } from '../components/calendar';
-import { ContactsComponent } from '../components/contacts';
 import { SubTicketComponent } from '../components/ticket/subticket';
 import { OSBBComponent } from '../components/osbb';
 import { HouseAboutComponent } from '../components/house';
@@ -27,7 +26,6 @@ export const AdminRoutes: Routes = [
       { path: 'provider', component: ProviderComponent },
       { path: 'apartment', component: ApartmentComponent },
       { path: 'calendar', component: CalendarComponent },
-      { path: 'contacts', component: ContactsComponent },
       { path: 'osbb', component: OSBBComponent },
       { path: 'house/:id', component: HouseAboutComponent },
       { path: 'users', component: UsersComponent }

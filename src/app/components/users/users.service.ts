@@ -13,9 +13,9 @@ import { API_URL } from '../../../shared/models/localhost.config';
 
 export class usersService {
 
-  constructor(private http: Http, private LoginService:LoginService) { }
+  constructor(private http: Http, private LoginService: LoginService) { }
 
-  getUsers(): Observable<any> {
+  public getUsers(): Observable<any> {
     return this.http.get(`${API_URL}/restful/user`,this.LoginService.getRequestOptionArgs())
       .map((res: Response) => res.json())
       .catch((error) => Observable.throw(error));

@@ -13,7 +13,6 @@ import { HouseService } from './house.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from '../../shared/login/login.service';
 
-
 @Component({
     selector: 'houses',
     templateUrl: 'house.component.html',
@@ -41,7 +40,7 @@ export class HouseComponent implements OnInit {
         this.router.navigate(['manager/house', id]);
     }
     public ngOnInit() {
-        this.house.getHouseData().subscribe(data => {
+        this.house.getHouseData().subscribe((data) => {
             this.resData = data;
         });
         this.LoginService.setRole();

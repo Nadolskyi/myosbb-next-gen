@@ -11,12 +11,18 @@ import { ApartmentComponent } from '../components/apartment';
 import { CalendarComponent } from '../components/calendar';
 import { ContactsComponent } from '../components/contacts';
 import { SubTicketComponent } from '../components/ticket/subticket';
+import { OsbbDocumentsAndReportsComponent } from '../components/osbb-docs-and-reports';
+import { OsbbContactsComponent } from '../components/osbb-contacts';
+import { LogedInGuard } from '../services/loged-in-guard.service';
 
 export const UserRoutes: Routes = [
   { path: 'user',  component: UserComponent,
+    canActivate: [LogedInGuard],
+    data: { role: 'ROLE_USER'},
     children: [
       { path: '', redirectTo: 'wall', pathMatch: 'full' },
       { path: 'wall', component: WallComponent },
+      { path: 'documents-and-reports', component: OsbbDocumentsAndReportsComponent },
       { path: 'houses', component: HouseComponent },
       { path: 'events', component: EventsComponent },
       { path: 'osbb', component: OsbbBillsComponent },
@@ -26,6 +32,6 @@ export const UserRoutes: Routes = [
       { path: 'provider', component: ProviderComponent },
       { path: 'apartment', component: ApartmentComponent },
       { path: 'calendar', component: CalendarComponent },
-      { path: 'contacts', component: ContactsComponent }
+      { path: 'contacts', component: OsbbContactsComponent }
     ]},
 ];

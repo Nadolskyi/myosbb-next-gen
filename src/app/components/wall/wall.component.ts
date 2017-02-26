@@ -23,7 +23,7 @@ export class WallComponent implements OnInit {
     public wall: WallService
   ) {}
   public ngOnInit() {
-    this.wall.getWallData().subscribe(data => {
+    this.wall.getWallData().subscribe((data) => {
       this.resData = data;
     });
   }

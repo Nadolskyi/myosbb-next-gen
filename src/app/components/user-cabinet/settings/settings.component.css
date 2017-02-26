@@ -12,8 +12,6 @@
 .panel{
    width:84%;
    margin-top: 15px;
-
-
 }
 .panel-heading{
     text-align: left;
@@ -88,8 +86,12 @@
           box-shadow: inset 0 0 0 1px #f5f7fa, 1px 1px 1px #c7ccd3;
 }
 .switcher{
-    display:inline;
+    clear: both;
+    color: #00838F;
+
 }
 .saver{
+    clear: both;
     margin:10px;
+    float: right;
 }

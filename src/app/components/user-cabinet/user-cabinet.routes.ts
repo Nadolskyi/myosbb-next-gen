@@ -11,7 +11,5 @@ export const routesCabinet = [
       { path: 'settings', component: SettingsComponent },
       { path: 'user_bills', component: UserBillsComponent },
       { path: 'profile', component: ProfileComponent },
-      
-      
     ]},
 ];

@@ -1,29 +1,22 @@
-import {Component,OnInit,Input} from '@angular/core';
-import {LoginService }          from "../../../shared/login/login.service";
-import {User}                   from '../../../models/User';
- 
+import { Component, OnInit, Input } from '@angular/core';
+import { LoginService }             from '../../../shared/login/login.service';
+import { User }                     from '../../../models/User';
 @Component({
-  selector: 'profile-sidebar',  
+  selector: 'profile-sidebar',
   styleUrls: [ './profile-sidebar.component.css' ],
   templateUrl: './profile-sidebar.component.html',
-  
 })
 
 export class ProfileSidebarComponent implements OnInit {
-	public currentUser:User;
+  public currentUser: User;
 
-    constructor(private currentUserService: LoginService) {
-            
-    }
+    constructor(private currentUserService: LoginService) {}
 
     public ngOnInit() {
         this.getCurrentUser();
     }
 
-    getCurrentUser(){
-        this.currentUser =this.currentUserService.getUser();
-        
-    }  
-  
-
+    public getCurrentUser() {
+        this.currentUser = this.currentUserService.getUser();
+    }
 }

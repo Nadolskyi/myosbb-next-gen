@@ -27,6 +27,5 @@ export const UserRoutes: Routes = [
       { path: 'apartment', component: ApartmentComponent },
       { path: 'calendar', component: CalendarComponent },
       { path: 'contacts', component: ContactsComponent },
-      
     ]},
 ];

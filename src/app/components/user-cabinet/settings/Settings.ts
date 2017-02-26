@@ -1,11 +1,10 @@
-import {User}  from '../../../models/User';
+import { User }  from '../../../models/User';
 
 export class Settings {
-    settingsId: number;
-    user:User;
-    assigned:boolean;
-    creator:boolean;
-    comment:boolean;
-    answer:boolean;
-    
+    public settingsId: number;
+    public user: User;
+    public assigned: boolean;
+    public creator: boolean;
+    public comment: boolean;
+    public answer: boolean;
 }

@@ -42,7 +42,7 @@ export class ProfileComponent implements OnInit {
     }
 
     public changeUser() {
-        let osbbId = this.updateUser.osbbId;
+        const osbbId = this.updateUser.osbbId;
         let user: User;
         this.profileService.updateUser(this.updateUser).subscribe((data) => {
             user = <User> data.json();

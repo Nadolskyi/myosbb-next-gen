@@ -64,7 +64,7 @@ import { BreadcrumbComponent } from './components/breadcrumb';
 import { SidebarComponent } from './shared/sidebar';
 import { SubTicketComponent } from './components/ticket/subticket';
 import { HouseAboutComponent } from './components/house';
-import { eventsDetailComponent } from './components/events/eventsDetail';
+import { EventsDetailComponent } from './components/events/eventsDetail';
 import { UsersComponent } from './components/users';
 
 // import { ChartsModule } from "ng2-charts/ng2-charts";
@@ -113,7 +113,7 @@ type StoreType = {
     HouseComponent,
     OSBBComponent,
     EventsComponent,
-    eventsDetailComponent,
+    EventsDetailComponent,
     ApartmentComponent,
     BreadcrumbComponent,
     CalendarComponent,

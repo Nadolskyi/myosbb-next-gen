@@ -10,7 +10,7 @@ import { CalendarComponent } from '../components/calendar';
 import { SubTicketComponent } from '../components/ticket/subticket';
 import { OSBBComponent } from '../components/osbb';
 import { HouseAboutComponent } from '../components/house';
-import { eventsDetailComponent } from '../components/events/eventsDetail';
+import { EventsDetailComponent } from '../components/events/eventsDetail';
 import { UsersComponent } from '../components/users';
 
 export const AdminRoutes: Routes = [
@@ -18,7 +18,7 @@ export const AdminRoutes: Routes = [
     children: [
       { path: '', redirectTo: 'osbb', pathMatch: 'full' },
       { path: 'houses', component: HouseComponent },
-      { path: 'events/:id', component: eventsDetailComponent },
+      { path: 'events/:id', component: EventsDetailComponent },
       { path: 'events', component: EventsComponent },
       { path: 'contract', component: ContractsComponent },
       { path: 'ticket', component: TicketComponent  },

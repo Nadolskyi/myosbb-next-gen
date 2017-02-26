@@ -11,12 +11,11 @@ import { API_URL } from '../../../shared/models/localhost.config';
 
 @Injectable()
 
-export class usersService {
+export class UsersService {
 
-  constructor(private http: Http, private LoginService: LoginService) { }
-
-  public getUsers(): Observable<any> {
-    return this.http.get(`${API_URL}/restful/user`,this.LoginService.getRequestOptionArgs())
+constructor(private http: Http, private LoginService: LoginService) { }
+   public getUsers(): Observable<any> {
+    return this.http.get(`${API_URL}/restful/user`, this.LoginService.getRequestOptionArgs())
       .map((res: Response) => res.json())
       .catch((error) => Observable.throw(error));
   }

@@ -10,7 +10,7 @@ import { ProviderComponent } from '../components/provider';
 import { ApartmentComponent } from '../components/apartment';
 import { CalendarComponent } from '../components/calendar';
 import { SubTicketComponent } from '../components/ticket/subticket';
-import { eventsDetailComponent } from '../components/events/eventsDetail';
+import { EventsDetailComponent } from '../components/events/eventsDetail';
 import { HouseAboutComponent } from '../components/house';
 import { OsbbDocumentsAndReportsComponent } from '../components/osbb-docs-and-reports';
 import { OsbbContactsComponent } from '../components/osbb-contacts';
@@ -22,7 +22,7 @@ export const ManagerRoutes: Routes = [
       { path: 'wall', component: WallComponent },
       { path: 'houses', component: HouseComponent },
       { path: 'events', component: EventsComponent },
-      { path: 'events/:id', component: eventsDetailComponent },
+      { path: 'events/:id', component: EventsDetailComponent },
       { path: 'osbbBills', component: OsbbBillsComponent },
       { path: 'contract', component: ContractsComponent },
       { path: 'ticket', component: TicketComponent  },

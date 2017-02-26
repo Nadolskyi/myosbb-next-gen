@@ -22,7 +22,6 @@ export class HouseAboutComponent implements OnInit {
     constructor(
         public route: ActivatedRoute, public http: Http, public HouseService:HouseService
     ) {}
-
     public ngOnInit(): any {
           this.sub = this.route.params.subscribe((params)=> {
            return this.houseId = +params['id'];

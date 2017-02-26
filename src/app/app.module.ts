@@ -21,6 +21,23 @@ import { FileSelectDirective, } from 'ng2-file-upload';
 import { TextMaskModule } from 'angular2-text-mask';
 import { SelectModule } from 'ng2-select';
 import { MomentModule } from 'angular2-moment';
+import {
+   ScheduleModule,
+   DialogModule,
+   InputTextModule,
+   InputMaskModule,
+   CheckboxModule,
+   ButtonModule,
+   TabViewModule,
+   CalendarModule,
+   CodeHighlighterModule
+} from 'primeng/primeng';
+import {
+  AlertModule,
+  DatepickerModule,
+  ModalModule
+} from 'ng2-bootstrap';
+import { Calendar } from 'primeng/components/calendar/calendar';
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -120,7 +137,19 @@ type StoreType = {
     SelectModule,
     MomentModule,
     ToasterModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    ScheduleModule,
+    DialogModule,
+    InputTextModule,
+    InputMaskModule,
+    CheckboxModule,
+    ButtonModule,
+    TabViewModule,
+    CalendarModule,
+    CodeHighlighterModule,
+    AlertModule.forRoot(),
+    DatepickerModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [
     ENV_PROVIDERS,

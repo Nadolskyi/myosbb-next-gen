@@ -8,6 +8,7 @@ import { ProviderComponent } from '../components/provider';
 import { ApartmentComponent } from '../components/apartment';
 import { CalendarComponent } from '../components/calendar';
 import { SubTicketComponent } from '../components/ticket/subticket';
+import { LogedInGuard } from '../services/loged-in-guard.service';
 import { OSBBComponent } from '../components/osbb';
 import { HouseAboutComponent } from '../components/house';
 import { EventsDetailComponent } from '../components/events/eventsDetail';
@@ -15,6 +16,8 @@ import { UsersComponent } from '../components/users';
 
 export const AdminRoutes: Routes = [
   { path: 'admin',  component: AdminComponent,
+    canActivate: [LogedInGuard],
+    data: { role: 'ROLE_ADMIN'},
     children: [
       { path: '', redirectTo: 'osbb', pathMatch: 'full' },
       { path: 'houses', component: HouseComponent },

@@ -14,9 +14,12 @@ import { EventsDetailComponent } from '../components/events/eventsDetail';
 import { HouseAboutComponent } from '../components/house';
 import { OsbbDocumentsAndReportsComponent } from '../components/osbb-docs-and-reports';
 import { OsbbContactsComponent } from '../components/osbb-contacts';
+import { LogedInGuard } from '../services/loged-in-guard.service';
 
 export const ManagerRoutes: Routes = [
   { path: 'manager',  component: ManagerComponent,
+    canActivate: [LogedInGuard],
+    data: { role: 'ROLE_MANAGER'},
     children: [
       { path: '', redirectTo: 'wall', pathMatch: 'full' },
       { path: 'wall', component: WallComponent },

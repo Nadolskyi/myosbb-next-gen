@@ -18,15 +18,12 @@ import { LoginService } from './shared/login/login.service';
 })
 export class AppComponent implements OnInit {
   public name = 'Наш Двір';
-  public authRole: string;
   constructor(
     public appState: AppState,
     public _router: Router,
     public loginService: LoginService
   ) { }
   public ngOnInit() {
-    this.loginService.setRole();
-    this.authRole = this.loginService.getRole();
-    this.loginService.switchRole(this.authRole);
+    this.loginService.setData();
   }
 }

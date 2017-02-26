@@ -1,6 +1,9 @@
 <nav class="black-bg">
-  <i class="fa fa-home fa-lg header_logo_position" aria-hidden="true">
-  <b>Наш Двір</b></i>
+  <a [routerLink]="['']">
+    <i class="fa fa-home fa-lg header_logo_position" aria-hidden="true">
+      <b>Наш Двір</b>
+    </i>
+  </a>
   <div class="header_button_block">
     <a  [routerLink]=" ['./cabinet'] "
       routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">

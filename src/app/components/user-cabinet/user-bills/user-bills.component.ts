@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 @Component({
   selector: 'user-bills',
-  templateUrl: './user-bills.component.html',
+  templateUrl: './user-bills.template.html',
 })
 
 export class UserBillsComponent {

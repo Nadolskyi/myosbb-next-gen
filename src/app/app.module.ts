@@ -130,6 +130,7 @@ type StoreType = {
     SidebarComponent,
     HouseAboutComponent,
     SubTicketComponent,
+    UserComponent,
     UsersComponent,
     SetLanguageComponent,
     CapitalizeFirstLetterPipe,

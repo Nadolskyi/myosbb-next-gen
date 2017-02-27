@@ -9,8 +9,8 @@ import { ProfileConstants }       from './profile.constants';
 @Component({
   selector: 'profile',
   providers: [ProfileService, ProfileConstants],
-  styleUrls: [ './profile.component.css' ],
-  templateUrl: './profile.component.html',
+  styleUrls: [ './profile.css' ],
+  templateUrl: './profile.template.html',
 
 })
 

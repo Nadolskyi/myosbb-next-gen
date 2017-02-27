@@ -3,8 +3,8 @@ import { LoginService }             from '../../../shared/login/login.service';
 import { User }                     from '../../../models/user.model';
 @Component({
   selector: 'profile-sidebar',
-  styleUrls: [ './profile-sidebar.component.css' ],
-  templateUrl: './profile-sidebar.component.html',
+  styleUrls: [ './profile-sidebar.css' ],
+  templateUrl: './profile-sidebar.template.html',
 })
 
 export class ProfileSidebarComponent implements OnInit {

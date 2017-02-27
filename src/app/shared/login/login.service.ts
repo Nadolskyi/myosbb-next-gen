@@ -126,4 +126,7 @@ export class LoginService {
       this.setUser();
     }
   }
+  public setEditUser(user: User) {
+    this.currentUser = user;
+  }
 }

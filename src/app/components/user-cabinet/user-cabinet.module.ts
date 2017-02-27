@@ -15,11 +15,14 @@ import { UpperCaseFirstLetterPipe } from './upper-case-first-letter.pipe';
 
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 
+import { ToasterModule, ToasterService } from 'angular2-toaster';
+
 @NgModule({
   imports:      [
     CommonModule,
     FormsModule,
     TextMaskModule,
+    ToasterModule,
     RouterModule.forChild(routesCabinet),
     TranslateModule.forRoot({
         provide: TranslateLoader,
@@ -34,6 +37,9 @@ import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-tra
     SettingsComponent,
     UserCabinetComponent,
     UpperCaseFirstLetterPipe
+  ],
+  providers : [
+  ToasterService
   ],
 
 })

@@ -147,7 +147,7 @@ module.exports = function (options) {
       new DefinePlugin({
         'ENV': JSON.stringify(METADATA.ENV),
         'HMR': METADATA.HMR,
-        'HARDCODE_FOR_LOCALHOST_MYOSBB': JSON.stringify(localhost),
+        'API_SERVER': JSON.stringify(localhost),
         'process.env': {
           'ENV': JSON.stringify(METADATA.ENV),
           'NODE_ENV': JSON.stringify(METADATA.ENV),

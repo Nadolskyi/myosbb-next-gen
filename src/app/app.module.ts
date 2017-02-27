@@ -58,7 +58,7 @@ import { RegistrationComponent }       from './registration';
 import { RegistrationSuccessComponent }from './registration/registration-sucess';
 import { AppHeaderComponent }          from './shared/header';
 import { WallComponent }               from './components/wall';
-import { HouseComponent }              from  './components/house';
+import { HouseComponent }              from  './components/houses';
 import { EventsComponent }             from './components/events';
 import { OsbbBillsComponent }          from './components/osbbBils';
 import { ContractsComponent }          from  './components/contracts';
@@ -68,7 +68,11 @@ import { ApartmentComponent }          from './components/apartment';
 import { CalendarComponent }           from './components/calendar';
 import { BreadcrumbComponent }         from './components/breadcrumb';
 import { SidebarComponent }            from './shared/sidebar';
-import { SubTicketComponent }          from './components/ticket/subticket';
+import { SubTicketComponent }          from './components/ticket/components/subticket';
+import { TicketAddFormComponent } from './components/ticket/components/ticketAddFormComponent/ticket-add-form.component';
+import { TicketEditFormComponent } from './components/ticket/components/ticketEditFromComponent/ticket-edit-form.component';
+import { TicketDelFormComponent } from './components/ticket/components/ticketDelFormComponent/ticket-del-form.component'
+import { TicketEditDiscussedFormComponent } from './components/ticket/components/ticketEditDistFormComponent/ticket-editdiscussed-form.component';
 
 import { SetLanguageComponent }             from './shared/set-language/';
 import { OsbbDocumentsAndReportsComponent } from './components/osbb-docs-and-reports';
@@ -80,10 +84,10 @@ import '../styles/styles.scss';
 import '../styles/headings.css';
 import { AdminComponent } from './admin/admin.component';
 import { ManagerComponent } from './manager/manager.component';
-
+import { UserComponent } from './user/user.component';
 // pipes
 import { CapitalizeFirstLetterPipe } from './pipes/capitalize-first-letter';
-
+import { CapitalizeLetterPipe } from './pipes/capitalize.firstletter';
 // services
 import { OsbbService } from './services/osbb.service';
 import { OsbbConstants } from './services/osbb.constants';
@@ -133,7 +137,12 @@ type StoreType = {
     CapitalizeFirstLetterPipe,
     OsbbDocumentsAndReportsComponent,
     OsbbContactsComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    TicketAddFormComponent,
+    TicketEditFormComponent,
+    TicketDelFormComponent,
+    TicketEditDiscussedFormComponent,
+    CapitalizeLetterPipe
   ],
   imports: [
     BrowserModule,

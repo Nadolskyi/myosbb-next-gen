@@ -61,25 +61,27 @@ import { ApartmentComponent } from './components/apartment';
 import { CalendarComponent } from './components/calendar';
 import { BreadcrumbComponent } from './components/breadcrumb';
 import { SidebarComponent } from './shared/sidebar';
-import { SubTicketComponent } from './components/ticket/subticket';
+import { SubTicketComponent } from './components/ticket/components/subticket';
 import { SetLanguageComponent } from './shared/set-language/';
 import { OsbbDocumentsAndReportsComponent } from './components/osbb-docs-and-reports';
 import { OsbbContactsComponent } from './components/osbb-contacts';
+import { TicketAddFormComponent } from './components/ticket/components/ticketAddFormComponent/ticket-add-form.component';
+import { TicketEditFormComponent } from './components/ticket/components/ticketEditFromComponent/ticket-edit-form.component';
+import { TicketDelFormComponent } from './components/ticket/components/ticketDelFormComponent/ticket-del-form.component'
+import { TicketEditDiscussedFormComponent } from './components/ticket/components/ticketEditDistFormComponent/ticket-editdiscussed-form.component';
 
-import '../styles/styles.scss';
-import '../styles/headings.css';
-import { AdminComponent } from './admin/admin.component';
-import { UserComponent } from './user/user.component';
-import { ManagerComponent } from './manager/manager.component';
+import { AdminComponent } from './adminComponent/admin.component';
+import { UserComponent } from './userComponent/user.component';
+import { ManagerComponent } from './managerComponent/manager.component';
 
 // pipes
-import { CapitalizeFirstLetterPipe } from './pipes/capitalize-first-letter';
-
+import { CapitalizeFirstLetterPipe } from '../assets/pipes/capitalize-first-letter';
+import { CapitalizeLetterPipe } from '../assets/pipes/capitalize.firstletter';
 // services
-import { OsbbService } from './services/osbb.service';
-import { OsbbConstants } from './services/osbb.constants';
+import { OsbbService } from '../assets/services/osbb.service';
+import { OsbbConstants } from '../assets/services/osbb.constants';
 import { LoginService } from './shared/login/login.service';
-import { LogedInGuard } from './services/loged-in-guard.service';
+import { LogedInGuard } from '../assets/services/loged-in-guard.service';
 // Application wide providers
 
 const APP_PROVIDERS = [
@@ -118,15 +120,20 @@ type StoreType = {
     SubTicketComponent,
     SetLanguageComponent,
     CapitalizeFirstLetterPipe,
+    CapitalizeLetterPipe,
     OsbbDocumentsAndReportsComponent,
     OsbbContactsComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    TicketAddFormComponent,
+    TicketEditFormComponent,
+    TicketDelFormComponent,
+    TicketEditDiscussedFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules }),
     TranslateModule.forRoot({
         provide: TranslateLoader,
         useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),

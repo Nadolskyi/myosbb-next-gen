@@ -11,8 +11,7 @@ import { LoginService } from './shared/login/login.service';
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
-    './app.component.scss',
-    '../assets/css/default.style.scss'
+    './app.component.scss'
   ],
   templateUrl: './app.html'
 })

@@ -1,0 +1,35 @@
+.ticket {
+  .ticket_span-btn-group {
+    padding-top: 5px;
+    font-size: 15px;
+    font-weight: normal;
+  }
+  .ticket_span-group {
+    margin-top: 8px;
+    cursor: pointer;
+  }
+  .ticket_btn-find-group {
+    display: block;
+    left: -15px;
+  }
+  .ticket_search-box {
+    top: -75px;
+    right: -15px;
+  }
+  .ticket_footer-btn-group {
+    white-space: nowrap;
+    padding-bottom: 15px;
+  }
+  table {
+    td {
+      &:first-child {
+        cursor: pointer;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+    .ticket_first-row-data {
+      display: block;
+    }
+  }
+}

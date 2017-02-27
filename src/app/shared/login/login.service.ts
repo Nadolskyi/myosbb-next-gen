@@ -5,8 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import { LoginConstants } from './login.constants';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../../models/user.model';
-import { API_URL } from '../../../shared/models/localhost.config.ts';
+import { User } from '../../../assets/models/user.model';
+import { API_URL } from '../../../assets/models/localhost.config.ts';
 
 @Injectable()
 export class LoginService {

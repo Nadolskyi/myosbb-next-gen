@@ -9,8 +9,8 @@ import { ProfileConstants }       from './profile.constants';
 @Component({
   selector: 'profile',
   providers: [ProfileService, ProfileConstants],
-  styleUrls: [ './profile.component.css' ],
-  templateUrl: './profile.component.html',
+  styleUrls: [ './profile.css' ],
+  templateUrl: './profile.template.html',
 
 })
 
@@ -42,12 +42,10 @@ export class ProfileComponent implements OnInit {
     }
 
     public changeUser() {
-        const osbbId = this.updateUser.osbbId;
         let user: User;
         this.profileService.updateUser(this.updateUser).subscribe((data) => {
             user = <User> data.json();
-            user.osbbId = osbbId;
-            this.currentUserService.setUser(user);
+            this.currentUserService.setEditUser(user);
             this.currentUser = this.currentUserService.currentUser;
             this.updateUser = Object.assign({}, this.currentUser);
          });

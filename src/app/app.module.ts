@@ -58,7 +58,7 @@ import { RegistrationComponent }       from './registration';
 import { RegistrationSuccessComponent }from './registration/registration-sucess';
 import { AppHeaderComponent }          from './shared/header';
 import { WallComponent }               from './components/wall';
-import { HouseComponent }              from  './components/house';
+import { HouseComponent }              from  './components/houses';
 import { EventsComponent }             from './components/events';
 import { OsbbBillsComponent }          from './components/osbbBils';
 import { ContractsComponent }          from  './components/contracts';
@@ -80,6 +80,8 @@ import '../styles/styles.scss';
 import '../styles/headings.css';
 import { AdminComponent } from './admin/admin.component';
 import { ManagerComponent } from './manager/manager.component';
+import { UserComponent } from './user/user.component';
+
 
 // pipes
 import { CapitalizeFirstLetterPipe } from './pipes/capitalize-first-letter';
@@ -128,6 +130,7 @@ type StoreType = {
     SidebarComponent,
     HouseAboutComponent,
     SubTicketComponent,
+    UserComponent,
     UsersComponent,
     SetLanguageComponent,
     CapitalizeFirstLetterPipe,

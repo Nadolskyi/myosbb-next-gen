@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
 import { LoginService } from '../../shared/login/login.service';
-import { PageRequest } from '../../models/pageRequest.interface';
+import { PageRequest } from '../../models/pageRequest.model';
 import { UrlListConfig } from '../../services/apiUrl.service';
 
 @Injectable()

@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import { TicketService } from './ticket.service';
 import { LoginService } from '../../shared/login/login.service';
-import { PageRequest } from '../../models/pageRequest.interface';
+import { PageRequest } from '../../models/pageRequest.model';
 
 @Component({
     selector: 'ticket',

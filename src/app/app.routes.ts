@@ -1,9 +1,12 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './common/login';
-
+import { LoginComponent } from './shared/login';
+import { ManagerRoutes } from './managerComponent/manager.routes';
+import { AdminRoutes } from './adminComponent/admin.routes';
+import { UserRoutes } from './userComponent/user.routes';
 export const ROUTES: Routes = [
+
   { path: 'login',  component: LoginComponent },
-  { path: 'manager', loadChildren: './manager#ManagerModule' },
-  { path: 'admin', loadChildren: './admin#AdminModule' },
-  { path: 'user', loadChildren: './user#UserModule' }
+  ...ManagerRoutes,
+  ...AdminRoutes,
+  ...UserRoutes
 ];

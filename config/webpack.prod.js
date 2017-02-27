@@ -24,7 +24,6 @@ const OptimizeJsPlugin = require('optimize-js-plugin');
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 8080;
-const localhost = 'http://localhost:8080/myosbb';
 const METADATA = webpackMerge(commonConfig({
   env: ENV
 }).metadata, {
@@ -158,7 +157,6 @@ module.exports = function (env) {
       new DefinePlugin({
         'ENV': JSON.stringify(METADATA.ENV),
         'HMR': METADATA.HMR,
-        'HARDCODE_FOR_LOCALHOST_MYOSBB': JSON.stringify(localhost),
         'process.env': {
           'ENV': JSON.stringify(METADATA.ENV),
           'NODE_ENV': JSON.stringify(METADATA.ENV),

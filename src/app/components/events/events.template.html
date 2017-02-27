@@ -1,4 +1,4 @@
-<div class="content">
+<div class="page-content">
   <breadcrumb [header]="title"></breadcrumb>
   <table class="table table-striped table-advance table-hover">
     <thead>
@@ -28,10 +28,10 @@
     <tr>
       <td><a (click)="onNavigate(event.id)">{{event.title}}</a></td>
       <td>
-        <!--{{formatDate(event.start)}}-->
+        {{event.start | date: 'mediumDate'}}
       </td>
       <td>
-        <!--{formatDate(event.end)}}-->
+        {{event.end}}
       </td>
       <td>{{event.repeat}}</td>
       <td><a (click)="toUser(event.author.userId)">{{event.author.firstName + " " + event.author.lastName}}</a></td>

@@ -9,12 +9,12 @@ import {
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { LoginService } from '../../common/login/login.service';
+import { LoginService } from '../../shared/login/login.service';
 import { EventsService } from './events.service';
 
 @Component({
   selector: `events`,
-  styleUrls: ['../../../assets/css/manager.page.layout.scss'],
+  styleUrls: ['../../../assets/style/page.layout.scss'],
   templateUrl: './events.template.html',
   providers: [ LoginService, EventsService ]
 })
@@ -31,6 +31,7 @@ export class EventsComponent implements OnInit {
   public ngOnInit() {
     this.event.getEventData().subscribe(data => {
       this.resData = data;
+      console.log(data)
     });
   };
 }

@@ -24,13 +24,32 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { LoginComponent } from './common/login';
-import { AppHeader } from './common/header';
+import { LoginComponent } from './shared/login';
+import { AppHeader } from './shared/header';
+import { WallComponent } from './components/wall';
+import { HouseComponent } from  './components/house';
+import { EventsComponent } from './components/events';
+import { OsbbBillsComponent } from './components/osbbBils';
+import { ContractsComponent } from  './components/contracts';
+import { TicketComponent } from './components/ticket';
+import { ProviderComponent } from './components/provider';
+import { ApartmentComponent } from './components/apartment';
+import { CalendarComponent } from './components/calendar';
+import { ContactsComponent } from './components/contacts';
+import { BreadcrumbComponent } from './components/breadcrumb';
+import { SidebarComponent } from './shared/sidebar';
+import { SubTicketComponent } from './components/ticket/components/subticket';
 
+import { ModalModule } from 'ng2-bootstrap';
 
-import '../styles/styles.scss';
-import '../styles/headings.css';
-
+import {AdminComponent} from "./adminComponent/admin.component";
+import {UserComponent} from "./userComponent/user.component";
+import {ManagerComponent} from "./managerComponent/manager.component";
+import { CapitalizeFirstLetterPipe } from '../assets/pipes/capitalize.firstletter';
+import { TicketAddFormComponent } from './components/ticket/components/ticketAddFormComponent/ticket-add-form.component';
+import { TicketEditFormComponent } from './components/ticket/components/ticketEditFromComponent/ticket-edit-form.component';
+import { TicketDelFormComponent } from './components/ticket/components/ticketDelFormComponent/ticket-del-form.component'
+import { TicketEditDiscussedFormComponent } from './components/ticket/components/ticketEditDistFormComponent/ticket-editdiscussed-form.component';
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
@@ -43,21 +62,40 @@ type StoreType = {
   disposeOldHosts: () => void
 };
 
-/**
- * `AppModule` is the main entry point into Angular2's bootstraping process
- */
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
     AppHeader,
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ManagerComponent,
+    AdminComponent,
+    UserComponent,
+    WallComponent,
+    HouseComponent,
+    EventsComponent,
+    ApartmentComponent,
+    ContactsComponent,
+    BreadcrumbComponent,
+    CalendarComponent,
+    ProviderComponent,
+    OsbbBillsComponent,
+    ContractsComponent,
+    TicketComponent,
+    SidebarComponent,
+    SubTicketComponent,
+    CapitalizeFirstLetterPipe,
+    TicketAddFormComponent,
+    TicketEditFormComponent,
+    TicketDelFormComponent,
+    TicketEditDiscussedFormComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    ModalModule.forRoot(),
+    RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

@@ -5,13 +5,16 @@ import {
 } from '@angular/core';
 import { AppState } from './app.service';
 import { Router } from '@angular/router';
+import 'jquery';
+import 'bootstrap/js/tooltip';
+
 
 @Component({
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
     './app.component.scss',
-    '../assets/css/default.style.scss'
+    '../assets/style/default.style.scss'
   ],
   templateUrl: './app.html'
 })
@@ -25,7 +28,7 @@ export class AppComponent implements OnInit {
   ) { }
 
   public ngOnInit() {
-    this.router.navigate(['./login']);
+    // this.router.navigate(['./login']);
   }
 
 }

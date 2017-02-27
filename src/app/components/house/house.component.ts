@@ -14,7 +14,7 @@ import { HouseService } from './house.service';
   {
     selector: 'houses',
     templateUrl: 'house.component.html',
-    styleUrls: ['../../../assets/css/manager.page.layout.scss', './house.scss'],
+    styleUrls: ['../../../assets/style/page.layout.scss', './house.scss'],
     providers: [ HouseService ]
   }
 )

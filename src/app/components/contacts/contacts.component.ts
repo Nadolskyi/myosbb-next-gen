@@ -5,7 +5,7 @@ import {
 
 @Component({
   selector: 'contacts',
-  styleUrls: ['../../../assets/css/manager.page.layout.scss'],
+  styleUrls: ['../../../assets/style/page.layout.scss'],
   templateUrl: './contacts.component.html'
 })
 export class ContactsComponent {

@@ -92,19 +92,6 @@ module.exports = function (options) {
 
       rules: [
 
-        /*
-         * Typescript loader support for .ts
-         *
-         * Component Template/Style integration using `angular2-template-loader`
-         * Angular 2 lazy loading (async routes) via `ng-router-loader`
-         *
-         * `ng-router-loader` expects vanilla JavaScript code, not TypeScript code. This is why the
-         * order of the loader matter.
-         *
-         * See: https://github.com/s-panferov/awesome-typescript-loader
-         * See: https://github.com/TheLarkInn/angular2-template-loader
-         * See: https://github.com/shlomiassaf/ng-router-loader
-         */
         {
           test: /\.ts$/,
           use: [
@@ -194,8 +181,14 @@ module.exports = function (options) {
           loader: 'url-loader?limit=10000'
         },
 
-      ],
 
+      ],
+      loaders: [
+        {
+          test: /jquery\.js/,
+          loader: 'null-loader',
+          exclude: [helpers.root('src', 'styles')]
+        }],
     },
 
     /*
@@ -359,8 +352,12 @@ module.exports = function (options) {
         disabled: !AOT,
         tsConfig: helpers.root('tsconfig.webpack.json'),
         resourceOverride: helpers.root('config/resource-override.js')
+      }),
+      new webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery',
+        jquery: 'jquery'
       })
-
     ],
 
     /*

@@ -6,11 +6,13 @@ import { User }         from '../../../models/user.model';
 import { SettingsService } from './settings.service';
 import { LoginService }    from '../../../shared/login/login.service';
 
+import { ToasterService } from 'angular2-toaster';
+
 @Component({
   selector: 'settings',
-  providers: [SettingsService],
-  templateUrl: './settings.component.html',
-  styleUrls: [ './settings.component.css' ],
+  providers: [SettingsService, ToasterService],
+  templateUrl: './settings.template.html',
+  styleUrls: [ './settings.css' ],
 })
 
 export class SettingsComponent implements OnInit {
@@ -20,6 +22,7 @@ export class SettingsComponent implements OnInit {
 
     constructor(private settingsService: SettingsService,
                 private currentUserService: LoginService,
+                private toasterService: ToasterService,
     ) {
         this.currentUser = this.currentUserService.getUser();
         this.settings = new Settings();
@@ -32,6 +35,7 @@ export class SettingsComponent implements OnInit {
 
     public save() {
         this.settingsService.save(this.settings);
+        this.toasterService.pop('success', 'Your changes is saved successfully');
     }
 
     public changeAssigned() {

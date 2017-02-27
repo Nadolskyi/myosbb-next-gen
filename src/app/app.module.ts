@@ -84,7 +84,8 @@ import '../styles/styles.scss';
 import '../styles/headings.css';
 import { AdminComponent } from './admin/admin.component';
 import { ManagerComponent } from './manager/manager.component';
-import { UserComponent } from './user/user.component';
+import { UserComponent} from './user/user.component';
+
 // pipes
 import { CapitalizeFirstLetterPipe } from './pipes/capitalize-first-letter';
 import { CapitalizeLetterPipe } from './pipes/capitalize.firstletter';
@@ -117,6 +118,7 @@ type StoreType = {
     ManagerComponent,
     AdminComponent,
     UserComponent,
+    UsersComponent,
     WallComponent,
     HouseComponent,
     OSBBComponent,
@@ -132,6 +134,7 @@ type StoreType = {
     SidebarComponent,
     HouseAboutComponent,
     SubTicketComponent,
+    UserComponent,
     UsersComponent,
     SetLanguageComponent,
     CapitalizeFirstLetterPipe,

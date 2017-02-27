@@ -7,7 +7,7 @@ import { TicketComponent  } from '../components/ticket';
 import { ProviderComponent } from '../components/provider';
 import { ApartmentComponent } from '../components/apartment';
 import { CalendarComponent } from '../components/calendar';
-import { SubTicketComponent } from '../components/ticket/subticket';
+import { SubTicketComponent } from '../components/ticket/components/subticket';
 import { LogedInGuard } from '../services/loged-in-guard.service';
 import { OSBBComponent } from '../components/osbb';
 import { HouseAboutComponent } from '../components/house';

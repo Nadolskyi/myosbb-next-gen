@@ -16,7 +16,7 @@ export class SidebarConstants {
       {route: 'ticket' , name: 'tickets' , class: 'fa fa-ticket'},
       {route: 'calendar' , name: 'calendar' , class: 'fa fa-calendar'},
       {route: 'events' , name: 'events' , class: 'fa fa-comments'},
-      {route: 'osbb/bill' , name: 'bills_osbb' , class: 'fa fa-credit-card-alt'},
+      {route: 'osbbBills' , name: 'bills_osbb' , class: 'fa fa-credit-card-alt'},
       {route: 'provider' , name: 'providers' , class: 'fa fa-building'},
       {route: 'contract' , name: 'contracts' , class: 'fa fa-bookmark'}
     ]; }

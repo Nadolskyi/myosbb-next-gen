@@ -9,7 +9,7 @@ import { TicketComponent  } from '../components/ticket';
 import { ProviderComponent } from '../components/provider';
 import { ApartmentComponent } from '../components/apartment';
 import { CalendarComponent } from '../components/calendar';
-import { SubTicketComponent } from '../components/ticket/subticket';
+import { SubTicketComponent } from '../components/ticket/components/subticket';
 import { EventsDetailComponent } from '../components/events/eventsDetail';
 import { HouseAboutComponent } from '../components/house';
 import { OsbbDocumentsAndReportsComponent } from '../components/osbb-docs-and-reports';

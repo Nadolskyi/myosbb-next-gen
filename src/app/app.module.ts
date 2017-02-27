@@ -68,7 +68,11 @@ import { ApartmentComponent }          from './components/apartment';
 import { CalendarComponent }           from './components/calendar';
 import { BreadcrumbComponent }         from './components/breadcrumb';
 import { SidebarComponent }            from './shared/sidebar';
-import { SubTicketComponent }          from './components/ticket/subticket';
+import { SubTicketComponent }          from './components/ticket/components/subticket';
+import { TicketAddFormComponent } from './components/ticket/components/ticketAddFormComponent/ticket-add-form.component';
+import { TicketEditFormComponent } from './components/ticket/components/ticketEditFromComponent/ticket-edit-form.component';
+import { TicketDelFormComponent } from './components/ticket/components/ticketDelFormComponent/ticket-del-form.component'
+import { TicketEditDiscussedFormComponent } from './components/ticket/components/ticketEditDistFormComponent/ticket-editdiscussed-form.component';
 
 import { SetLanguageComponent }             from './shared/set-language/';
 import { OsbbDocumentsAndReportsComponent } from './components/osbb-docs-and-reports';
@@ -84,7 +88,7 @@ import { UserComponent} from './user/user.component';
 
 // pipes
 import { CapitalizeFirstLetterPipe } from './pipes/capitalize-first-letter';
-
+import { CapitalizeLetterPipe } from './pipes/capitalize.firstletter';
 // services
 import { OsbbService } from './services/osbb.service';
 import { OsbbConstants } from './services/osbb.constants';
@@ -136,7 +140,12 @@ type StoreType = {
     CapitalizeFirstLetterPipe,
     OsbbDocumentsAndReportsComponent,
     OsbbContactsComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    TicketAddFormComponent,
+    TicketEditFormComponent,
+    TicketDelFormComponent,
+    TicketEditDiscussedFormComponent,
+    CapitalizeLetterPipe
   ],
   imports: [
     BrowserModule,

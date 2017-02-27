@@ -8,28 +8,29 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
 import { LoginService } from '../../shared/login/login.service';
+import { PageParams } from '../../models/pageParam.model';
 import { UrlListConfig } from '../../services/apiUrl.service';
 
 @Injectable()
 
-export class ContractsService {
+export class OsbbService {
 
   constructor(
-    private http: Http,
-    public loginService: LoginService
+    private _http: Http,
+    public login: LoginService,
   ) { }
 
-  public getContractsData(): Observable<any> {
-    return this.http.get(UrlListConfig.URL_LIST.contractsUrl,
-      this.loginService.getRequestOptionArgs())
+  public getBilsData(parameters: PageParams, status: string): Observable<any> {
+    return this._http.post(UrlListConfig.URL_LIST.billUrl + status,
+      JSON.stringify(parameters), this.login.getRequestOptionArgs())
       .map((res: Response) => res.json())
       .catch((error) => Observable.throw(error));
   };
 
-  public findByProviderName(search: string): Observable<any> {
-    return  this.http.get(UrlListConfig.URL_LIST.contactNameUrl + 'find?name=' + search,
-      this.loginService.getRequestOptionArgs())
-      .map((res) => res.json())
+  public findBillById(billId: number): Observable<any> {
+    return this._http.get(UrlListConfig.URL_LIST.idUrl + `${billId}`,
+      this.login.getRequestOptionArgs())
+      .map((response) => response.json())
       .catch((error) => Observable.throw(error));
   };
 }

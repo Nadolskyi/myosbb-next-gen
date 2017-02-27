@@ -1,4 +1,4 @@
-import { LoginConstants } from '../shared/login/login.constants';
+import { LoginConstants } from '../../shared/login/login.constants';
 
 export class RegistrationConstants {
   public static get Masks() {

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { UserRegistration } from './models/user_registration';
 import { OsbbRegistration } from './models/osbb_registration';
 import { RegistrationConstants } from './registration.constant';
-import { LoginConstants } from '../shared/login/login.constants';
+import { LoginConstants } from '../../shared/login/login.constants';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 @Injectable()

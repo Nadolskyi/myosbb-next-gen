@@ -76,10 +76,9 @@ export class CalendarComponent implements OnInit {
     }
     public findEventIndexById(id: number) {
         let index = -1;
-        for (let i of this.events) {
-            if (id === this.events[i].id) {
-                index = i;
-                break;
+        this.events.forEach( (item, ind) => {
+            if (id === this.events[ind].id) {
+                index = ind;
             }
         })
         return index;

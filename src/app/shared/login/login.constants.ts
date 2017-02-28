@@ -1,7 +1,9 @@
+import { API_URL } from '../../../shared/models/localhost.config.ts';
+
 export class LoginConstants {
   public static get Login(){
     return {
-      serverUrl: 'http://localhost:8080/myosbb',
+      serverUrl: API_URL,
       auth: 'Authorization',
       contentType: 'Content-Type',
       appJson: 'application/json',

@@ -1,1 +1,1 @@
-export const API_URL = 'http://localhost:8080/myosbb';
+export const API_URL = API_SERVER;

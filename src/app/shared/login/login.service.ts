@@ -6,7 +6,6 @@ import { LoginConstants } from './login.constants';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../../models/user.model';
-import { API_URL } from '../../../shared/models/localhost.config.ts';
 
 @Injectable()
 export class LoginService {
@@ -15,7 +14,7 @@ export class LoginService {
   public role: string;
   public isLoggedIn: boolean;
   public currentUser: User;
-  private getUrl: string = API_URL + '/restful/user';
+  private getUrl: string = this._pathUrl.serverUrl + '/restful/user';
 
   constructor(public http: Http, public _router: Router,
     ) {}

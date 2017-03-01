@@ -8,7 +8,7 @@
             
             <div class="col-md-4 switcher">
               <h4>{{'iAssigned' | translate | capitalize}}</h4>
-              <label class="toggle col-sm-8">
+              <label class="toggle col-sm-8 [ngClass]="setAssigned()"">
                    <input type="checkbox"(click)="changeAssigned()">
                    <span class="handle"></span>
               </label>
@@ -18,7 +18,7 @@
             
             <div class="col-md-4 switcher">
                 <h4>{{'commentChangeStatus' | translate | capitalize}}</h4>
-                <label class="toggle col-sm-8">
+                <label class="toggle col-sm-8 [ngClass]="setCreator()"">
                    <input type="checkbox"(click)="changeCreator()">
                    <span class="handle"></span>
                </label>
@@ -26,7 +26,7 @@
 
             <div class="col-md-4 switcher">
                 <h4>{{'newCommentSetting' | translate | capitalize}}</h4>
-                <label class="toggle col-sm-8">
+                <label class="toggle col-sm-8 [ngClass]="setComment()"">
                    <input type="checkbox"(click)="changeComment()">
                    <span class="handle"></span>
                </label>
@@ -34,7 +34,7 @@
             
             <div class="col-md-4 switcher">
                 <h4>{{'newAnswerForMyComment'| translate | capitalize}}</h4>
-                <label class="toggle col-sm-8">
+                <label class="toggle col-sm-8 [ngClass]="setAnswer()"">
                    <input type="checkbox"(click)="changeAnswer()">
                    <span class="handle"></span>
                </label>

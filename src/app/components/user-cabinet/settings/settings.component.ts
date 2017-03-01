@@ -52,5 +52,21 @@ export class SettingsComponent implements OnInit {
 
     public changeAnswer() {
         this.settings.answer  = !this.settings.answer;
-      }
+    }
+    
+    public setAssigned(){
+      return this.settings.assigned == true ? 'switch-on':'switch-off';
+    }
+    
+    public setCreator(){
+      return this.settings.creator == true ? 'switch-on':'switch-off';
+    }
+    public setComment(){
+      return this.settings.comment == true ? 'switch-on':'switch-off';
+    }
+    public setAnswer(){
+      return this.settings.answer == true ? 'switch-on':'switch-off';
+    }
+    
+    
 }
